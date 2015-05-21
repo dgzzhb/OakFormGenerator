@@ -1,0 +1,7 @@
+thead {
+	background-color: #b0c4de;
+}
+
+.left-colored tr td:first-child {
+	background: pink;
+}
