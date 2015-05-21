@@ -13,10 +13,10 @@ public class Controller extends HttpServlet{
 	/**
 	 * version Id
 	 */
-	private static final long serialVersionUID = -1951358628804251994L;
+	private static final long serialVersionUID = 823L;
 	
 	public void init() throws ServletException {
-
+		Action.add(new IndexAction());
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class Controller extends HttpServlet{
         String      servletPath = req.getServletPath();
 
         String      action = getActionName(servletPath);
-         System.out.println("action:  ++ "+action);
+
         if (action.equals("register.do") || action.equals("login.do")) {
         	// Allow these actions without logging in
 			return Action.perform(action,req);
