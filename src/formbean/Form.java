@@ -14,19 +14,21 @@ public class Form extends FormBean {
     private List<Integer> what;
     
     // Yes or No form
+    private boolean showSixthRow; // The sixth row is optional
     private boolean forBusiness;
     private boolean forMarketing;
     private boolean forJointMarket;
     private boolean forAffiliateTransaction;
     private boolean forAffiliateCredit;
-    private boolean forAffiliateMarket;
+    private boolean forAffiliateMarket; // optional
     private boolean forNonaffiliate;
+    // If any of them is yes, provide opt-out
     private boolean limitBusiness;
     private boolean limitMarketing;
     private boolean limitJointMarket;
     private boolean limitAffiliateTransaction;
     private boolean limitAffiliateCredit;
-    private boolean limitAffiliateMarket;
+    private boolean limitAffiliateMarket; // optional
     private boolean limitNonaffiliate;
     
     private String phone;
@@ -47,7 +49,7 @@ public class Form extends FormBean {
     private String jointMarket;
     private String others;
     
-    // Opt-out, indicated by index 1, 2, 3
+    // Opt-out, indicated by index 1 = no, 2 = web, 3 = mail
     private int optOut;
 
 	public Date getDate() {
@@ -72,6 +74,14 @@ public class Form extends FormBean {
 
 	public void setWhat(List<Integer> what) {
 		this.what = what;
+	}
+
+	public boolean isShowSixthRow() {
+		return showSixthRow;
+	}
+
+	public void setShowSixthRow(boolean showSixthRow) {
+		this.showSixthRow = showSixthRow;
 	}
 
 	public boolean isForBusiness() {
@@ -305,7 +315,16 @@ public class Form extends FormBean {
         if (what.size() != 5) 
         	errors.add("Must choose 5 what in fact from list!");
         
+        // Disclosure consistency
+        if (optOut == 1 && (limitBusiness || limitMarketing || limitJointMarket 
+        		|| limitAffiliateTransaction || limitAffiliateCredit 
+        		|| limitAffiliateMarket || limitNonaffiliate) == true)
+        	errors.add("You have to provide opt-out due to your limitation selection.");
         
+        if (optOut != 1 && (limitBusiness || limitMarketing || limitJointMarket 
+        		|| limitAffiliateTransaction || limitAffiliateCredit 
+        		|| limitAffiliateMarket || limitNonaffiliate) == false)
+        	errors.add("There is no need to provide opt-out due to your limitation selection.");
         
         if (phone.matches("^[0-9]{9}$")) 
         	errors.add("Please input the right phone number!");
