@@ -21,8 +21,15 @@ public class Form extends FormBean {
     private boolean forAffiliateCredit;
     private boolean forAffiliateMarket;
     private boolean forNonaffiliate;
+    private boolean limitBusiness;
+    private boolean limitMarketing;
+    private boolean limitJointMarket;
+    private boolean limitAffiliateTransaction;
+    private boolean limitAffiliateCredit;
+    private boolean limitAffiliateMarket;
+    private boolean limitNonaffiliate;
     
-    private int phone;
+    private String phone;
     private String url;
     private int beginShareDays;
     
@@ -123,11 +130,67 @@ public class Form extends FormBean {
 		this.forNonaffiliate = forNonaffiliate;
 	}
 
-	public int getPhone() {
+	public boolean isLimitBusiness() {
+		return limitBusiness;
+	}
+
+	public void setLimitBusiness(boolean limitBusiness) {
+		this.limitBusiness = limitBusiness;
+	}
+
+	public boolean isLimitMarketing() {
+		return limitMarketing;
+	}
+
+	public void setLimitMarketing(boolean limitMarketing) {
+		this.limitMarketing = limitMarketing;
+	}
+
+	public boolean isLimitJointMarket() {
+		return limitJointMarket;
+	}
+
+	public void setLimitJointMarket(boolean limitJointMarket) {
+		this.limitJointMarket = limitJointMarket;
+	}
+
+	public boolean isLimitAffiliateTransaction() {
+		return limitAffiliateTransaction;
+	}
+
+	public void setLimitAffiliateTransaction(boolean limitAffiliateTransaction) {
+		this.limitAffiliateTransaction = limitAffiliateTransaction;
+	}
+
+	public boolean isLimitAffiliateCredit() {
+		return limitAffiliateCredit;
+	}
+
+	public void setLimitAffiliateCredit(boolean limitAffiliateCredit) {
+		this.limitAffiliateCredit = limitAffiliateCredit;
+	}
+
+	public boolean isLimitAffiliateMarket() {
+		return limitAffiliateMarket;
+	}
+
+	public void setLimitAffiliateMarket(boolean limitAffiliateMarket) {
+		this.limitAffiliateMarket = limitAffiliateMarket;
+	}
+
+	public boolean isLimitNonaffiliate() {
+		return limitNonaffiliate;
+	}
+
+	public void setLimitNonaffiliate(boolean limitNonaffiliate) {
+		this.limitNonaffiliate = limitNonaffiliate;
+	}
+
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -238,14 +301,30 @@ public class Form extends FormBean {
     public List<String> getValidationErrors() {
         List<String> errors = new ArrayList<String>();
 
-        if (url == null || url.length() == 0) 
-        	errors.add("URL is required!");
+        // What in fact bullet points must be 5 among list
+        if (what.size() != 5) 
+        	errors.add("Must choose 5 what in fact from list!");
+        
+        
+        
+        if (phone.matches("^[0-9]{9}$")) 
+        	errors.add("Please input the right phone number!");
+        
+//	Use javascript to check whether form is complete since need to save partial form       
+//        if (url == null || url.length() == 0) 
+//        	errors.add("URL is required!");
+//        if (url.trim().equals("")) 
+//        	errors.add("Empty URL!");
 
+        // How to collect must be collect from list
+        if (howCollect.size() != 5) 
+        	errors.add("Must choose 5 how to collect from list!");
+        
+        if (optOut < 1 || optOut > 3)
+        	errors.add("Please choose the right opt-out option!");
+        
         if (errors.size() > 0) 
         	return errors;
-
-        if (url.trim().equals("")) 
-        	errors.add("Empty URL!");
 		
         return errors;
     }
