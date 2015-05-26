@@ -31,9 +31,9 @@ public class Controller extends HttpServlet{
 
         String      action = getActionName(servletPath);
         
-        String attr = (String) req.getAttribute("nameOfInstitutionA");
-        String prmtr = req.getParameter("nameOfInstitutionA");
-		System.out.println("reading Attr: "+attr);
+       // String attr = (String) req.getAttribute("nameOfInstitutionA");
+        String prmtr = req.getParameter("what");
+		//System.out.println("reading Attr: "+attr);
 		System.out.println("reading Prmtr: "+prmtr);
 
 		System.out.println("reading action: "+action);
