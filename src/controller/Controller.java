@@ -1,9 +1,12 @@
 package controller;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,8 +26,47 @@ public class Controller extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		//-------------------------------------
+		String      servletPath = req.getServletPath();
+
+        String      action = getActionName(servletPath);
+        
+        String attr = (String) req.getAttribute("nameOfInstitutionA");
+        String prmtr = req.getParameter("nameOfInstitutionA");
+		System.out.println("reading Attr: "+attr);
+		System.out.println("reading Prmtr: "+prmtr);
+
+		System.out.println("reading action: "+action);
+
+		if ( action.equals("save.do")){
+			
+			
+			System.out.print("haha");
+		
+		resp.setContentType("application/octet-stream");
+		resp.setHeader("Content-Disposition",
+		"attachment;filename=downloadfilename.csv");
+		
+		StringBuffer sb = new StringBuffer("whatever string you like");
+		InputStream in = new ByteArrayInputStream(sb.toString().getBytes("UTF-8"));
+		ServletOutputStream out = resp.getOutputStream();
+		 
+		byte[] outputByte = new byte[4096];
+		//copy binary contect to output stream
+		while(in.read(outputByte, 0, 4096) != -1)
+		{
+			out.write(outputByte, 0, 4096);
+		}
+		in.close();
+		out.flush();
+		out.close();
+		}
+		
+		//-------------------------------------
+		else{
 		String nextPage = performTheAction(req);
         sendToNextPage(nextPage,req,resp);
+		}
 	}
 	
 

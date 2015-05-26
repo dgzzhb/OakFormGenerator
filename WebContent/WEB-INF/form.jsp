@@ -34,15 +34,15 @@
 			</script>
 </head>
 <body>
-<form id="myForm">
+<form id="myForm" action="save.do">
 	<div class="demoHead">
 		<div>
 			<div style="float: right;" class="demoNavLinks">
 				<input class="btn" type="button" onclick="reset()" value="Reset">
 				 <a
 					href="https://github.com/mstratman/jQuery-Smart-Wizard/blob/master/README.md"
-					class="btn">Load</a> <a
-					href="https://github.com/mstratman/jQuery-Smart-Wizard" class="btn">Save</a>
+					class="btn">Load</a> <input
+					 class="btn" type="submit" value = "Save"/>
 			</div>
 			<div style="clear: both;"></div>
 		</div>
@@ -85,8 +85,8 @@
 										<tr>
 											<td>FACTS</td>
 											<td>WHAT DOES <input type="text"
-												name="nameOfInstitution"
-												placeholder="NAME OF FINANCIAL INSTITUTION"> DO WITH
+												name="nameOfInstitutionA" value="testname"
+												placeholder="A NAME OF FINANCIAL INSTITUTION A"> DO WITH
 													YOUR PERSONAL INFORMATION?</td>
 										</tr>
 										<tr>

@@ -1,35 +1,55 @@
 package formbean;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.mybeans.form.FormBean;
 
 public class Form extends FormBean {
     // First Page
-	private Date date;
+	//private String String;
+	private String date;
     private String nameOfInstitution;
     // Select 5 among the list, indicated by index
-    private List<Integer> what;
+    private List<String> what;
+    
+//    // Yes or No form
+//    private String showSixthRow; // The sixth row is optional
+//    private String forBusiness;
+//    private String forMarketing;
+//    private String forJointMarket;
+//    private String forAffiliateTransaction;
+//    private String forAffiliateCredit;
+//    private String forAffiliateMarket; // optional
+//    private String forNonaffiliate;
+//    // If any of them is yes, provide opt-out
+//    private String limitBusiness;
+//    private String limitMarketing;
+//    private String limitJointMarket;
+//    private String limitAffiliateTransaction;
+//    private String limitAffiliateCredit;
+//    private String limitAffiliateMarket; // optional
+//    private String limitNonaffiliate;
     
     // Yes or No form
-    private boolean showSixthRow; // The sixth row is optional
-    private boolean forBusiness;
-    private boolean forMarketing;
-    private boolean forJointMarket;
-    private boolean forAffiliateTransaction;
-    private boolean forAffiliateCredit;
-    private boolean forAffiliateMarket; // optional
-    private boolean forNonaffiliate;
+    private String showSixthRow; // The sixth row is optional
+    private String forBusiness;
+    private String forMarketing;
+    private String forJointMarket;
+    private String forAffiliateTransaction;
+    private String forAffiliateCredit;
+    private String forAffiliateMarket; // optional
+    private String forNonaffiliate;
     // If any of them is yes, provide opt-out
-    private boolean limitBusiness;
-    private boolean limitMarketing;
-    private boolean limitJointMarket;
-    private boolean limitAffiliateTransaction;
-    private boolean limitAffiliateCredit;
-    private boolean limitAffiliateMarket; // optional
-    private boolean limitNonaffiliate;
+    private String limitBusiness;
+    private String limitMarketing;
+    private String limitJointMarket;
+    private String limitAffiliateTransaction;
+    private String limitAffiliateCredit;
+    private String limitAffiliateMarket; // optional
+    private String limitNonaffiliate;
+    
+    
     
     private String phone;
     private String url;
@@ -40,9 +60,9 @@ public class Form extends FormBean {
     private String howDoes;
     // Select 5 among the list, indicated by index
     private List<Integer> howCollect;
-    private boolean howDoesOther;
+    private String howDoesOther;
     private String seeBelow;
-    private boolean whatHappens;
+    private String whatHappens;
     
     private String affiliates;
     private String nonaffiliates;
@@ -52,11 +72,11 @@ public class Form extends FormBean {
     // Opt-out, indicated by index 1 = no, 2 = web, 3 = mail
     private int optOut;
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -68,131 +88,131 @@ public class Form extends FormBean {
 		this.nameOfInstitution = nameOfInstitution;
 	}
 
-	public List<Integer> getWhat() {
+	public List<String> getWhat() {
 		return what;
 	}
 
-	public void setWhat(List<Integer> what) {
+	public void setWhat(List<String> what) {
 		this.what = what;
 	}
 
-	public boolean isShowSixthRow() {
+	public String isShowSixthRow() {
 		return showSixthRow;
 	}
 
-	public void setShowSixthRow(boolean showSixthRow) {
+	public void setShowSixthRow(String showSixthRow) {
 		this.showSixthRow = showSixthRow;
 	}
 
-	public boolean isForBusiness() {
+	public String isForBusiness() {
 		return forBusiness;
 	}
 
-	public void setForBusiness(boolean forBusiness) {
+	public void setForBusiness(String forBusiness) {
 		this.forBusiness = forBusiness;
 	}
 
-	public boolean isForMarketing() {
+	public String isForMarketing() {
 		return forMarketing;
 	}
 
-	public void setForMarketing(boolean forMarketing) {
+	public void setForMarketing(String forMarketing) {
 		this.forMarketing = forMarketing;
 	}
 
-	public boolean isForJointMarket() {
+	public String isForJointMarket() {
 		return forJointMarket;
 	}
 
-	public void setForJointMarket(boolean forJointMarket) {
+	public void setForJointMarket(String forJointMarket) {
 		this.forJointMarket = forJointMarket;
 	}
 
-	public boolean isForAffiliateTransaction() {
+	public String isForAffiliateTransaction() {
 		return forAffiliateTransaction;
 	}
 
-	public void setForAffiliateTransaction(boolean forAffiliateTransaction) {
+	public void setForAffiliateTransaction(String forAffiliateTransaction) {
 		this.forAffiliateTransaction = forAffiliateTransaction;
 	}
 
-	public boolean isForAffiliateCredit() {
+	public String isForAffiliateCredit() {
 		return forAffiliateCredit;
 	}
 
-	public void setForAffiliateCredit(boolean forAffiliateCredit) {
+	public void setForAffiliateCredit(String forAffiliateCredit) {
 		this.forAffiliateCredit = forAffiliateCredit;
 	}
 
-	public boolean isForAffiliateMarket() {
+	public String isForAffiliateMarket() {
 		return forAffiliateMarket;
 	}
 
-	public void setForAffiliateMarket(boolean forAffiliateMarket) {
+	public void setForAffiliateMarket(String forAffiliateMarket) {
 		this.forAffiliateMarket = forAffiliateMarket;
 	}
 
-	public boolean isForNonaffiliate() {
+	public String isForNonaffiliate() {
 		return forNonaffiliate;
 	}
 
-	public void setForNonaffiliate(boolean forNonaffiliate) {
+	public void setForNonaffiliate(String forNonaffiliate) {
 		this.forNonaffiliate = forNonaffiliate;
 	}
 
-	public boolean isLimitBusiness() {
+	public String isLimitBusiness() {
 		return limitBusiness;
 	}
 
-	public void setLimitBusiness(boolean limitBusiness) {
+	public void setLimitBusiness(String limitBusiness) {
 		this.limitBusiness = limitBusiness;
 	}
 
-	public boolean isLimitMarketing() {
+	public String isLimitMarketing() {
 		return limitMarketing;
 	}
 
-	public void setLimitMarketing(boolean limitMarketing) {
+	public void setLimitMarketing(String limitMarketing) {
 		this.limitMarketing = limitMarketing;
 	}
 
-	public boolean isLimitJointMarket() {
+	public String isLimitJointMarket() {
 		return limitJointMarket;
 	}
 
-	public void setLimitJointMarket(boolean limitJointMarket) {
+	public void setLimitJointMarket(String limitJointMarket) {
 		this.limitJointMarket = limitJointMarket;
 	}
 
-	public boolean isLimitAffiliateTransaction() {
+	public String isLimitAffiliateTransaction() {
 		return limitAffiliateTransaction;
 	}
 
-	public void setLimitAffiliateTransaction(boolean limitAffiliateTransaction) {
+	public void setLimitAffiliateTransaction(String limitAffiliateTransaction) {
 		this.limitAffiliateTransaction = limitAffiliateTransaction;
 	}
 
-	public boolean isLimitAffiliateCredit() {
+	public String isLimitAffiliateCredit() {
 		return limitAffiliateCredit;
 	}
 
-	public void setLimitAffiliateCredit(boolean limitAffiliateCredit) {
+	public void setLimitAffiliateCredit(String limitAffiliateCredit) {
 		this.limitAffiliateCredit = limitAffiliateCredit;
 	}
 
-	public boolean isLimitAffiliateMarket() {
+	public String isLimitAffiliateMarket() {
 		return limitAffiliateMarket;
 	}
 
-	public void setLimitAffiliateMarket(boolean limitAffiliateMarket) {
+	public void setLimitAffiliateMarket(String limitAffiliateMarket) {
 		this.limitAffiliateMarket = limitAffiliateMarket;
 	}
 
-	public boolean isLimitNonaffiliate() {
+	public String isLimitNonaffiliate() {
 		return limitNonaffiliate;
 	}
 
-	public void setLimitNonaffiliate(boolean limitNonaffiliate) {
+	public void setLimitNonaffiliate(String limitNonaffiliate) {
 		this.limitNonaffiliate = limitNonaffiliate;
 	}
 
@@ -244,11 +264,11 @@ public class Form extends FormBean {
 		this.howCollect = howCollect;
 	}
 
-	public boolean isHowDoesOther() {
+	public String isHowDoesOther() {
 		return howDoesOther;
 	}
 
-	public void setHowDoesOther(boolean howDoesOther) {
+	public void setHowDoesOther(String howDoesOther) {
 		this.howDoesOther = howDoesOther;
 	}
 
@@ -260,11 +280,11 @@ public class Form extends FormBean {
 		this.seeBelow = seeBelow;
 	}
 
-	public boolean isWhatHappens() {
+	public String isWhatHappens() {
 		return whatHappens;
 	}
 
-	public void setWhatHappens(boolean whatHappens) {
+	public void setWhatHappens(String whatHappens) {
 		this.whatHappens = whatHappens;
 	}
 
@@ -316,14 +336,14 @@ public class Form extends FormBean {
         	errors.add("Must choose 5 what in fact from list!");
         
         // Disclosure consistency
-        if (optOut == 1 && (limitBusiness || limitMarketing || limitJointMarket 
-        		|| limitAffiliateTransaction || limitAffiliateCredit 
-        		|| limitAffiliateMarket || limitNonaffiliate) == true)
+        if (optOut == 1 && (limitBusiness.equals("true") || limitMarketing.equals("true") || limitJointMarket.equals("true") 
+        		|| limitAffiliateTransaction.equals("true") || limitAffiliateCredit.equals("true") 
+        		|| limitAffiliateMarket.equals("true") || limitNonaffiliate.equals("true")) == true)
         	errors.add("You have to provide opt-out due to your limitation selection.");
         
-        if (optOut != 1 && (limitBusiness || limitMarketing || limitJointMarket 
-        		|| limitAffiliateTransaction || limitAffiliateCredit 
-        		|| limitAffiliateMarket || limitNonaffiliate) == false)
+        if (optOut != 1 && (limitBusiness.equals("true") || limitMarketing.equals("true") || limitJointMarket.equals("true") 
+        		|| limitAffiliateTransaction.equals("true") || limitAffiliateCredit.equals("true") 
+        		|| limitAffiliateMarket.equals("true") || limitNonaffiliate.equals("true")) == false)
         	errors.add("There is no need to provide opt-out due to your limitation selection.");
         
         if (phone.matches("^[0-9]{9}$")) 
