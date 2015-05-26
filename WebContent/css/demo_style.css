@@ -44,7 +44,7 @@ body {
   border                : 1px solid #7D7D7D;    
   text-decoration       : none; 
 }
-.demoHead .demoNavLinks a.btn {
+.demoHead .demoNavLinks input.btn {
   color:#FFF;
   background: #8CC63F;
   border: 1px solid #8CC63F;

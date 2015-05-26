@@ -20,6 +20,10 @@
 			<script type="text/javascript" src="js/jquery.smartWizard.js"></script>
 
 			<script type="text/javascript">
+			function reset() {
+			    document.getElementById("myForm").reset();
+			}
+			
 				$(document).ready(function() {
 					// Smart Wizard	
 					$('#wizard').smartWizard({
@@ -30,13 +34,12 @@
 			</script>
 </head>
 <body>
-
+<form id="myForm">
 	<div class="demoHead">
 		<div>
 			<div style="float: right;" class="demoNavLinks">
-				<a
-					href="https://github.com/mstratman/jQuery-Smart-Wizard/tarball/master"
-					class="btn">Reset</a> <a
+				<input class="btn" type="button" onclick="reset()" value="Reset">
+				 <a
 					href="https://github.com/mstratman/jQuery-Smart-Wizard/blob/master/README.md"
 					class="btn">Load</a> <a
 					href="https://github.com/mstratman/jQuery-Smart-Wizard" class="btn">Save</a>
@@ -46,7 +49,7 @@
 
 
 	</div>
-	<form>
+
 		<table align="center" border="0" cellpadding="0" cellspacing="0">
 			<tr>
 				<td>
@@ -179,7 +182,7 @@
 <input type="radio" name="forBusiness" value="false">No</td>
           </tr>
           <tr>
-            <td>For our affiliates to market to you</td>
+            <td>For our affiliates to market to you <br>   <input type="radio" name="showSixthRow" value="false" >hide</td>
             <td><input type="radio" name="limitBusiness" value="true" >Yes
 <input type="radio" name="forBusiness" value="false">No</td>
             <td><input type="radio" name="limitBusiness" value="true" >Yes
@@ -284,7 +287,7 @@
 
 						</div>
 						<div id="step-4">
-							<h2 class="StepTitle">Step 4 DEFINITIONS & OTHER INFORMATION</h2>
+							<h2 class="StepTitle">Step 4 Definition and Other Information</h2>
 							    <table class="table table-bordered">
         <thead>
           <tr>
@@ -313,7 +316,7 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Ohter important information</th>
+            <th>Other important information</th>
           </tr>
         </thead>
         <tbody>
