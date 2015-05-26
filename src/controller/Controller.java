@@ -17,6 +17,7 @@ public class Controller extends HttpServlet{
 	
 	public void init() throws ServletException {
 		Action.add(new IndexAction());
+		Action.add(new FormAction());
 	}
 
 	@Override
@@ -40,11 +41,7 @@ public class Controller extends HttpServlet{
 
         String      action = getActionName(servletPath);
 
-        if (action.equals("register.do") || action.equals("login.do")) {
-        	// Allow these actions without logging in
-			return Action.perform(action,req);
-        }
-        
+
 		return Action.perform(action,req);
 	}
 	
