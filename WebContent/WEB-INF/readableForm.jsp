@@ -53,16 +53,16 @@
 
 
 
-
+<form action="upload" method="post" enctype="multipart/form-data">
+    <input type="text" name="description" />
+    <input type="file" name="file" />
+    <input type="submit" />
+</form>
 <form id="myForm" action="submit.do" method="POST">
 	<div class="demoHead">
 		<div>
 			<div style="float: right;" class="demoNavLinks">
-					<form action="load.do" method="post" enctype="multipart/form-data">
-				<input  type="file" name="fileName">
-
-<input class = "btn" type="submit" value="Load">
-</form>
+					
  					<input class="btn" type="submit" value = "Save"/>
  
 					 <a href="save.do" class="btn">DownLoad</a> 

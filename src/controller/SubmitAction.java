@@ -21,7 +21,7 @@ public class SubmitAction extends Action{
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		
+		System.out.println("submit called");
 		process(request, "nameOfInstitution");
 
 
