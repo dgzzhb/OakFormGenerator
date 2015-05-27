@@ -92,13 +92,18 @@
 								</span>
 							</a></li>
 							<li><a href="#step-3"> <label class="stepNumber">3</label>
-									<span class="stepDesc"> Step 3<br /> <small>Step
-											3 Who and What</small>
+									<span class="stepDesc"> Opt-Out<br /> <small>Step
+											3 Opt-Out options</small>
 								</span>
 							</a></li>
 							<li><a href="#step-4"> <label class="stepNumber">4</label>
 									<span class="stepDesc"> Step 4<br /> <small>Step
-											4 Definition and Other Information</small>
+											4 Who and What</small>
+								</span>
+							</a></li>
+							<li><a href="#step-5"> <label class="stepNumber">5</label>
+									<span class="stepDesc"> Step 5<br /> <small>Step
+											5 Definition and Other Information</small>
 								</span>
 							</a></li>
 						</ul>
@@ -262,9 +267,13 @@
           </tr>                        
         </tbody>
       </table>
-
+</div>
+</div>
 							
-							   
+	<div id="step-3">
+			<h2 class="StepTitle">Step 3 OPT-OUT</h2>
+		<div id="noOptOut" >No opt-out here based on the disclosure table.
+		 </div>					   
       <table class="table table-bordered" id="optOut" style="display:none">
         <tbody class="left-colored"> 
           <tr>
@@ -313,9 +322,12 @@
         </tbody>
       </table>    
     </div> <!-- first-footer -->
-						</div>
-						<div id="step-3">
-							<h2 class="StepTitle">Step 3 Who and What</h2>
+    
+    
+   
+						
+						<div id="step-4">
+							<h2 class="StepTitle">Step 4 Who and What</h2>
 							    	  <table class="table table-bordered">
         <thead>
           <tr>
@@ -350,18 +362,67 @@
           </tr>
           <tr>
             <td>How do we collect your personal information?</td>
-            <td>We collect your personal information, for example, when you:
-            <ul>
-            <li><input type="checkbox" name="howCollect" value="1">open an account or <input type="checkbox" name="howCollect" value="2">perform transactions</li> 
-              <li><input type="checkbox" name="howCollect" value="3">apply for a loan or <input type="checkbox" name="howCollect" value="4">use your credit or debit card</li>
-  			<li><input type="checkbox" name="howCollect" value="5">seek advice about your investments</li>
-            </ul>
- 
+            <td>We collect your personal information, for example, when you:<br>
+            (Please select 5 of the following terms to complete the bulleted list for this question:)<br>
+            <table>
+            <tr>
+            <td><input type="checkbox" name="howCollect" value="open an account">open an account</td>
+            <td><input type="checkbox" name="howCollect" value="deposit money">deposit money</td>
+            <td><input type="checkbox" name="howCollect" value="pay your bills">pay your bills</td>
+            </tr>
+             <tr>
+            <td><input type="checkbox" name="howCollect" value="apply for a loan">apply for a loan</td>
+            <td><input type="checkbox" name="howCollect" value="use your credit or debit card">use your credit or debit card</td>
+            <td><input type="checkbox" name="howCollect" value="seek financial or tax advice">seek financial or tax advice</td>
+            </tr>
+             <tr>
+            <td><input type="checkbox" name="howCollect" value="apply for insurance">apply for insurance</td>
+            <td><input type="checkbox" name="howCollect" value="pay insurance premiums">pay insurance premiums</td>
+            <td><input type="checkbox" name="howCollect" value="file an insurance claim">file an insurance claim</td>
+            </tr>
+             <tr>
+            <td><input type="checkbox" name="howCollect" value="seek advice about your investments">seek advice about your investments</td>
+            <td><input type="checkbox" name="howCollect" value="buy securities from us">buy securities from us</td>
+            <td><input type="checkbox" name="howCollect" value="sell securities to us">sell securities to us</td>
+            </tr>
+             <tr>
+            <td><input type="checkbox" name="howCollect" value="direct us to buy securities">direct us to buy securities</td>
+            <td><input type="checkbox" name="howCollect" value="direct us to sell your securities">direct us to sell your securities</td>
+            <td><input type="checkbox" name="howCollect" value="make deposits or withdrawals from your account">make deposits or withdrawals from your account</td>
+            </tr>
+             <tr>
+            <td><input type="checkbox" name="howCollect" value="enter into an investment advisory contract">enter into an investment advisory contract</td>
+            <td><input type="checkbox" name="howCollect" value="give us your income information">give us your income information</td>
+            <td><input type="checkbox" name="howCollect" value="provide employment information">provide employment information</td>
+            </tr>
+            <tr>
+            <td><input type="checkbox" name="howCollect" value="give us your employment history">give us your employment history</td>
+            <td><input type="checkbox" name="howCollect" value="tell us about your investment or retirement portfolio">tell us about your investment or retirement portfolio</td>
+            <td><input type="checkbox" name="howCollect" value="tell us about your investment or retirement earnings"> tell us about your investment or retirement earnings</td>
+            </tr>
+            <tr>
+            <td><input type="checkbox" name="howCollect" value="apply for financing">apply for financing</td>
+            <td><input type="checkbox" name="howCollect" value="apply for a lease">apply for a lease</td>
+            <td><input type="checkbox" name="howCollect" value="provide account information">provide account information</td>
+            </tr>
+            </table>
+            <br>
+            <div id="collect">
+            Do we collect personal information from their affiliates and/or credit bureaus?<br>
+            <input type="radio" name="whatHappens" value="true" onclick="hide('#collectFromOtherCompany')">Yes
+            <input type="radio" name="whatHappens" value="true" onclick="show('#collectFromOtherCompany')">No<br>
+            </div>
+             <div id="collectFromOtherCompany" style="display:none" >
+            <br>Do we collect information from other companies?<br>
+            <input type="radio" name="whatHappens" value="true" >Yes<input type="radio" name="whatHappens" value="true" >No<br>
+           </div>
+            
+            
 
-<input type="radio" name="whatHappens" value="true" >Your choices will apply to everyone on your account.
-<br>
-<input type="radio" name="whatHappens" value="false">Your choices will apply to everyone on your account.--unless you tell us otherwise.
-
+             <br><select>
+  <option  value="whatHappens">Your choices will apply to everyone on your account.</option>
+  <option  value="whatHappens">Your choices will apply to everyone on your account.--unless you tell us otherwise. </option>
+</select>
  </td>
           </tr>
           <tr>
@@ -387,8 +448,8 @@
       </table>
 
 						</div>
-						<div id="step-4">
-							<h2 class="StepTitle">Step 4 Definition and Other Information</h2>
+						<div id="step-5">
+							<h2 class="StepTitle">Step 5 Definition and Other Information</h2>
 							    <table class="table table-bordered">
         <thead>
           <tr>

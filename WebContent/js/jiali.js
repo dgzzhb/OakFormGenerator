@@ -113,6 +113,7 @@ $(function() {
 $(function() {
 	$('.triggerOptOut').change(function() {
 		 $("#optOut").show();
+		 $("#noOptOut").hide();
 		 
 	});
     
@@ -143,4 +144,11 @@ function validate(){
 	  else {
 		  $(".mail").hide(); 
 	  }
+	}
+
+function hide(id){
+	$(id).hide();
+	}
+function show(id){
+	$(id).show();
 	}
