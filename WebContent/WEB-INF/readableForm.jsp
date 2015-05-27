@@ -156,7 +156,7 @@ Select File to Upload:<input type="file" name="fileName">
 												</tr>
 												<tr>
 												<td><input type="checkbox" name="what" value="investment experience">investment experience</td>
-												<td><input type="checkbox" name="what" value="credit­based insurance scores">credit­based insurance scores</td>
+												<td><input type="checkbox" name="what" value="credit-�based insurance scores">credit­based insurance scores</td>
 												<td><input type="checkbox" name="what" value="insurance claim history">insurance claim history</td>
 												</tr>
 												<tr>
@@ -502,8 +502,20 @@ Please input list categories of companies such as mortgage companies, insurance 
           </tr>
           <tr>
             <td>Joint Marketing</td>
-            <td>A formal agreement between nonaffiliated financial companies that together market financial products or services to you.
-  Our joint marketing partners include financial service companies.</td>
+            <td>
+                         <div  >
+            	Do we engage in joint marketing?<br>
+			 <input type="radio" name="account" value="Affiliate"onclick="show('#jointMarketList')" >Yes
+<input type="radio" name="account" value="NoAffiliate" onclick="hide('#jointMarketList')">No <br><br>
+</div>
+
+ <div id="jointMarketList" style="display:none" >
+ Our joint marketing partners include:<br>
+ <textarea rows="4" cols="50">
+ Please input list categories of companies such as credit card companies.</textarea>
+ </div>
+ 
+ </td>
           </tr>                              
         </tbody>
       </table>
@@ -515,7 +527,20 @@ Please input list categories of companies such as mortgage companies, insurance 
         </thead>
         <tbody>
           <tr>
-            <td>[insert]</td>
+            <td>
+             <div   >
+
+ <textarea rows="5" cols="90">
+ This box is optional.
+ Only the following types of information can appear in this box.
+(1) State and/or international privacy law information; and/or
+(2) Acknowledgment of receipt form.
+
+ </textarea>
+ </div>
+            
+            
+            </td>
           </tr>
         </tbody>
       </table>
