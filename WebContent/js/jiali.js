@@ -113,6 +113,7 @@ $(function() {
 $(function() {
 	$('.triggerOptOut').change(function() {
 		 $("#optOut").show();
+		 $(".optOut").show();
 		 $("#noOptOut").hide();
 		 
 	});
