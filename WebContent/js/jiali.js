@@ -112,8 +112,35 @@ $(function() {
 });
 $(function() {
 	$('.triggerOptOut').change(function() {
-		alert("opt-out");
+		 $("#optOut").show();
 		 
 	});
     
 });
+
+
+function validate(){
+	  var remember = document.getElementById('phone');
+	  if (remember.checked){
+		  $(".phoneNumber").show();
+	  }
+	  else {
+		  $(".phoneNumber").hide(); 
+	  }
+	  
+	  var website = document.getElementById('website');
+	  if (website.checked){
+		  $(".website").show();
+	  }
+	  else {
+		  $(".website").hide(); 
+	  }
+	  
+	  var mail = document.getElementById('mail');
+	  if (mail.checked){
+		  $(".mail").show();
+	  }
+	  else {
+		  $(".mail").hide(); 
+	  }
+	}

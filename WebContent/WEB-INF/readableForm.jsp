@@ -147,7 +147,7 @@
 												</tr>
 												<tr>
 												<td><input type="checkbox" name="what" value="investment experience">investment experience</td>
-												<td><input type="checkbox" name="what" value="credit­based insurance scores">credit­based insurance scores</td>
+												<td><input type="checkbox" name="what" value="creditÂ­based insurance scores">creditÂ­based insurance scores</td>
 												<td><input type="checkbox" name="what" value="insurance claim history">insurance claim history</td>
 												</tr>
 												<tr>
@@ -158,7 +158,7 @@
 												<tr>
 												<td><input type="checkbox" name="what" value="account transactions">account transactions</td>
 												<td><input type="checkbox" name="what" value="risk tolerance">risk tolerance</td>
-												<td><input type="checkbox" name="what" value="medical­related debts">medical­related debts</td>
+												<td><input type="checkbox" name="what" value="medicalÂ­related debts">medicalÂ­related debts</td>
 												</tr>
 												<tr>
 												<td><input type="checkbox" name="what" value="redit card or other debt">credit card or other debt</td>
@@ -265,31 +265,51 @@
 
 							
 							   
-      <table class="table table-bordered">
+      <table class="table table-bordered" id="optOut" style="display:none">
         <tbody class="left-colored"> 
           <tr>
             <td>To limit our sharing</td>
             <td>
-            Please select one or more of the applicable opt­out methods described:<br>
+            Please select one or more of the applicable optÂ­-out methods described:<br>
             <input type="checkbox" name="phone" value="1" id="phone"onclick="validate()">Telephone
              <input type="checkbox" name="phone" value="1"id="website" onclick="validate()">Website
-             <input type="checkbox" name="phone" value="1">mail-­in opt­-out form 
+             <input type="checkbox" name="mail" value="1" id="mail" onclick="validate()">mail-Â­in optÂ­-out form 
              <br>
-            
-<div class="phoneNumber" style="display:none">     Call <input type="text" name="phone" placeholder="phone number"  /> - our menu will prompt you through your choices</div>
+             <br>
+<div class="phoneNumber" style="display:none">     Call <input type="text" name="phone" placeholder="phone number"  /> - our menu will prompt you through your choices<br></div>
  
  
-  <br>
-<div class="website" style="display:none">   Visit us online: <input type="text" name="url" placeholder="website"></div>
- <br> Talk to a banking center associate
-  Talk to your assigned account representative (e.g., financial advisor, mortgage loan officer)
+  
+<div class="website" style="display:none"><br>   Visit us online: <input type="text" name="url" placeholder="website"><br></div>
+ 
+   <div class="mail" style="display:none"><br>Do we require customers to provide additional or different information other than name and address, such as a random optÂ­out number or a truncated account number?<br>
+   		<input type="radio" name="account" value="marketing purposes">Yes
+<input type="radio" name="account" value="false" >No	
+
+    <br><br>
+    Opt-out mailing address:<br>
+    <input type="text" name="address1" placeholder="Address1"> <br>
+    <input type="text" name="address2" placeholder="Address2"> <br>
+    <input type="text" name="city" placeholder="city"><br> 
+    <input type="text" name="street" placeholder="street"> <br>
+    <input type="text" name="zip" placeholder="zip"> <br>
+   
+   	<br>
+   	<!--If we do, we must  include in the far left column of the mailÂ­in form the following statement.  -->
+   	<!-- â€œIf you have a joint account, your choice(s) will apply to everyone on your account unless you mark below. ô°€ Apply my choice(s) only to me.â€ -->
+   	Do we provide their joint accountholders the choice to opt out for only one accountholder?<br>
+   	   		<input type="radio" name="jointAccountHolders" value="marketing purposes">Yes
+<input type="radio" name="jointAccountHolders" value="false" >No	
+   	
+   
+   </div>
+   
+   
+ 
   <br>Please note:
-  If you are a new customer, we can begin sharing your information <input type="text" name="beginShareDays" placeholder="30">  days from the date we sent this notice. When you are no longer our customer, we continue to share your information as described in this notice. However, you can contact us at any time to limit our sharing.</td>
+  If you are a new customer, we can begin sharing your information <input type="text" name="beginShareDays" placeholder="30 or greater">  days from the date we sent this notice. When you are no longer our customer, we continue to share your information as described in this notice. However, you can contact us at any time to limit our sharing.</td>
           </tr>
-          <tr>
-            <td>Why?</td>
-            <td>Call <input type="text" name="phone" placeholder="phone number"> or go to <input type="text" name="url" placeholder="website"></td>
-          </tr>           
+          
         </tbody>
       </table>    
     </div> <!-- first-footer -->
@@ -320,10 +340,16 @@
         <tbody>
           <tr>
             <td>How do we protect my personal information?</td>
-            <td>To protect your personal information from unauthorized access and use, we use security measures that comply with federal law. These measures include computer safeguards and secured files and buildings. For more information visit bankofamerica.com/security or ml.com/privacy.</td>
+            <td>To protect your personal information from unauthorized access and use, we use security measures that comply with federal law. These measures include computer safeguards and secured files and buildings.<br>
+            	<br>
+            	Please provide additional information pertaining to its safeguards practices following the designated response to this question here:<br>
+            	(Such information may include information about the institution's use of cookies or other measures it uses to safeguard personal information. )<br>
+            	<input type="text" name="whoIsProviding" placeholder="a maximum of 30 additional words">
+            
+            </td>
           </tr>
           <tr>
-            <td>How do we collect my personal information?</td>
+            <td>How do we collect your personal information?</td>
             <td>We collect your personal information, for example, when you:
             <ul>
             <li><input type="checkbox" name="howCollect" value="1">open an account or <input type="checkbox" name="howCollect" value="2">perform transactions</li> 
@@ -342,7 +368,7 @@
             <td>Why can&apos;t I limit all sharing?</td>
             <td>Federal law gives you the right to limit some but not all sharing related to:
             <ul>
- <li> affiliates' everyday business purposes €information about your creditworthiness</li>
+ <li> affiliates' everyday business purposes Â€information about your creditworthiness</li>
   <li>affiliates from using your information to market to you</li>
   <li>nonaffiliates to market to you</li>
   </ul>
