@@ -464,7 +464,21 @@ Select File to Upload:<input type="file" name="fileName">
         <tbody>
           <tr>
             <td>Affiliates</td>
-            <td>Companies related by common ownership or control. They can be Financial and nonfinancial companies.
+            <td>
+            Do we have affiliates?<br>
+            <input type="radio" name="account" value="Affiliate">Yes
+<input type="radio" name="account" value="NoAffiliate" >No <br><br>
+
+			Do we share personal information with affiliates?<br>
+			
+
+		
+
+
+            
+            
+            
+            Companies related by common ownership or control. They can be Financial and nonfinancial companies.
   Our affiliates include companies that utilize the names Bank of America; Banc of America; U.S. Trust; LandSafe or Merrill Lynch, financial companies such as General Fidelity Life Insurance Company.</td>
           </tr>
           <tr>
