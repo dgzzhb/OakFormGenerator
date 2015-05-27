@@ -108,7 +108,7 @@ $(function() {
 });
 $(function() {
 	$('.triggerOptOut').change(function() {
-		alert("opt-out");
+		 $("#optOut").show();
 		 
 	});
     
@@ -130,5 +130,13 @@ function validate(){
 	  }
 	  else {
 		  $(".website").hide(); 
+	  }
+	  
+	  var mail = document.getElementById('mail');
+	  if (mail.checked){
+		  $(".mail").show();
+	  }
+	  else {
+		  $(".mail").hide(); 
 	  }
 	}
