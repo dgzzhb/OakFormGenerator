@@ -6,6 +6,8 @@ import javax.servlet.http.HttpSession;
 public class SubmitAction extends Action{
 	private void process(HttpServletRequest request, String name ){
 		HttpSession session = request.getSession();
+		System.out.println("reading session id: "+ session.getId());
+
 		String prmtr = request.getParameter(name);
 		System.out.println("reading Prmtr in prcs: "+prmtr);
 		session.setAttribute(name, prmtr);
@@ -19,12 +21,9 @@ public class SubmitAction extends Action{
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		process(request, "nameOfInstitutionA");
-		process(request, "nameOfInstitutionA");
+		
+		process(request, "nameOfInstitution");
 
-		process(request, "nameOfInstitutionA");
-
-		process(request, "nameOfInstitutionA");
 
 		return "index.jsp";	
 

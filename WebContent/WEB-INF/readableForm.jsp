@@ -40,18 +40,35 @@
 
 				});
 			</script>
+			
+		<style>
+			@media print {
+			#non-print {
+			display: none 
+			}}</style>	
+  
+  
 </head>
 <body>
-<form id="myForm" action="save.do">
+
+
+
+
+<form id="myForm" action="submit.do" method="POST">
 	<div class="demoHead">
 		<div>
 			<div style="float: right;" class="demoNavLinks">
-				<input class="btn" type="button" onclick="reset()" value="Reset">
-				 <a
-					href="https://github.com/mstratman/jQuery-Smart-Wizard/blob/master/README.md"
-					class="btn">Load</a> 
-					<input
-					 class="btn" type="submit" value = "Save"/>
+					<form action="load.do" method="post" enctype="multipart/form-data">
+				<input  type="file" name="fileName">
+
+<input class = "btn" type="submit" value="Load">
+</form>
+ 					<input class="btn" type="submit" value = "Save"/>
+ 
+					 <a href="save.do" class="btn">DownLoad</a> 
+					 <a type = "button" class = "btn" id = "non-print" name = "anything" onClick="javascript:window.print();return true" >Print</a>
+					 <a class="btn" type="button" onclick="reset();" >Reset</a>
+					 
 			</div>
 			<div style="clear: both;"></div>
 		</div>
@@ -66,8 +83,7 @@
 					<div id="wizard" class="swMain">
 						<ul>
 							<li><a href="#step-1"> <label class="stepNumber">1</label>
-									<span class="stepDesc"> Step 1<br /> <small>Step
-											1 Facts</small>
+									<span class="stepDesc"> Facts<br /> <small>say something</small>
 								</span>
 							</a></li>
 							<li><a href="#step-2"> <label class="stepNumber">2</label>

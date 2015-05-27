@@ -1,8 +1,12 @@
 package controller;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,21 +46,41 @@ public class Controller extends HttpServlet{
 		System.out.println("reading action: "+action);
 
 		if ( action.equals("save.do")){
-			String[] prmtr = req.getParameterValues("limitBusiness");
+			
+			String prmtr = req.getParameter("nameOfInstitution");
+			System.out.println("reading Prmtr in prcs: "+prmtr);
+			req.setAttribute("nameOfInstitution", prmtr);
+			
+			URL url = new URL(new String("http://localhost:8080/OakFormGenerator/index.do"));
+			URLConnection con = url.openConnection();
+			con.setRequestProperty("Cookie", "JSESSIONID=D73B323172A859679A29208CB03BA0AB");
+			
+			BufferedReader bf = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+			String inputLine;
+			String html = "";
+
+			while ((inputLine = bf.readLine()) != null){ 
+			   html += inputLine + "\n";}
+			bf.close();
+			System.out.println("reading html: "+html);
+
+			
+			//String[] prmtr = req.getParameterValues("limitBusiness");
 	        
 			//System.out.println("reading Attr: "+attr);
-			System.out.println("reading Prmtr: "+prmtr[0]);
+			//System.out.println("reading Prmtr: "+prmtr[0]);
 		        
 				//System.out.println("reading Attr: "+attr);
-				System.out.println("reading Prmtr: "+prmtr[1]);
+				//System.out.println("reading Prmtr: "+prmtr[1]);
 			
 			System.out.print("haha");
 		
 		resp.setContentType("application/octet-stream");
 		resp.setHeader("Content-Disposition",
-		"attachment;filename=downloadfilename.csv");
+		"attachment;filename=downloadfilename.html");
 		
-		StringBuffer sb = new StringBuffer("whatever string you like");
+		StringBuffer sb = new StringBuffer(html);
 		InputStream in = new ByteArrayInputStream(sb.toString().getBytes("UTF-8"));
 		ServletOutputStream out = resp.getOutputStream();
 		 

@@ -13,7 +13,7 @@ public class FormAction extends Action{
 
 	@Override
 	public String perform(HttpServletRequest request) {
-
+		//return "form.jsp";
 		return "readableForm.jsp";	
 	}
 

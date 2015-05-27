@@ -4,6 +4,10 @@ $(function() {
 		$(".limit13").hide();
 	});
 });
+
+
+
+
 $(function() {
 	$('.No11').change(function() {
 		$(".limit12").hide();
@@ -113,22 +117,3 @@ $(function() {
 	});
     
 });
-
-
-function validate(){
-	  var remember = document.getElementById('phone');
-	  if (remember.checked){
-		  $(".phoneNumber").show();
-	  }
-	  else {
-		  $(".phoneNumber").hide(); 
-	  }
-	  
-	  var website = document.getElementById('website');
-	  if (website.checked){
-		  $(".website").show();
-	  }
-	  else {
-		  $(".website").hide(); 
-	  }
-	}
