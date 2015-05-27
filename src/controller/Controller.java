@@ -21,6 +21,10 @@ public class Controller extends HttpServlet{
 	public void init() throws ServletException {
 		Action.add(new IndexAction());
 		Action.add(new FormAction());
+		Action.add(new SaveAction());
+		Action.add(new LoadAction());
+		Action.add(new SubmitAction());
+
 	}
 
 	@Override
@@ -31,14 +35,14 @@ public class Controller extends HttpServlet{
 
         String      action = getActionName(servletPath);
         
-        String attr = (String) req.getAttribute("nameOfInstitutionA");
+       // String attr = (String) req.getAttribute("nameOfInstitutionA");
         String prmtr = req.getParameter("nameOfInstitutionA");
-		System.out.println("reading Attr: "+attr);
+		//System.out.println("reading Attr: "+attr);
 		System.out.println("reading Prmtr: "+prmtr);
 
 		System.out.println("reading action: "+action);
 
-		if ( action.equals("save.do")){
+		if ( action.equals("save1.do")){
 			
 			
 			System.out.print("haha");

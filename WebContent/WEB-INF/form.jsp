@@ -32,17 +32,25 @@
 
 				});
 			</script>
+			
+			<style>
+			@media print {
+			.non-print {
+			display: none 
+			}}</style>
 </head>
 <body>
-<form id="myForm" action="save.do">
+<form id="myForm" action="submit.do">
 	<div class="demoHead">
 		<div>
 			<div style="float: right;" class="demoNavLinks">
 				<input class="btn" type="button" onclick="reset()" value="Reset">
 				 <a
-					href="https://github.com/mstratman/jQuery-Smart-Wizard/blob/master/README.md"
+					href="load.do"
 					class="btn">Load</a> <input
 					 class="btn" type="submit" value = "Save"/>
+					 <input type = "button" class = "non-print" id = "non-print" name = "anything" value = "Print" onclick = "javascript:window.print();return true" >
+								 <input type = "button" class = "non-print" id = "non-print" name = "anything" value = "SavePage" onClick="window.location.href='form.jsp'" >
 			</div>
 			<div style="clear: both;"></div>
 		</div>
@@ -334,6 +342,13 @@
 			</tr>
 		</table>
 	</form>
+	
+	
+	
+	<form action="UploadDownloadFileServlet" method="post" enctype="multipart/form-data">
+Select File to Upload:<input type="file" name="fileName">
+<br>
+<input type="submit" value="Upload">
 
 </body>
 </html>
