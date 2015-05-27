@@ -16,13 +16,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 
-<<<<<<< HEAD
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-=======
+
 import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.io.FilenameUtils;
->>>>>>> origin/master
 import org.apache.tomcat.util.http.fileupload.FileItem;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.json.simple.JSONObject;
@@ -48,25 +45,7 @@ public class LoadAction extends Action{
 		ServletFileUpload ser = new ServletFileUpload();
 		FileItemFactory f = new DiskFileItemFactory();
 		try {
-<<<<<<< HEAD
-			
-=======
-			List<FileItem> items = new ServletFileUpload(f).parseRequest(request);
-	        for (FileItem item : items) {
-	            if (item.isFormField()) {
-	                // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
-	                String fieldName = item.getFieldName();
-	                String fieldValue = item.getString();
-	                // ... (do your job here)
-	            } else {
-	                // Process form file field (input type="file").
-	                String fieldName = item.getFieldName();
-	                String fileName = FilenameUtils.getName(item.getName());
-	                InputStream fileContent = item.getInputStream();
-	                // ... (do your job here)
-	            }
-	        }
->>>>>>> origin/master
+
 	        
 			br = new BufferedReader(new FileReader("/users/ThomasZhao/Documents/out.json"));
 			line  = br.readLine();
