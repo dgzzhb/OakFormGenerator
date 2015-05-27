@@ -435,7 +435,7 @@
   </ul>
   State laws and individual companies may give you more rights to limit sharing. See Other important information section for your rights under state law.</td>
           </tr>
-          <tr>
+          <tr class="optOut">
             <td>What happens when I limit sharing for an account I hold jointly with someone else?</td>
             <td>
             <select>

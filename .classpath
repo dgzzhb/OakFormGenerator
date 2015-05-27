@@ -9,9 +9,8 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-fileupload-1.3.1.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-io-2.4.jar"/>
-	<classpathentry kind="lib" path="/Users/ThomasZhao/Downloads/commons-fileupload-1.3.1-bin/lib/commons-fileupload-1.3.1.jar"/>
-	<classpathentry kind="lib" path="/Users/ThomasZhao/Downloads/commons-io-2.4/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-fileupload-1.3.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/json_simple-1.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

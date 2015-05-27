@@ -16,8 +16,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.tomcat.util.http.fileupload.FileItem;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -38,8 +41,10 @@ public class LoadAction extends Action{
 
 		BufferedReader br;
 		String line;
+		ServletFileUpload ser = new ServletFileUpload();
+		FileItemFactory f = new DiskFileItemFactory();
 		try {
-			List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+			List<FileItem> items = new ServletFileUpload(f).parseRequest(request);
 	        for (FileItem item : items) {
 	            if (item.isFormField()) {
 	                // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
