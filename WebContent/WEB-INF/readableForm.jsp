@@ -42,7 +42,7 @@
 			</script>
 </head>
 <body>
-<form id="myForm">
+<form id="myForm" action="save.do">
 	<div class="demoHead">
 		<div>
 			<div style="float: right;" class="demoNavLinks">
@@ -145,9 +145,9 @@
 												<td><input type="checkbox" name="what" value="medical­related debts">medical­related debts</td>
 												</tr>
 												<tr>
-												<td><input type="checkbox" name="what" value="2">credit card or other debt</td>
-												<td><input type="checkbox" name="what" value="2">mortgage rates and payments</td>
-												<td><input type="checkbox" name="what" value="2">retirement assets</td>
+												<td><input type="checkbox" name="what" value="redit card or other debt">credit card or other debt</td>
+												<td><input type="checkbox" name="what" value="mortgage rates and payments">mortgage rates and payments</td>
+												<td><input type="checkbox" name="what" value="retirement assets">retirement assets</td>
 												</tr>
 												</table>
 
@@ -184,54 +184,65 @@
         <tbody>
           <tr>
             <td>For our everyday business purposes - such as to process your transactions, maintain your account(s), respond to court orders and legal investigations, or report to credit bureaus</td>
-            <td><input type="radio" name="forBusiness" value="true" class="Yes1">Yes
-<input type="radio" name="forBusiness" value="false" class="forBusinessNo"">No</td>
-            <td><div class="limitBusiness"  style="display:none"><input type="radio" name="forBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</div>
-		<div class="limitBusinessNo" style="display:none">We don't share.</div>
+            <td><input type="radio" name="forBusiness" value="true" class="Yes11">Yes
+<input type="radio" name="forBusiness" value="false" class="No11">No</td>
+            <td><div class="limit12"  style="display:none">No</div>
+		<div class="limit13" style="display:none">We don't share.</div>
 </td>
           </tr>
           <tr>
             <td>For our marketing purposes - with service providers we use to offer our products and services to you</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
+            <td><input type="radio" name="forMarketing" value="marketing purposes" class="Yes21">Yes
+<input type="radio" name="forMarketing" value="false" class="No21">No</td>
+            <td><div class="limit22"  style="display:none"><input type="radio" name="limitMarketing" value="true" class="triggerOptOut">Yes
+<input type="radio" name="limitMarketing" value="false">No</div>
+<div class="limit23" style="display:none">We don't share.</div>
+</td>
           </tr>
           <tr>
             <td>For joint marketing with other financial companies</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
+                        <td><input type="radio" name="forJointMarket" value="marketing purposes" class="Yes31">Yes
+<input type="radio" name="forJointMarket" value="false" class="No31">No</td>
+            <td><div class="limit32"  style="display:none"><input type="radio" name="limitJointMarket" value="true" class="triggerOptOut">Yes
+<input type="radio" name="limitJointMarket" value="false">No</div>
+<div class="limit33" style="display:none">We don't share.</div>
+</td>
           </tr>
           <tr>
             <td>For our affiliates' everyday business purposes - Information about your transactions and experiences</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
+                        <td><input type="radio" name="forAffiliateTransaction" value="marketing purposes" class="Yes41">Yes
+<input type="radio" name="forAffiliateTransaction" value="false" class="No41">No</td>
+            <td><div class="limit42"  style="display:none"><input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut">Yes
+<input type="radio" name="limitAffiliateTransaction" value="false">No</div>
+<div class="limit43" style="display:none">We don't share.</div>
+</td>
           </tr>        
           <tr>
             <td>For our affiliates' everyday business purposes - Information about your creditworthiness</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
+                        <td><input type="radio" name="forAffiliateCredit" value="marketing purposes" id="Yes51" class="triggerOptOut">Yes
+<input type="radio" name="forAffiliateCredit" value="false" class="No51">No</td>
+            <td><div class="limit52"  style="display:none">Yes</div>
+<div class="limit53" style="display:none">We don't share.</div>
+</td>
           </tr>
           <tr>
-            <td>For our affiliates to market to you <br>   <input type="radio" name="showSixthRow" value="false" >hide</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
+            <td>For our affiliates to market to you <br>   <input type="radio" name="showSixthRow" value="false" class="hide61" >hide
+            <input type="radio" name="showSixthRow" value="false"class="show61" >show
+            </td>
+                        <td><div class="share62"  style="display:none"><input type="radio" name="forAffiliateMarket" value="marketing purposes" class="Yes61">Yes
+<input type="radio" name="forAffiliateMarket" value="false" class="No61">No</div></td>
+            <td><div class="limit62"  style="display:none"><input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut" >Yes
+<input type="radio" name="limitAffiliateMarket" value="false">No</div>
+<div class="limit63" style="display:none">We don't share.</div>
+</td>
           </tr>
           <tr>
             <td>For nonaffiliates to market to you</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
-            <td><input type="radio" name="limitBusiness" value="true" >Yes
-<input type="radio" name="forBusiness" value="false">No</td>
+                        <td><input type="radio" name="forNonaffiliate" value="marketing purposes" id="Yes71" class="triggerOptOut">Yes
+<input type="radio" name="forNonaffiliate" value="false" class="No71">No</td>
+            <td><div class="limit72"  style="display:none">Yes</div>
+<div class="limit73" style="display:none">We don't share.</div>
+</td>
           </tr>                        
         </tbody>
       </table>
@@ -242,11 +253,21 @@
         <tbody class="left-colored"> 
           <tr>
             <td>To limit our sharing</td>
-            <td>Call <input type="text" name="phone" placeholder="phone number"> - our menu will prompt you through your choices
-  Visit us online: <input type="text" name="url" placeholder="website">
-  Talk to a banking center associate
+            <td>
+            Please select one or more of the applicable opt­out methods described:<br>
+            <input type="checkbox" name="phone" value="1" id="phone"onclick="validate()">Telephone
+             <input type="checkbox" name="phone" value="1"id="website" onclick="validate()">Website
+             <input type="checkbox" name="phone" value="1">mail-­in opt­-out form 
+             <br>
+            
+<div class="phoneNumber" style="display:none">     Call <input type="text" name="phone" placeholder="phone number"  /> - our menu will prompt you through your choices</div>
+ 
+ 
+  <br>
+<div class="website" style="display:none">   Visit us online: <input type="text" name="url" placeholder="website"></div>
+ <br> Talk to a banking center associate
   Talk to your assigned account representative (e.g., financial advisor, mortgage loan officer)
-  Please note:
+  <br>Please note:
   If you are a new customer, we can begin sharing your information <input type="text" name="beginShareDays" placeholder="30">  days from the date we sent this notice. When you are no longer our customer, we continue to share your information as described in this notice. However, you can contact us at any time to limit our sharing.</td>
           </tr>
           <tr>
