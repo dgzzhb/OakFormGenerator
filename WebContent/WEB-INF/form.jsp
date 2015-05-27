@@ -92,9 +92,11 @@
 									<tbody class="left-colored">
 										<tr>
 											<td>FACTS</td>
+
 											<td>WHAT DOES <input type="text"
 												name="nameOfInstitutionA" value="testname"
 												placeholder="A NAME OF FINANCIAL INSTITUTION A"> DO WITH
+
 													YOUR PERSONAL INFORMATION?</td>
 										</tr>
 										<tr>
@@ -131,9 +133,7 @@
 											<td>All financial companies need to share
 												customers&apos; personal information to run their everyday
 												business. In the section below, we list the reasons
-												financial companies can share their customers&apos;€ personal information; the reasons <input type="text"
-												name="nameOfInstitution"
-												placeholder="NAME OF FINANCIAL INSTITUTION"> chooses
+												financial companies can share their customers&apos;€ personal information; the reasons we chooses
 													to share; and whether you can limit this sharing.
 											</td>
 										</tr>
@@ -149,7 +149,7 @@
         <thead>
           <tr>
             <th>Reasons we can share your personal information</th>
-            <th>Does <input type="text" name="nameOfInstitution" placeholder="NAME OF FINANCIAL INSTITUTION"> share?</th>
+            <th>Do we share?</th>
             <th>Can you limit this sharing?</th>
           </tr>
         </thead>
@@ -252,11 +252,11 @@
         </thead>
         <tbody>
           <tr>
-            <td>How does <input type="text" name="nameOfInstitution" placeholder="NAME OF FINANCIAL INSTITUTION"> protect my personal information?</td>
+            <td>How do we protect my personal information?</td>
             <td>To protect your personal information from unauthorized access and use, we use security measures that comply with federal law. These measures include computer safeguards and secured files and buildings. For more information visit bankofamerica.com/security or ml.com/privacy.</td>
           </tr>
           <tr>
-            <td>How does <input type="text" name="nameOfInstitution" placeholder="NAME OF FINANCIAL INSTITUTION"> collect my personal information?</td>
+            <td>How do we collect my personal information?</td>
             <td>We collect your personal information, for example, when you:
             <ul>
             <li><input type="checkbox" name="howCollect" value="1">open an account or <input type="checkbox" name="howCollect" value="2">perform transactions</li> 

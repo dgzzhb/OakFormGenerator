@@ -36,14 +36,19 @@ public class Controller extends HttpServlet{
         String      action = getActionName(servletPath);
         
        // String attr = (String) req.getAttribute("nameOfInstitutionA");
-        String prmtr = req.getParameter("nameOfInstitutionA");
-		//System.out.println("reading Attr: "+attr);
-		System.out.println("reading Prmtr: "+prmtr);
+
+        
 
 		System.out.println("reading action: "+action);
 
-		if ( action.equals("save1.do")){
-			
+		if ( action.equals("save.do")){
+			String[] prmtr = req.getParameterValues("limitBusiness");
+	        
+			//System.out.println("reading Attr: "+attr);
+			System.out.println("reading Prmtr: "+prmtr[0]);
+		        
+				//System.out.println("reading Attr: "+attr);
+				System.out.println("reading Prmtr: "+prmtr[1]);
 			
 			System.out.print("haha");
 		
