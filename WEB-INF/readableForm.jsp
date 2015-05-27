@@ -52,7 +52,11 @@
 <body>
 
 
-
+<form action="FileUploadServlet" method="post" enctype="multipart/form-data">
+Select File to Upload:<input type="file" name="fileName">
+<br>
+<input type="submit" value="Upload">
+</form>
 <form action="upload" method="post" enctype="multipart/form-data">
     <input type="text" name="description" />
     <input type="file" name="file" />

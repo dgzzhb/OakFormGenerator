@@ -16,7 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 
-import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.tomcat.util.http.fileupload.FileItem;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -39,25 +39,9 @@ public class LoadAction extends Action{
 		BufferedReader br;
 		String line;
 		try {
-			List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
-	        for (FileItem item : items) {
-	            if (item.isFormField()) {
-	                // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
-	                String fieldName = item.getFieldName();
-	                String fieldValue = item.getString();
-	                // ... (do your job here)
-	            } else {
-	                // Process form file field (input type="file").
-	                String fieldName = item.getFieldName();
-	                String fileName = FilenameUtils.getName(item.getName());
-	                InputStream fileContent = item.getInputStream();
-	                // ... (do your job here)
-	            }
-	        }
+			
 	        
-		    InputStream fileContent = filePart.getInputStream();
-		    br = new BufferedReader(new InputStreamReader(fileContent));
-			//br = new BufferedReader(new FileReader("/users/ThomasZhao/Documents/out.json"));
+			br = new BufferedReader(new FileReader("/users/ThomasZhao/Documents/out.json"));
 			line  = br.readLine();
 			
 			br.close();
@@ -79,9 +63,6 @@ public class LoadAction extends Action{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
