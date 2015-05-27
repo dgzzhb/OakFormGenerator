@@ -153,3 +153,9 @@ function hide(id){
 function show(id){
 	$(id).show();
 	}
+
+function showHide(show, hide){
+	$(show).show();
+	$(hide).hide();
+	
+	}

@@ -466,25 +466,39 @@ Select File to Upload:<input type="file" name="fileName">
             <td>Affiliates</td>
             <td>
             Do we have affiliates?<br>
-            <input type="radio" name="account" value="Affiliate">Yes
-<input type="radio" name="account" value="NoAffiliate" >No <br><br>
+            <input type="radio" name="account" value="Affiliate" onclick="showHide('#shareWithAffiliates','#shareWithNonaffiliates')">Yes
+<input type="radio" name="account" value="NoAffiliate" onclick="showHide('#shareWithNonaffiliates','#shareWithAffiliates')" >No <br><br>
 
+			 <div id="shareWithAffiliates" style="display:none" >
 			Do we share personal information with affiliates?<br>
-			
+			 <input type="radio" name="account" value="Affiliate" onclick="show('#affiliatesList')">Yes
+<input type="radio" name="account" value="NoAffiliate"  onclick="hide('#affiliatesList')">No <br><br>
+</div>
 
-		
-
-
-            
-            
-            
-            Companies related by common ownership or control. They can be Financial and nonfinancial companies.
-  Our affiliates include companies that utilize the names Bank of America; Banc of America; U.S. Trust; LandSafe or Merrill Lynch, financial companies such as General Fidelity Life Insurance Company.</td>
+		<div id="affiliatesList" style="display:none" >
+		Our affiliates include companies with a <input type="text" name="whoIsProviding" placeholder="common corporate identity of financial institution"> name; 
+		financial companies such as <input type="text" name="whoIsProviding" placeholder="illustrative list of companies">; 
+		nonfinancial companies, such as <input type="text" name="whoIsProviding" placeholder="illustrative list of companies">;
+		 and others, such as <input type="text" name="whoIsProviding" placeholder="illustrative list">.
+		</div>
+</td>
           </tr>
-          <tr>
+          <tr id="shareWithNonaffiliates" style="display:none">
             <td>Nonaffiliates</td>
-            <td>Companies not related by common ownership or control. They can be Financial and nonfinancial companies.
-  Nonaffiliates we share with can include financial services companies such as insurance agencies or mortgage brokers, nonfinancial companies such as retailers, travel companies and membership groups, other companies such as nonprofit groups.</td>
+            <td>
+             <div  >
+            	Do we share with nonaffiliated third parties?<br>
+			 <input type="radio" name="account" value="Affiliate"onclick="show('#NonaffiliatesList')" >Yes
+<input type="radio" name="account" value="NoAffiliate" onclick="hide('#NonaffiliatesList')">No <br><br>
+</div>
+
+ <div id="NonaffiliatesList" style="display:none" >
+ <textarea rows="4" cols="50">
+Please input list categories of companies such as mortgage companies, insurance companies, direct marketing companies, and nonprofit organizations
+</textarea>
+ 
+ </div>
+  </td>
           </tr>
           <tr>
             <td>Joint Marketing</td>
