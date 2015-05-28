@@ -28,10 +28,7 @@
 			    document.getElementById("myForm").reset();
 			}
 			
-			$('#name').bind('input', function() {
-			      $(".nameOfInstitution").val($("#name").val());
-			});
-			
+
 				$(document).ready(function() {
 					// Smart Wizard	
 					$('#wizard').smartWizard({
@@ -131,7 +128,7 @@ $( "#opener1" ).click(function() {
 											<td>FACTS</td>
 											<td>WHAT DOES <input type="text" id ="name"
 												name="nameOfInstitution" class="nameOfInstitution"
-												placeholder="NAME OF FINANCIAL INSTITUTION"> DO WITH
+												placeholder="NAME OF FINANCIAL INSTITUTION" size="32"> DO WITH
 													YOUR PERSONAL INFORMATION?</td>
 										</tr>
 										<tr>
@@ -229,7 +226,7 @@ $( "#opener1" ).click(function() {
           </tr>
           <tr>
             <td>For our marketing purposes - with service providers we use to offer our products and services to you</td>
-            <td><input type="radio" name="forMarketing" value="marketing purposes" class="Yes21">Yes
+            <td><input type="radio" name="forMarketing" value="true" class="Yes21">Yes
 <input type="radio" name="forMarketing" value="false" class="No21" id="noShareMarketing" onclick="validateOptOut()">No</td>
             <td><div class="limit22"  style="display:none"><input type="radio" name="limitMarketing" value="true" id="limitShare2" onclick="validateOptOut()">Yes
 <input type="radio" name="limitMarketing" value="false" onclick="validateOptOut()">No</div>
@@ -237,7 +234,7 @@ $( "#opener1" ).click(function() {
           </tr>
           <tr>
             <td>For joint marketing with other financial companies</td>
-                        <td><input type="radio" name="forJointMarket" value="marketing purposes" class="Yes31">Yes
+                        <td><input type="radio" name="forJointMarket" value="true" class="Yes31">Yes
 <input type="radio" name="forJointMarket" value="false"  id="noShareJointMarketing" class="No31" onclick="validateOptOut()">No</td>
             <td><div class="limit32"  style="display:none"><input type="radio" name="limitJointMarket" value="true" class="triggerOptOut"  id="limitShare3" onclick="validateOptOut()">Yes
 
@@ -248,7 +245,7 @@ $( "#opener1" ).click(function() {
           </tr>
           <tr>
             <td>For our affiliates' everyday business purposes - Information about your transactions and experiences</td>
-                        <td><input type="radio" name="forAffiliateTransaction" value="marketing purposes" class="Yes41">Yes
+                        <td><input type="radio" name="forAffiliateTransaction" value="true" class="Yes41">Yes
 <input type="radio" name="forAffiliateTransaction" value="false" class="No41">No</td>
 
  <td><div class="limit42"  style="display:none"><input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut"  id="limitShare4" onclick="validateOptOut()">Yes
@@ -259,7 +256,7 @@ $( "#opener1" ).click(function() {
           </tr>        
           <tr>
             <td>For our affiliates' everyday business purposes - Information about your creditworthiness</td>
-                        <td><input type="radio" name="forAffiliateCredit" value="marketing purposes" id="Yes51" class="triggerOptOut">Yes
+                        <td><input type="radio" name="forAffiliateCredit" value="true" id="Yes51" class="triggerOptOut">Yes
 <input type="radio" name="forAffiliateCredit" value="false" id="No51" onclick="validateOptOut()">No</td>
             <td><div class="limit52"  style="display:none">Yes</div>
 <div class="limit53" style="display:none">We don't share.</div>
@@ -269,7 +266,7 @@ $( "#opener1" ).click(function() {
             <td>For our affiliates to market to you <br>   <input type="radio" name="showSixthRow" value="false" class="hide61" >hide
             <input type="radio" name="showSixthRow" value="false"class="show61" >show
             </td>
-                        <td><div class="share62"  style="display:none"><input type="radio" name="forAffiliateMarket" value="marketing purposes" class="Yes61">Yes
+                        <td><div class="share62"  style="display:none"><input type="radio" name="forAffiliateMarket" value="true" class="Yes61">Yes
 <input type="radio" name="forAffiliateMarket" value="false" class="No61">No</div></td>
 
             <td><div class="limit62"  style="display:none"><input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut"  id="limitShare6" onclick="validateOptOut()">Yes
@@ -314,7 +311,7 @@ $( "#opener1" ).click(function() {
 <div class="website" style="display:none"><br>   Visit us online: <input type="text" name="url" placeholder="website"><br></div>
  
    <div class="mail" style="display:none"><br>Do we require customers to provide additional or different information other than name and address, such as a random opt-out number or a truncated account number?<br>
-   		<input type="radio" name="account" value="marketing purposes">Yes
+   		<input type="radio" name="account" value="true">Yes
 <input type="radio" name="account" value="false" >No	
 
     <br><br>
@@ -329,7 +326,7 @@ $( "#opener1" ).click(function() {
    	<!--If we do, we must  include in the far left column of the mail-­in form the following statement.  -->
    	<!-- If you have a joint account, your choice(s) will apply to everyone on your account unless you mark below. ô° Apply my choice(s) only to me. -->
    	Do we provide their joint accountholders the choice to opt out for only one accountholder?<br>
-   	   		<input type="radio" name="jointAccountHolders" value="marketing purposes">Yes
+   	   		<input type="radio" name="jointAccountHolders" value="true">Yes
 <input type="radio" name="jointAccountHolders" value="false" >No	
    	
    
@@ -359,8 +356,8 @@ $( "#opener1" ).click(function() {
         </thead>
         <tbody>
           <tr>
-            <td>Who is providing this notice?</td>
-            <td><input type="text" name="whoIsProviding" placeholder="insert"></td>
+            <td>Who is providing this notice?<span class="glyphicon glyphicon-question-sign" title="Please omit it when only one financial institution provides the model form." ></span></td>
+            <td><input type="text" name="whoIsProviding" placeholder="insert" class="nameOfInstitution"></td>
           </tr>
         </tbody>
       </table>
@@ -449,11 +446,12 @@ $( "#opener1" ).click(function() {
             <div id="collect">
             Do we collect personal information from their affiliates and/or credit bureaus?<br>
             <input type="radio" name="whatHappens" value="true" onclick="hide('#collectFromOtherCompany')">Yes
-            <input type="radio" name="whatHappens" value="true" onclick="show('#collectFromOtherCompany')">No<br>
+            <input type="radio" name="whatHappens" value="false" onclick="show('#collectFromOtherCompany')">No<br>
             </div>
              <div id="collectFromOtherCompany" style="display:none" >
             <br>Do we collect information from other companies?<br>
-            <input type="radio" name="whatHappens" value="true" >Yes<input type="radio" name="whatHappens" value="true" >No<br>
+            <input type="radio" name="whatHappens" value="true" >Yes
+            <input type="radio" name="whatHappens" value="false" >No<br>
            </div>
             
             
@@ -503,23 +501,23 @@ $( "#opener1" ).click(function() {
             <td>Affiliates</td>
             <td>
             Do we have affiliates?<br>
-             <input type="radio" name="account" value="Affiliate" onclick="showHide('#shareWithAffiliates','#shareWithNonaffiliates')">Yes
-<input type="radio" name="account" value="NoAffiliate" onclick="showHide('#shareWithNonaffiliates','#shareWithAffiliates')" >No <br><br>
+             <input type="radio" name="haveAffiliates" value="true" onclick="showHide('#shareWithAffiliates','#shareWithNonaffiliates')">Yes
+<input type="radio" name="haveAffiliates" value="false" onclick="showHide('#shareWithNonaffiliates','#shareWithAffiliates')" >No <br><br>
            
            
 
 <div id="shareWithAffiliates" style="display:none" >
 			Do we share personal information with affiliates?<br>
-				 <input type="radio" name="account" value="Affiliate" onclick="show('#affiliatesList')">Yes
-<input type="radio" name="account" value="NoAffiliate"  onclick="hide('#affiliatesList')">No <br><br>
+				 <input type="radio" name="shareWithAffiliates" value="true" onclick="show('#affiliatesList')">Yes
+<input type="radio" name="shareWithAffiliates" value="false"  onclick="hide('#affiliatesList')">No <br><br>
 </div>
 			
 
 		<div id="affiliatesList" style="display:none" >
-		Our affiliates include companies with a <input type="text" name="whoIsProviding" placeholder="common corporate identity of financial institution"> name; 
-		financial companies such as <input type="text" name="whoIsProviding" placeholder="illustrative list of companies">; 
-		nonfinancial companies, such as <input type="text" name="whoIsProviding" placeholder="illustrative list of companies">;
-		 and others, such as <input type="text" name="whoIsProviding" placeholder="illustrative list">.
+		Our affiliates include companies with a <input type="text" name="affiliates1" placeholder="common corporate identity of financial institution"> name; 
+		financial companies such as <input type="text" name="affiliates2" placeholder="illustrative list of companies">; 
+		nonfinancial companies, such as <input type="text" name="affiliates3" placeholder="illustrative list of companies">;
+		 and others, such as <input type="text" name="affiliates4" placeholder="illustrative list">.
 		</div>
 </td>
 
@@ -534,15 +532,13 @@ $( "#opener1" ).click(function() {
               <td>
              <div  >
             	Do we share with nonaffiliated third parties?<br>
-			 <input type="radio" name="account" value="Affiliate"onclick="show('#NonaffiliatesList')" >Yes
-<input type="radio" name="account" value="NoAffiliate" onclick="hide('#NonaffiliatesList')">No <br><br>
+			 <input type="radio" name="shareWithNonaffiliates" value="true"onclick="show('#NonaffiliatesList')" >Yes
+<input type="radio" name="shareWithNonaffiliates" value="false" onclick="hide('#NonaffiliatesList')">No <br><br>
 </div>
 
  <div id="NonaffiliatesList" style="display:none" >
  Please input list categories of companies such as mortgage companies, insurance companies, direct marketing companies, and nonprofit organizations
- <textarea rows="4" cols="50">
-
-</textarea>
+ <textarea rows="4" cols="50" name="NonaffiliatesList"></textarea>
  
  </div>
   </td>
@@ -555,8 +551,8 @@ $( "#opener1" ).click(function() {
              <td>
                          <div  >
             	Do we engage in joint marketing?<br>
-			 <input type="radio" name="account" value="Affiliate"onclick="show('#jointMarketList')" >Yes
-<input type="radio" name="account" value="NoAffiliate" onclick="hide('#jointMarketList')">No <br><br>
+			 <input type="radio" name="jointMarketing" value="true"onclick="show('#jointMarketList')" >Yes
+<input type="radio" name="jointMarketing" value="false" onclick="hide('#jointMarketList')">No <br><br>
 </div>
 
  <div id="jointMarketList" style="display:none" >
@@ -589,7 +585,7 @@ $( "#opener1" ).click(function() {
             <td>
              <div   >
 
- <textarea rows="5" cols="90" >
+ <textarea rows="5" cols="90"  name="otherImportantInformation">
 
  </textarea>
  </div>

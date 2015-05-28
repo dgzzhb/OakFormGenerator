@@ -1,3 +1,12 @@
+
+$(function() {
+$('#name').bind('input', function() {	
+			      $(".nameOfInstitution").val($("#name").val());
+			});
+});
+			
+
+
 $(function() {
 	$('.Yes11').change(function() {
 		$(".limit12").show();
