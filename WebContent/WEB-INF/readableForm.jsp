@@ -304,10 +304,10 @@ $( "#opener1" ).click(function() {
             Please select one or more of the applicable opt­-out methods described:<br>
             <input type="checkbox" name="phone" value="1" id="phone"onclick="validate()">Telephone
              <input type="checkbox" name="phone" value="1"id="website" onclick="validate()">Website
-             <input type="checkbox" name="mail" value="1" id="mail" onclick="validate()">mail-­in opt-out form 
+             <input type="checkbox" name="phone" value="1" id="mail" onclick="validate()">mail-­in opt-out form 
              <br>
              <br>
-<div class="phoneNumber" style="display:none">     Call <input type="text" name="phone" placeholder="phone number"  /> - our menu will prompt you through your choices<br></div>
+<div class="phoneNumber" style="display:none">     Call <input type="text" name="phoneNum" placeholder="phone number"  /> - our menu will prompt you through your choices<br></div>
  
  
   
@@ -322,7 +322,7 @@ $( "#opener1" ).click(function() {
     <input type="text" name="address1" placeholder="Address1"> <br>
     <input type="text" name="address2" placeholder="Address2"> <br>
     <input type="text" name="city" placeholder="city"><br> 
-    <input type="text" name="street" placeholder="street"> <br>
+    <input type="text" name="state" placeholder="state"> <br>
     <input type="text" name="zip" placeholder="zip"> <br>
    
    	<br>
@@ -539,8 +539,9 @@ $( "#opener1" ).click(function() {
 </div>
 
  <div id="NonaffiliatesList" style="display:none" >
+ Please input list categories of companies such as mortgage companies, insurance companies, direct marketing companies, and nonprofit organizations
  <textarea rows="4" cols="50">
-Please input list categories of companies such as mortgage companies, insurance companies, direct marketing companies, and nonprofit organizations
+
 </textarea>
  
  </div>
