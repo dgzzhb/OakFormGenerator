@@ -436,60 +436,129 @@ $("#opener").click(function() {
             <span class="glyphicon glyphicon-question-sign" title="Please select 5 of the following terms to complete the bulleted list for this question. "></span> <br>
             <table>
             <tr>
-            <td><input type="checkbox" name="howCollect" value="open an account">open an account</td>
-            <td><input type="checkbox" name="howCollect" value="deposit money">deposit money</td>
-            <td><input type="checkbox" name="howCollect" value="pay your bills">pay your bills</td>
+            	<%
+												HashSet<String> howCollect = (HashSet<String>)session.getAttribute("howCollect");
+												%>
+            <td><input type="checkbox" name="howCollect" value="open an account"
+				<% if( howCollect.contains("open an account")) { %>checked<% } %>
+            	>open an account</td>
+            <td><input type="checkbox" name="howCollect" value="deposit money"
+				<% if( howCollect.contains("deposit money")) { %>checked<% } %>
+            	>deposit money</td>
+            <td><input type="checkbox" name="howCollect" value="pay your bills"
+				<% if( howCollect.contains("pay your bills")) { %>checked<% } %>
+            	>pay your bills</td>
             </tr>
              <tr>
-            <td><input type="checkbox" name="howCollect" value="apply for a loan">apply for a loan</td>
-            <td><input type="checkbox" name="howCollect" value="use your credit or debit card">use your credit or debit card</td>
-            <td><input type="checkbox" name="howCollect" value="seek financial or tax advice">seek financial or tax advice</td>
+            <td><input type="checkbox" name="howCollect" value="apply for a loan"
+				<% if( howCollect.contains("apply for a loan")) { %>checked<% } %>
+            	>apply for a loan</td>
+            <td><input type="checkbox" name="howCollect" value="use your credit or debit card"
+				<% if( howCollect.contains("use your credit or debit card")) { %>checked<% } %>
+            	>use your credit or debit card</td>
+            <td><input type="checkbox" name="howCollect" value="seek financial or tax advice"
+				<% if( howCollect.contains("seek financial or tax advice")) { %>checked<% } %>
+            	>seek financial or tax advice</td>
             </tr>
              <tr>
-            <td><input type="checkbox" name="howCollect" value="apply for insurance">apply for insurance</td>
-            <td><input type="checkbox" name="howCollect" value="pay insurance premiums">pay insurance premiums</td>
-            <td><input type="checkbox" name="howCollect" value="file an insurance claim">file an insurance claim</td>
+            <td><input type="checkbox" name="howCollect" value="apply for insurance"
+				<% if( howCollect.contains("apply for insurance")) { %>checked<% } %>
+            	>apply for insurance</td>
+            <td><input type="checkbox" name="howCollect" value="pay insurance premiums"
+				<% if( howCollect.contains("pay insurance premiums")) { %>checked<% } %>
+            	>pay insurance premiums</td>
+            <td><input type="checkbox" name="howCollect" value="file an insurance claim"
+				<% if( howCollect.contains("file an insurance claim")) { %>checked<% } %>
+            	>file an insurance claim</td>
             </tr>
              <tr>
-            <td><input type="checkbox" name="howCollect" value="seek advice about your investments">seek advice about your investments</td>
-            <td><input type="checkbox" name="howCollect" value="buy securities from us">buy securities from us</td>
-            <td><input type="checkbox" name="howCollect" value="sell securities to us">sell securities to us</td>
+            <td><input type="checkbox" name="howCollect" value="seek advice about your investments"
+				<% if( howCollect.contains("seek advice about your investments")) { %>checked<% } %>
+            	>seek advice about your investments</td>
+            <td><input type="checkbox" name="howCollect" value="buy securities from us"
+				<% if( howCollect.contains("buy securities from us")) { %>checked<% } %>
+            	>buy securities from us</td>
+            <td><input type="checkbox" name="howCollect" value="sell securities to us"
+				<% if( howCollect.contains("sell securities to us")) { %>checked<% } %>
+            	>sell securities to us</td>
             </tr>
              <tr>
-            <td><input type="checkbox" name="howCollect" value="direct us to buy securities">direct us to buy securities</td>
-            <td><input type="checkbox" name="howCollect" value="direct us to sell your securities">direct us to sell your securities</td>
-            <td><input type="checkbox" name="howCollect" value="make deposits or withdrawals from your account">make deposits or withdrawals from your account</td>
+            <td><input type="checkbox" name="howCollect" value="direct us to buy securities"
+				<% if( howCollect.contains("direct us to buy securities")) { %>checked<% } %>
+            	>direct us to buy securities</td>
+            <td><input type="checkbox" name="howCollect" value="direct us to sell your securities"
+				<% if( howCollect.contains("direct us to sell your securities")) { %>checked<% } %>
+            	>direct us to sell your securities</td>
+            <td><input type="checkbox" name="howCollect" value="make deposits or withdrawals from your account"
+				<% if( howCollect.contains("make deposits or withdrawals from your account")) { %>checked<% } %>
+            	>make deposits or withdrawals from your account</td>
             </tr>
              <tr>
-            <td><input type="checkbox" name="howCollect" value="enter into an investment advisory contract">enter into an investment advisory contract</td>
-            <td><input type="checkbox" name="howCollect" value="give us your income information">give us your income information</td>
-            <td><input type="checkbox" name="howCollect" value="provide employment information">provide employment information</td>
+            <td><input type="checkbox" name="howCollect" value="enter into an investment advisory contract"
+				<% if( howCollect.contains("enter into an investment advisory contract")) { %>checked<% } %>
+            	>enter into an investment advisory contract</td>
+            <td><input type="checkbox" name="howCollect" value="give us your income information"
+				<% if( howCollect.contains("give us your income information")) { %>checked<% } %>
+            	>give us your income information</td>
+            <td><input type="checkbox" name="howCollect" value="provide employment information"
+				<% if( howCollect.contains("provide employment information")) { %>checked<% } %>
+            	>provide employment information</td>
             </tr>
             <tr>
-            <td><input type="checkbox" name="howCollect" value="give us your employment history">give us your employment history</td>
-            <td><input type="checkbox" name="howCollect" value="tell us about your investment or retirement portfolio">tell us about your investment or retirement portfolio</td>
-            <td><input type="checkbox" name="howCollect" value="tell us about your investment or retirement earnings"> tell us about your investment or retirement earnings</td>
+            <td><input type="checkbox" name="howCollect" value="give us your employment history"
+				<% if( howCollect.contains("give us your employment history")) { %>checked<% } %>
+            	>give us your employment history</td>
+            <td><input type="checkbox" name="howCollect" value="tell us about your investment or retirement portfolio"
+				<% if( howCollect.contains("tell us about your investment or retirement portfolio")) { %>checked<% } %>
+            	>tell us about your investment or retirement portfolio</td>
+            <td><input type="checkbox" name="howCollect" value="tell us about your investment or retirement earnings"
+				<% if( howCollect.contains("tell us about your investment or retirement earnings")) { %>checked<% } %>
+            	> tell us about your investment or retirement earnings</td>
             </tr>
             <tr>
-            <td><input type="checkbox" name="howCollect" value="apply for financing">apply for financing</td>
-            <td><input type="checkbox" name="howCollect" value="apply for a lease">apply for a lease</td>
-            <td><input type="checkbox" name="howCollect" value="provide account information">provide account information</td>
+            <td><input type="checkbox" name="howCollect" value="apply for financing"
+				<% if( howCollect.contains("apply for financing")) { %>checked<% } %>
+            	>apply for financing</td>
+            <td><input type="checkbox" name="howCollect" value="apply for a lease"
+				<% if( howCollect.contains("apply for a lease")) { %>checked<% } %>
+            	>apply for a lease</td>
+            <td><input type="checkbox" name="howCollect" value="provide account information"
+				<% if( howCollect.contains("provide account information")) { %>checked<% } %>
+            	>provide account information</td>
             </tr>
 
             <tr>
-            <td><input type="checkbox" name="howCollect" value="give us your contact information">give us your contact information</td>
-            <td><input type="checkbox" name="howCollect" value="pay us by check">pay us by check</td>
-            <td><input type="checkbox" name="howCollect" value="give us your wage statements">give us your wage statements</td>
+            <td><input type="checkbox" name="howCollect" value="give us your contact information"
+				<% if( howCollect.contains("give us your contact information")) { %>checked<% } %>
+            	>give us your contact information</td>
+            <td><input type="checkbox" name="howCollect" value="pay us by check"
+				<% if( howCollect.contains("pay us by check")) { %>checked<% } %>
+            	>pay us by check</td>
+            <td><input type="checkbox" name="howCollect" value="give us your wage statements"
+				<% if( howCollect.contains("give us your wage statements")) { %>checked<% } %>
+            	>give us your wage statements</td>
             </tr>
                         <tr>
-            <td><input type="checkbox" name="howCollect" value="make a wire transfer">make a wire transfer</td>
-            <td><input type="checkbox" name="howCollect" value="tell us who receives the money">tell us who receives the money</td>
-            <td><input type="checkbox" name="howCollect" value="tell us where to send the money">tell us where to send the money</td>
+            <td><input type="checkbox" name="howCollect" value="make a wire transfer"
+				<% if( howCollect.contains("make a wire transfer")) { %>checked<% } %>
+            	>make a wire transfer</td>
+            <td><input type="checkbox" name="howCollect" value="tell us who receives the money"
+				<% if( howCollect.contains("tell us who receives the money")) { %>checked<% } %>
+            	>tell us who receives the money</td>
+            <td><input type="checkbox" name="howCollect" value="tell us where to send the money"
+				<% if( howCollect.contains("tell us where to send the money")) { %>checked<% } %>
+            	>tell us where to send the money</td>
             </tr>
                         <tr>
-            <td><input type="checkbox" name="howCollect" value="show your government-issued ID">show your government-issued ID</td>
-            <td><input type="checkbox" name="howCollect" value="show your driver's license">show your driver's license</td>
-            <td><input type="checkbox" name="howCollect" value="order a commodity futures or option trade.">order a commodity futures or option trade.</td>
+            <td><input type="checkbox" name="howCollect" value="show your government-issued ID"
+				<% if( howCollect.contains("show your government-issued ID")) { %>checked<% } %>
+            	>show your government-issued ID</td>
+            <td><input type="checkbox" name="howCollect" value="show your driver's license"
+				<% if( howCollect.contains("show your driver's license")) { %>checked<% } %>
+            	>show your driver's license</td>
+            <td><input type="checkbox" name="howCollect" value="order a commodity futures or option trade"
+				<% if( howCollect.contains("order a commodity futures or option trade")) { %>checked<% } %>
+            	>order a commodity futures or option trade.</td>
             </tr>
             </table>
             <br>
