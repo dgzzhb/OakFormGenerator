@@ -21,6 +21,21 @@ public class SubmitAction extends Action{
 
 	@Override
 	public String perform(HttpServletRequest request) {
+		
+		System.out.println("submit called");
+		process(request, "nameOfInstitution");
+		HttpSession session = request.getSession();
+		String sid = session.getId();
+
+		System.out.println("reading session id: "+ sid);
+		System.out.println("save is"+request.getParameter("save"));
+
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("DownLoad")){
+			return "SaveAction?sid="+sid;	
+		}
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Save")){
+			return "SaveAction?sid="+sid;	
+		}
 		System.out.println("submit called");
 		process(request, "nameOfInstitution");
 

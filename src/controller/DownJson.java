@@ -20,8 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONObject;
-@WebServlet("/SaveAction")
-public class SaveAction extends HttpServlet{
+@WebServlet("/DownJson")
+public class DownJson extends HttpServlet{
 	/**
 	 * 
 	 */
@@ -49,9 +49,8 @@ public class SaveAction extends HttpServlet{
 			
 			URL url = new URL(new String("http://localhost:8080/OakFormGenerator/index.do"));
 			URLConnection con = url.openConnection();
-			con.setRequestProperty("Cookie", "JSESSIONID="+req.getParameter("sid"));
-			System.out.println("reading sessionid: "+req.getParameter("sid"));
-
+			con.setRequestProperty("Cookie", "JSESSIONID=D73B323172A859679A29208CB03BA0AB");
+			
 			BufferedReader bf = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
 			String inputLine;

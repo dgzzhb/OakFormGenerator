@@ -5,6 +5,9 @@
 
 
 <head>
+
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Smart Wizard 3 - Vertical Style Example - a javascript
 		jQuery wizard control plugin</title>
@@ -15,13 +18,15 @@
 		<link href="css/smart_wizard_vertical.css" rel="stylesheet"
 			type="text/css">
 			<!-- Include all compiled plugins (below), or include individual files as needed -->
-			
+			  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
    
-			<script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-			<script type="text/javascript" src="js/jquery.smartWizard.js"></script>
-			 <script src="js/bootstrap.min.js"></script>
-			 <script type="text/javascript" src="js/jiali.js"></script>
-			
+ 			<script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+  			<script type="text/javascript" src="js/jquery.smartWizard.js"></script>
+ 			
+   <script src="js/bootstrap.min.js"></script>
+ 			 
+ <script type="text/javascript" src="js/jiali.js"></script>
+ 			
 
 			<script type="text/javascript">
 			function reset() {
@@ -38,46 +43,54 @@
 				});
 			</script>
 			
-		<style>
-			@media print {
-			#non-print {
-			display: none 
-			}}</style>	
+		
+  
+  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  
   
   
 </head>
 <body>
-
+<div id="dialog" title="Dialog Title">I'm a dialog
 
 <form action="UploadServlet" method="post" enctype="multipart/form-data">
 <input type="file" name="fileName">
 <input type="submit" value="Upload">
 </form>
+
+
+</div>
+  					<button id="opener">upload</button>
+ 
+<script>
+$( "#dialog" ).dialog({ autoOpen: false });
+$("#opener1").click(function() {
+  $( "#dialog" ).dialog( "open" );
+});
+</script>
+
+
+
+
+
+
 <!-- <form action="upload" method="post" enctype="multipart/form-data">
     <input type="text" name="description" />
     <input type="file" name="file" />
     <input type="submit" />
 </form> -->
-<form id="myForm" action="save.do" method="POST">
+<form id="myForm" action="submit.do" method="POST">
 	<div class="demoHead">
 		<div>
 			<div style="float: right;" class="demoNavLinks">
 					
- 					<input class="btn" type="submit" value = "Save"/>
+ 					<input name = "save" class="btn" type="submit" value = "Save"/>
+ 					<input name = "save" class="btn" type="submit" value = "DownLoad"/>
  					
- 					<button id="opener1">open the dialog</button>
-<div id="dialog1" title="Dialog Title">I'm a dialog</div>
- 
-<script>
-$( "#dialog1" ).dialog({ autoOpen: false });
-$( "#opener1" ).click(function() {
-  $( "#dialog1" ).dialog( "open" );
-});
-</script>
-
-
- 
-					 <a href="save.do" class="btn">DownLoad</a> 
+ 					<button class = "tryopen" id="opener1">open the dialog</button>
+ 					<a href="save.do?" class="btn">DownLoad</a> 
 					 <a type = "button" class = "btn" id = "non-print" name = "anything" onClick="javascript:window.print();return true" >Print</a>
 					 <a class="btn" type="button" onclick="reset();" >Reset</a>
 					 

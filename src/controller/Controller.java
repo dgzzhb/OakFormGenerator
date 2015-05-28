@@ -25,9 +25,9 @@ public class Controller extends HttpServlet{
 	public void init() throws ServletException {
 		Action.add(new IndexAction());
 		Action.add(new FormAction());
-		Action.add(new SaveAction());
 		Action.add(new LoadAction());
 		Action.add(new SubmitAction());
+		Action.add(new DisplayAction());
 
 	}
 
@@ -45,61 +45,13 @@ public class Controller extends HttpServlet{
 
 		System.out.println("reading action: "+action);
 
-		if ( action.equals("savehtml.do")){
-			
-			String prmtr = req.getParameter("nameOfInstitution");
-			System.out.println("reading Prmtr in prcs: "+prmtr);
-			req.setAttribute("nameOfInstitution", prmtr);
-			
-			URL url = new URL(new String("http://localhost:8080/OakFormGenerator/index.do"));
-			URLConnection con = url.openConnection();
-			con.setRequestProperty("Cookie", "JSESSIONID=D73B323172A859679A29208CB03BA0AB");
-			
-			BufferedReader bf = new BufferedReader(new InputStreamReader(con.getInputStream()));
-
-			String inputLine;
-			String html = "";
-
-			while ((inputLine = bf.readLine()) != null){ 
-			   html += inputLine + "\n";}
-			bf.close();
-			System.out.println("reading html: "+html);
-
-			
-			//String[] prmtr = req.getParameterValues("limitBusiness");
-	        
-			//System.out.println("reading Attr: "+attr);
-			//System.out.println("reading Prmtr: "+prmtr[0]);
-		        
-				//System.out.println("reading Attr: "+attr);
-				//System.out.println("reading Prmtr: "+prmtr[1]);
-			
-			System.out.print("haha");
 		
-		resp.setContentType("application/octet-stream");
-		resp.setHeader("Content-Disposition",
-		"attachment;filename=downloadfilename.html");
-		
-		StringBuffer sb = new StringBuffer(html);
-		InputStream in = new ByteArrayInputStream(sb.toString().getBytes("UTF-8"));
-		ServletOutputStream out = resp.getOutputStream();
-		 
-		byte[] outputByte = new byte[4096];
-		//copy binary contect to output stream
-		while(in.read(outputByte, 0, 4096) != -1)
-		{
-			out.write(outputByte, 0, 4096);
-		}
-		in.close();
-		out.flush();
-		out.close();
-		}
 		
 		//-------------------------------------
-		else{
+		
 		String nextPage = performTheAction(req);
         sendToNextPage(nextPage,req,resp);
-		}
+		
 	}
 	
 
