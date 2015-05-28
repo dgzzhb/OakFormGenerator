@@ -81,7 +81,10 @@ public class SubmitAction extends Action{
 		
 		session.setAttribute("phone", phoneNum);
 		session.setAttribute("noOpt", noOpt);
+		process(request, "questionPhone");
 		process(request, "phoneNum");
+		
+		process(request, "questionUrl");
 		process(request, "url");
 		
 		process(request, "address1");
