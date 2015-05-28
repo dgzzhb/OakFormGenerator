@@ -20,7 +20,7 @@
 </head>
 <body>
   <div class="container" id="main-container">
-    <p>Rev.[Insert date]</p>
+    <p>Rev.${time }</p>
     <H1>Hi This is ${nameOfInstitution}</H1>
     <div class="container" id="facts">
       <table class="table table-bordered">
@@ -72,6 +72,8 @@
             	<c:when test="${forBusiness == false}">
             		<td>No</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
+            	
             </c:choose>
              <c:choose>
 				<c:when test="${forBusiness == true}">
@@ -80,6 +82,7 @@
             	<c:when test="${forBusiness == false}">
             		<td>We don't share.</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
           </tr>
           <tr>
@@ -91,6 +94,7 @@
             	<c:when test="${forMarketing == false}">
             		<td>No</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
             <c:choose>
 				<c:when test="${forMarketing == true}">
@@ -106,6 +110,7 @@
             	<c:when test="${forMarketing == false}">
             		<td>We don't share.</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
           </tr>
           <tr>
@@ -117,6 +122,7 @@
             	<c:when test="${forJointMarket == false}">
             		<td>No</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
             <c:choose>
 				<c:when test="${forJointMarket == true}">
@@ -132,6 +138,7 @@
             	<c:when test="${forJointMarket == false}">
             		<td>We don't share.</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
           </tr>
           <tr>
@@ -143,6 +150,7 @@
             	<c:when test="${forAffiliateTransaction == false}">
             		<td>No</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
              <c:choose>
 				<c:when test="${forAffiliateTransaction == true}">
@@ -158,6 +166,7 @@
             	<c:when test="${forAffiliateTransaction == false}">
             		<td>We don't share.</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
           </tr>        
           <tr>
@@ -169,6 +178,7 @@
             	<c:when test="${forAffiliateCredit == false}">
             		<td>No</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
             <c:choose>
 				<c:when test="${forAffiliateCredit == true}">
@@ -177,6 +187,7 @@
             	<c:when test="${forAffiliateCredit == false}">
             		<td>We don't share.</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
           </tr>
           <tr>
@@ -195,6 +206,7 @@
             	<c:when test="${showSixthRow == false}">
             		<td></td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
             
             <c:choose>
@@ -218,6 +230,7 @@
 		        <c:when test="${showSixthRow == false}">
             		<td></td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
 			</c:choose>
           </tr>
           <tr>
@@ -229,6 +242,7 @@
             	<c:when test="${forNonaffiliate == false}">
             		<td>No</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
             <c:choose>
 				<c:when test="${forNonaffiliate == true}">
@@ -237,6 +251,7 @@
             	<c:when test="${forNonaffiliate == false}">
             		<td>We don't share.</td>
             	</c:when>
+            	<c:otherwise><td></td></c:otherwise>
             </c:choose>
           </tr>                        
         </tbody>
@@ -265,10 +280,17 @@
 						<tbody class="left-colored">
 						<tr>
 							<td>To limit our sharing</td>
-							<td>Call ${phoneNum} - our menu will prompt you through your choices
+							<td>
+							<c:choose>
+							<c:when test="${ phone[0] == true}">Call ${questionPhone} - our menu will prompt you through your choices
+							</c:when>
+							</c:choose>
 							
-							  Visit us online: ${url}
-							
+							<c:choose>
+							<c:when test="${phone[1] == true}">
+							  Visit us online: ${questionUrl}
+							</c:when>
+							</c:choose>
 							  Talk to a banking center associate
 							  Talk to your assigned account representative (e.g., financial advisor, mortgage loan officer)
 							  Please note:
@@ -408,14 +430,14 @@
 			  </ul>
 			  
 			  <c:choose>
-			      		<c:when test="${collectFromAffiliates == true}">
+			      		<c:when test="${whatHappens == true}">
 			      		We also collect your personal information from others, 
 			      		such as credit bureaus, affiliates.
 			      		</c:when>
 			   </c:choose>
 			    <c:choose>
-			      		<c:when test="${collectFromOtherCompany == true}">
-			      		We also collect information from other companies.
+			      		<c:when test="${whatHappensCompany == true}">
+			      		We also collectcollect information from other companies.
 			      		</c:when>
 			   </c:choose>
   			</td>
@@ -465,30 +487,27 @@
             <td>Nonaffiliates</td>
             <td>Companies not related by common ownership or control. They can be Financial and nonfinancial companies.
   Nonaffiliates we share with can include financial services companies such as insurance agencies or mortgage brokers, nonfinancial companies such as retailers, travel companies and membership groups, other companies such as nonprofit groups.
-           <c:choose>
-	          <c:when test="${haveAffiliates == false}">
-		          <c:choose>
-		          <c:when test="${account == true}">
-		             Companies include:
-	 					${ NonaffiliatesList};
-		          </c:when>
-		          </c:choose>
+	          <c:choose>
+	          <c:when test="${account == true}">
+	             Companies include:
+ 					${ NonaffiliatesList}.
 	          </c:when>
-          </c:choose>
+	          </c:choose>
+	         
           </td>
           </tr>
           <tr>
             <td>Joint Marketing</td>
             <td>A formal agreement between nonaffiliated financial companies that together market financial products or services to you.
-  Our joint marketing partners include financial service companies.</td>
+  Our joint marketing partners include financial service companies.
   		
 	          <c:choose>
 	          <c:when test="${jointMarketing == true}">
 	             Companies include:
-						${jointMarketList};
+						${jointMarketList}.
 	          </c:when>
 	          </c:choose>
-	          
+	       </td>   
           </tr>                              
         </tbody>
       </table>
