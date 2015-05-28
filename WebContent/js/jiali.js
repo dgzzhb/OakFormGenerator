@@ -122,17 +122,15 @@ $(function() {
 });
 
 function validateOptOut(){
-
 	var limitShare2 = document.getElementById('limitShare2');
 	var limitShare3 = document.getElementById('limitShare3');
-	var limitshare4 = document.getElementById('limitshare4');
+	var limitShare4 = document.getElementById('limitShare4');
 	var Yes51 = document.getElementById('Yes51');
-	var limitshare6 = document.getElementById('limitshare6');
+	var limitShare6 = document.getElementById('limitShare6');
 	var Yes71 = document.getElementById('Yes71');
 	if (limitShare2.checked || limitShare3.checked 
-			|| limitshare4.checked ||Yes51.checked||limitshare6.checked
+			|| limitShare4.checked ||Yes51.checked||limitShare6.checked
 			||Yes71.checked){
-		alert("Opt OUt");
 		 $("#optOut").show();
 		 $(".optOut").show();
 		 $("#noOptOut").hide();

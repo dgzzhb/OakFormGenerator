@@ -167,7 +167,8 @@ $( "#opener1" ).click(function() {
 												</tr>
 												<tr>
 												<td><input type="checkbox" name="what" value="investment experience">investment experience</td>
-												<td><input type="checkbox" name="what" value="credit­based insurance scores">credit­based insurance scores</td>
+
+												<td><input type="checkbox" name="what" value="credit-­based insurance scores">credit-based insurance scores</td>
 												<td><input type="checkbox" name="what" value="insurance claim history">insurance claim history</td>
 												</tr>
 												<tr>
@@ -178,7 +179,7 @@ $( "#opener1" ).click(function() {
 												<tr>
 												<td><input type="checkbox" name="what" value="account transactions">account transactions</td>
 												<td><input type="checkbox" name="what" value="risk tolerance">risk tolerance</td>
-												<td><input type="checkbox" name="what" value="medical­related debts">medical­related debts</td>
+												<td><input type="checkbox" name="what" value="medical-­related debts">medical-related debts</td>
 												</tr>
 												<tr>
 												<td><input type="checkbox" name="what" value="redit card or other debt">credit card or other debt</td>
@@ -238,9 +239,11 @@ $( "#opener1" ).click(function() {
           <tr>
             <td>For joint marketing with other financial companies</td>
                         <td><input type="radio" name="forJointMarket" value="marketing purposes" class="Yes31">Yes
-<input type="radio" name="forJointMarket" value="false" class="No31">No</td>
-            <td><div class="limit32"  style="display:none"><input type="radio" name="limitJointMarket" value="true" class="triggerOptOut">Yes
-<input type="radio" name="limitJointMarket" value="false">No</div>
+
+<input type="radio" name="forJointMarket" value="false"  id="noShareJointMarketing" class="No31" onclick="validateOptOut()">No</td>
+            <td><div class="limit32"  style="display:none"><input type="radio" name="limitJointMarket" value="true" class="triggerOptOut"  id="limitShare3" onclick="validateOptOut()">Yes
+<input type="radio" name="limitJointMarket" value="false" onclick="validateOptOut()">No</div>
+
 <div class="limit33" style="display:none">We don't share.</div>
 </td>
           </tr>
@@ -248,8 +251,10 @@ $( "#opener1" ).click(function() {
             <td>For our affiliates' everyday business purposes - Information about your transactions and experiences</td>
                         <td><input type="radio" name="forAffiliateTransaction" value="marketing purposes" class="Yes41">Yes
 <input type="radio" name="forAffiliateTransaction" value="false" class="No41">No</td>
-            <td><div class="limit42"  style="display:none"><input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut">Yes
-<input type="radio" name="limitAffiliateTransaction" value="false">No</div>
+
+            <td><div class="limit42"  style="display:none"><input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut"  id="limitShare4" onclick="validateOptOut()">Yes
+<input type="radio" name="limitAffiliateTransaction" value="false"  onclick="validateOptOut()">No</div>
+
 <div class="limit43" style="display:none">We don't share.</div>
 </td>
           </tr>        
@@ -267,8 +272,10 @@ $( "#opener1" ).click(function() {
             </td>
                         <td><div class="share62"  style="display:none"><input type="radio" name="forAffiliateMarket" value="marketing purposes" class="Yes61">Yes
 <input type="radio" name="forAffiliateMarket" value="false" class="No61">No</div></td>
-            <td><div class="limit62"  style="display:none"><input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut" >Yes
-<input type="radio" name="limitAffiliateMarket" value="false">No</div>
+
+            <td><div class="limit62"  style="display:none"><input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut"  id="limitShare6" onclick="validateOptOut()">Yes
+<input type="radio" name="limitAffiliateMarket" value="false" onclick="validateOptOut()">No</div>
+
 <div class="limit63" style="display:none">We don't share.</div>
 </td>
           </tr>
@@ -294,10 +301,10 @@ $( "#opener1" ).click(function() {
           <tr>
             <td>To limit our sharing</td>
             <td>
-            Please select one or more of the applicable opt­-out methods described:<br>
+            Please select one or more of the applicable optÂ­-out methods described:<br>
             <input type="checkbox" name="phone" value="1" id="phone"onclick="validate()">Telephone
              <input type="checkbox" name="phone" value="1"id="website" onclick="validate()">Website
-             <input type="checkbox" name="mail" value="1" id="mail" onclick="validate()">mail-­in opt­-out form 
+             <input type="checkbox" name="mail" value="1" id="mail" onclick="validate()">mail-Â­in optÂ­-out form 
              <br>
              <br>
 <div class="phoneNumber" style="display:none">     Call <input type="text" name="phone" placeholder="phone number"  /> - our menu will prompt you through your choices<br></div>
@@ -306,7 +313,7 @@ $( "#opener1" ).click(function() {
   
 <div class="website" style="display:none"><br>   Visit us online: <input type="text" name="url" placeholder="website"><br></div>
  
-   <div class="mail" style="display:none"><br>Do we require customers to provide additional or different information other than name and address, such as a random opt­out number or a truncated account number?<br>
+   <div class="mail" style="display:none"><br>Do we require customers to provide additional or different information other than name and address, such as a random optÂ­out number or a truncated account number?<br>
    		<input type="radio" name="account" value="marketing purposes">Yes
 <input type="radio" name="account" value="false" >No	
 
@@ -319,8 +326,8 @@ $( "#opener1" ).click(function() {
     <input type="text" name="zip" placeholder="zip"> <br>
    
    	<br>
-   	<!--If we do, we must  include in the far left column of the mail­in form the following statement.  -->
-   	<!-- “If you have a joint account, your choice(s) will apply to everyone on your account unless you mark below. 􏰀 Apply my choice(s) only to me.” -->
+   	<!--If we do, we must  include in the far left column of the mailÂ­in form the following statement.  -->
+   	<!-- âIf you have a joint account, your choice(s) will apply to everyone on your account unless you mark below. ô° Apply my choice(s) only to me.â -->
    	Do we provide their joint accountholders the choice to opt out for only one accountholder?<br>
    	   		<input type="radio" name="jointAccountHolders" value="marketing purposes">Yes
 <input type="radio" name="jointAccountHolders" value="false" >No	
@@ -369,9 +376,9 @@ $( "#opener1" ).click(function() {
             <td>How do we protect my personal information?</td>
             <td>To protect your personal information from unauthorized access and use, we use security measures that comply with federal law. These measures include computer safeguards and secured files and buildings.<br>
             	<br>
-            	Please provide additional information pertaining to its safeguards practices following the designated response to this question here:<br>
-            	(Such information may include information about the institution's use of cookies or other measures it uses to safeguard personal information. )<br>
-            	<input type="text" name="whoIsProviding" placeholder="a maximum of 30 additional words">
+            	Please provide additional information pertaining to its safeguards practices following the designated response to this question here <span class="glyphicon glyphicon-question-sign" title="Such information may include information about the institution's use of cookies or other measures it uses to safeguard personal information. "></span>  <br>
+            	
+            	<textarea rows="2" cols="50" placeholder="a maximum of 30 additional words"></textarea>
             
             </td>
           </tr>
@@ -444,7 +451,7 @@ $( "#opener1" ).click(function() {
             <td>Why can&apos;t I limit all sharing?</td>
             <td>Federal law gives you the right to limit some but not all sharing related to:
             <ul>
- <li> affiliates' everyday business purposes information about your creditworthiness</li>
+ <li> affiliates' everyday business purposes - information about your creditworthiness</li>
   <li>affiliates from using your information to market to you</li>
   <li>nonaffiliates to market to you</li>
   </ul>
@@ -507,12 +514,31 @@ $( "#opener1" ).click(function() {
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Other important information</th>
+            <th>Other important information 
+            <span class="glyphicon glyphicon-question-sign" title=" This box is optional.
+ Only the following types of information can appear in this box.
+(1) State and/or international privacy law information; and/or
+(2) Acknowledgment of receipt form.
+            " ></span>
+            
+            
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>[insert]</td>
+
+            <td>
+             <div   >
+
+ <textarea rows="5" cols="90" >
+
+ </textarea>
+ </div>
+            
+            
+            </td>
+
           </tr>
         </tbody>
       </table>
