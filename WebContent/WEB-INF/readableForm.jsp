@@ -108,27 +108,23 @@ $("#opener1").click(function() {
 					<div id="wizard" class="swMain">
 						<ul>
 							<li><a href="#step-1"> <label class="stepNumber">1</label>
-									<span class="stepDesc"> Facts<br /> <small>say something</small>
+									<span class="stepDesc"> Facts<br /> <small>Basic Information</small>
 								</span>
 							</a></li>
 							<li><a href="#step-2"> <label class="stepNumber">2</label>
-									<span class="stepDesc"> Step 2<br /> <small>Step
-											2 Reasons</small>
+									<span class="stepDesc"> Reasons<br /> <small>Reasons to share</small>
 								</span>
 							</a></li>
 							<li><a href="#step-3"> <label class="stepNumber">3</label>
-									<span class="stepDesc"> Opt-Out<br /> <small>Step
-											3 Opt-Out options</small>
+									<span class="stepDesc"> Opt-Out<br /> <small>Opt-Out & Question</small>
 								</span>
 							</a></li>
 							<li><a href="#step-4"> <label class="stepNumber">4</label>
-									<span class="stepDesc"> Step 4<br /> <small>Step
-											4 Who and What</small>
+									<span class="stepDesc"> Who & What<br /> <small>Who and What</small>
 								</span>
 							</a></li>
 							<li><a href="#step-5"> <label class="stepNumber">5</label>
-									<span class="stepDesc"> Step 5<br /> <small>Step
-											5 Definition and Other Information</small>
+									<span class="stepDesc"> Definition<br /> <small>Definition and Other Information</small>
 								</span>
 							</a></li>
 						</ul>
@@ -138,12 +134,16 @@ $("#opener1").click(function() {
 								<table class="table table-bordered" >
 									<tbody class="left-colored">
 										<tr>
-											<td>FACTS</td>
-											<td>WHAT DOES <input type="text" id ="name"
+											<td>Name Of institution</td>
+											<td>
+											 Please input name of the institution or group of affiliated institutions providing the notice.
+											 <span class="glyphicon glyphicon-question-sign" title="Insert the name of the financial institution providing the notice or a common identity of affiliated institutions jointly providing the notice." ></span>
+											 <br>
+											 <input type="text" id ="name"
 												name="nameOfInstitution" class="nameOfInstitution"
-												placeholder="NAME OF FINANCIAL INSTITUTION" size="32"> DO WITH
-													YOUR PERSONAL INFORMATION?</td>
+												placeholder="NAME OF FINANCIAL INSTITUTION" size="32"></td>
 										</tr>
+
 										<tr>
 											<td>Why?</td>
 											<td>Financial companies choose how they share your
@@ -155,10 +155,16 @@ $("#opener1").click(function() {
 												this notice carefully to understand what we do.</td>
 										</tr>
 										<tr>
-											<td>What?</td>
+											<td>What?&nbsp;
+
+<span class="glyphicon glyphicon-question-sign" title="The bulleted list identifies the types of personal information that the institution collects and shares. All institutions must use the term "Social Security number"in the first bullet" ></span>
+											</td>
 											<td>The types of personal information we collect and
 												share depend on the product or service you have with us.
-												This information can include (Please select 5):<br>
+												This information can include :
+<span class="glyphicon glyphicon-question-sign" title="Institutions must use five (5) of the following terms to complete the bulleted list" ></span>
+
+												<br>
 												<table>
 												<tr>
 												<td>Social Security number</td>
@@ -218,14 +224,26 @@ $("#opener1").click(function() {
 
 						</div>
 						<div id="step-2">
-							<h2 class="StepTitle">Step 2 REASONS</h2>
+							<h2 class="StepTitle">Step 2 REASONS
+
+
+
+</span>
+							</h2>
 							   <div  >
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Reasons we can share your personal information</th>
-            <th>Do we share?</th>
-            <th>Can you limit this sharing?</th>
+            <th>Reasons we can share your personal information
+<span class="glyphicon glyphicon-question-sign" title="The left column lists reasons for sharing or using personal information. Each reason correlates to a specific legal provision."></span>
+
+            </th>
+            <th>Do we share?
+<span class="glyphicon glyphicon-question-sign" title="each institution must provide a 'Yes' or 'No' response that accurately reflects its information sharing policies and practices with respect to the reason listed on the left."></span>
+            </th>
+            <th>Can you limit this sharing?
+<span class="glyphicon glyphicon-question-sign" title="each institution must provide in each box one of the following three (3) responses, as applicable, that reflects whether a consumer can limit such sharing: 'Yes' if it is required to or voluntarily provides an opt­-out; 'No' if it does not provide an opt­-out; or 'We don't share' if it answers 'No' in the middle column. Only the sixth row ('For our affiliates to market to you') may be omitted at the option of the institution."></span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -304,7 +322,7 @@ $("#opener1").click(function() {
 							
 	<div id="step-3">
 			<h2 class="StepTitle">Step 3 OPT-OUT</h2>
-		<div id="noOptOut" >No opt-out here based on the disclosure table.
+		<div id="noOptOut" >No opt-out here based on the disclosure table.<br>
 		 </div>					   
       <table class="table table-bordered" id="optOut" style="display:none">
         <tbody class="left-colored"> 
@@ -355,9 +373,11 @@ $("#opener1").click(function() {
       </table>  
       <!-- Finish To limit our sharing -->
       <!-- Question Field-->
-      <table>
+      <table class="table table-bordered">
       	<tr>
-      	<td>Question</td>
+      	<td>Question
+<span class="glyphicon glyphicon-question-sign" title="Customer service contact information must be inserted as appropriate. Institutions may elect to provide either a phone number, such as a toll-free number, or a Web address, or both. Institutions may include the words 'toll-free' before the telephone number, as appropriate."></span>
+      	</td>
       	<td>Call <input type="text" name="questionPhone" placeholder="phone number"  /> or go to <input type="text" name="questionUrl" placeholder="website"></td>
       	</tr>
       
@@ -461,7 +481,7 @@ $("#opener1").click(function() {
             <td><input type="checkbox" name="howCollect" value="tell us where to send the money">tell us where to send the money</td>
             </tr>
                         <tr>
-            <td><input type="checkbox" name="howCollect" value="show your government­-issued ID">show your government-­issued ID</td>
+            <td><input type="checkbox" name="howCollect" value="show your government-issued ID">show your government-issued ID</td>
             <td><input type="checkbox" name="howCollect" value="show your driver's license">show your driver's license</td>
             <td><input type="checkbox" name="howCollect" value="order a commodity futures or option trade.">order a commodity futures or option trade.</td>
             </tr>
