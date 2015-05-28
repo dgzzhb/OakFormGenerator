@@ -1,5 +1,6 @@
 <%@page import="java.util.HashSet"%>
 <%@page import="java.util.Set"%>
+<jsp:include page="error-list.jsp" />
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
   "http://www.w3.org/TR/html4/loose.dtd">
@@ -173,7 +174,7 @@ $("#opener").click(function() {
 												<td>Social Security number</td>
 												<%
 												HashSet<String> what = (HashSet<String>)session.getAttribute("what");
-												boolean exist = what!=null;
+												boolean exist = (what!=null);
 												%>
 												<td><input type="checkbox" name="what" value="income" <% if(  exist && what.contains("income")) { %>checked<% } %>> income</td>
 												<td><input type="checkbox" name="what" value="account balances" <% if(exist && what.contains("account balances")) { %>checked<% } %>>account balances</td>
@@ -256,7 +257,9 @@ $("#opener").click(function() {
         <tbody>
           <tr>
             <td>For our everyday business purposes - such as to process your transactions, maintain your account(s), respond to court orders and legal investigations, or report to credit bureaus</td>
-            <td><input type="radio" name="forBusiness" value="true" class="Yes11">Yes
+            <td><input type="radio" name="forBusiness" value="true" class="Yes11"
+            <% if(session.getAttribute("forBusiness")!=null && session.getAttribute("forBusiness")=="true") { %>checked<% } %>
+            >Yes
 <input type="radio" name="forBusiness" value="false" class="No11">No</td>
             <td><div class="limit12"  style="display:none">No</div>
 		<div class="limit13" style="display:none">We don't share.</div>

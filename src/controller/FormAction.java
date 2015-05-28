@@ -19,13 +19,13 @@ public class FormAction extends Action{
 	@Override
 	public String perform(HttpServletRequest request) {
 		//return "form.jsp";
-		/*
+		
 		Set<String> set = new HashSet<String>();
-		set.add("income");
+		set.add("forBusiness");
 		set.add("account balances");
 		HttpSession session= request.getSession();
 		session.setAttribute("what", set);
-		*/
+	
 		
 		return "readableForm.jsp";	
 	}
