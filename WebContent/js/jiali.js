@@ -132,12 +132,12 @@ function validateOptOut(){
 			|| limitShare4.checked ||Yes51.checked||limitShare6.checked
 			||Yes71.checked){
 		 $("#optOut").show();
-		 $(".optOut").show();
+		 $("#optOutWhatHappens").show();
 		 $("#noOptOut").hide();
 	}
 	else {
 		 $("#optOut").hide();
-		 $(".optOut").hide();
+		 $("#optOutWhatHappens").hide();
 		 $("#noOptOut").show();
 	}
 }

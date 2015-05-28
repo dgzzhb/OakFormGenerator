@@ -376,7 +376,8 @@ $( "#opener1" ).click(function() {
             <td>How do we protect my personal information?</td>
             <td>To protect your personal information from unauthorized access and use, we use security measures that comply with federal law. These measures include computer safeguards and secured files and buildings.<br>
             	<br>
-            	Please provide additional information pertaining to its safeguards practices following the designated response to this question here <span class="glyphicon glyphicon-question-sign" title="Such information may include information about the institution's use of cookies or other measures it uses to safeguard personal information. "></span>  <br>
+            	Please provide additional information pertaining to its safeguards practices following the designated response to this question here 
+            	<span class="glyphicon glyphicon-question-sign" title="Such information may include information about the institution's use of cookies or other measures it uses to safeguard personal information. "></span>  <br>
             	
             	<textarea rows="2" cols="50" placeholder="a maximum of 30 additional words"></textarea>
             
@@ -384,8 +385,8 @@ $( "#opener1" ).click(function() {
           </tr>
           <tr>
             <td>How do we collect your personal information?</td>
-            <td>We collect your personal information, for example, when you:<br>
-            (Please select 5 of the following terms to complete the bulleted list for this question:)<br>
+            <td>We collect your personal information, for example, when you:
+            <span class="glyphicon glyphicon-question-sign" title="Please select 5 of the following terms to complete the bulleted list for this question. "></span> <br>
             <table>
             <tr>
             <td><input type="checkbox" name="howCollect" value="open an account">open an account</td>
@@ -427,6 +428,22 @@ $( "#opener1" ).click(function() {
             <td><input type="checkbox" name="howCollect" value="apply for a lease">apply for a lease</td>
             <td><input type="checkbox" name="howCollect" value="provide account information">provide account information</td>
             </tr>
+
+            <tr>
+            <td><input type="checkbox" name="howCollect" value="give us your contact information">give us your contact information</td>
+            <td><input type="checkbox" name="howCollect" value="pay us by check">pay us by check</td>
+            <td><input type="checkbox" name="howCollect" value="give us your wage statements">give us your wage statements</td>
+            </tr>
+                        <tr>
+            <td><input type="checkbox" name="howCollect" value="make a wire transfer">make a wire transfer</td>
+            <td><input type="checkbox" name="howCollect" value="tell us who receives the money">tell us who receives the money</td>
+            <td><input type="checkbox" name="howCollect" value="tell us where to send the money">tell us where to send the money</td>
+            </tr>
+                        <tr>
+            <td><input type="checkbox" name="howCollect" value="show your government­-issued ID">show your government-­issued ID</td>
+            <td><input type="checkbox" name="howCollect" value="show your driver's license">show your driver's license</td>
+            <td><input type="checkbox" name="howCollect" value="order a commodity futures or option trade.">order a commodity futures or option trade.</td>
+            </tr>
             </table>
             <br>
             <div id="collect">
@@ -457,7 +474,7 @@ $( "#opener1" ).click(function() {
   </ul>
   State laws and individual companies may give you more rights to limit sharing. See Other important information section for your rights under state law.</td>
           </tr>
-          <tr class="optOut">
+          <tr id="optOutWhatHappens" style="display:none">
             <td>What happens when I limit sharing for an account I hold jointly with someone else?</td>
             <td>
             <select>
@@ -465,7 +482,9 @@ $( "#opener1" ).click(function() {
   <option  value="whatHappens">Your choices will apply to you alone unless you tell us otherwise. </option>
 </select>
         </td>
-          </tr>                               
+          </tr>  
+      
+                                      
         </tbody>
       </table>
 
