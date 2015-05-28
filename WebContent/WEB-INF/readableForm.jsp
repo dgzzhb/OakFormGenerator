@@ -1,3 +1,6 @@
+<%@page import="java.util.HashSet"%>
+<%@page import="java.util.Set"%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
   "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -168,39 +171,42 @@ $("#opener").click(function() {
 												<table>
 												<tr>
 												<td>Social Security number</td>
-												<td><input type="checkbox" name="what" value="income">income</td>
-												<td><input type="checkbox" name="what" value="account balances">account balances</td>
+												<%
+												HashSet<String> what = (HashSet<String>)session.getAttribute("what");
+												%>
+												<td><input type="checkbox" name="what" value="income" <% if( what.contains("income")) { %>checked<% } %>> income</td>
+												<td><input type="checkbox" name="what" value="account balances" <% if( what.contains("account balances")) { %>checked<% } %>>account balances</td>
 												</tr>
 												<tr>
-												<td><input type="checkbox" name="what" value="payment history">payment history</td>
-												<td><input type="checkbox" name="what" value="transaction history">transaction history</td>
-												<td><input type="checkbox" name="what" value="transaction or loss history">transaction or loss history</td>
+												<td><input type="checkbox" name="what" value="payment history" <% if( what.contains("payment history")) { %>checked<% } %>>payment history</td>
+												<td><input type="checkbox" name="what" value="transaction history" <% if( what.contains("transaction history")) { %>checked<% } %>>transaction history</td>
+												<td><input type="checkbox" name="what" value="transaction or loss history" <% if( what.contains("transaction or loss history")) { %>checked<% } %>>transaction or loss history</td>
 												</tr>
 												<tr>
-												<td><input type="checkbox" name="what" value="credit history">credit history</td>
-												<td><input type="checkbox" name="what" value="credit scores">credit scores</td>
-												<td><input type="checkbox" name="what" value="assets">assets</td>
+												<td><input type="checkbox" name="what" value="credit history" <% if( what.contains("credit history")) { %>checked<% } %>>credit history</td>
+												<td><input type="checkbox" name="what" value="credit scores" <% if( what.contains("credit scores")) { %>checked<% } %>>credit scores</td>
+												<td><input type="checkbox" name="what" value="assets" <% if( what.contains("assets")) { %>checked<% } %>>assets</td>
 												</tr>
 												<tr>
-												<td><input type="checkbox" name="what" value="investment experience">investment experience</td>
+												<td><input type="checkbox" name="what" value="investment experience" <% if( what.contains("investment experience")) { %>checked<% } %>>investment experience</td>
 
-												<td><input type="checkbox" name="what" value="credit-­based insurance scores">credit-based insurance scores</td>
-												<td><input type="checkbox" name="what" value="insurance claim history">insurance claim history</td>
+												<td><input type="checkbox" name="what" value="credit-­based insurance scores" <% if( what.contains("credit-­based insurance scores")) { %>checked<% } %>>credit-based insurance scores</td>
+												<td><input type="checkbox" name="what" value="insurance claim history" <% if( what.contains("insurance claim history")) { %>checked<% } %>>insurance claim history</td>
 												</tr>
 												<tr>
-												<td><input type="checkbox" name="what" value="medical information">medical information</td>
-												<td><input type="checkbox" name="what" value="overdraft history">overdraft history</td>
-												<td><input type="checkbox" name="what" value="purchase history">purchase history</td>
+												<td><input type="checkbox" name="what" value="medical information" <% if( what.contains("medical information")) { %>checked<% } %>>medical information</td>
+												<td><input type="checkbox" name="what" value="overdraft history" <% if( what.contains("overdraft history")) { %>checked<% } %>>overdraft history</td>
+												<td><input type="checkbox" name="what" value="purchase history" <% if( what.contains("purchase history")) { %>checked<% } %>>purchase history</td>
 												</tr>
 												<tr>
-												<td><input type="checkbox" name="what" value="account transactions">account transactions</td>
-												<td><input type="checkbox" name="what" value="risk tolerance">risk tolerance</td>
-												<td><input type="checkbox" name="what" value="medical-­related debts">medical-related debts</td>
+												<td><input type="checkbox" name="what" value="account transactions" <% if( what.contains("account transactions")) { %>checked<% } %>>account transactions</td>
+												<td><input type="checkbox" name="what" value="risk tolerance" <% if( what.contains("risk tolerance")) { %>checked<% } %>>risk tolerance</td>
+												<td><input type="checkbox" name="what" value="medical-­related debts" <% if( what.contains("medical-­related debts")) { %>checked<% } %>>medical-related debts</td>
 												</tr>
 												<tr>
-												<td><input type="checkbox" name="what" value="redit card or other debt">credit card or other debt</td>
-												<td><input type="checkbox" name="what" value="mortgage rates and payments">mortgage rates and payments</td>
-												<td><input type="checkbox" name="what" value="retirement assets">retirement assets</td>
+												<td><input type="checkbox" name="what" value="credit card or other debt" <% if( what.contains("credit card or other debt")) { %>checked<% } %>>credit card or other debt</td>
+												<td><input type="checkbox" name="what" value="mortgage rates and payments" <% if( what.contains("mortgage rates and payments")) { %>checked<% } %>>mortgage rates and payments</td>
+												<td><input type="checkbox" name="what" value="retirement assets" <% if( what.contains("retirement assets")) { %>checked<% } %>>retirement assets</td>
 												</tr>
 												</table>
 
