@@ -61,7 +61,7 @@ $(function() {
 	});
 });
 $(function() {
-	$('.No51').change(function() {
+	$('#No51').change(function() {
 		$(".limit52").hide();
 		$(".limit53").show();
 		 
@@ -110,6 +110,7 @@ $(function() {
 		 
 	});
 });
+
 $(function() {
 	$('.triggerOptOut').change(function() {
 		 $("#optOut").show();
@@ -120,6 +121,28 @@ $(function() {
     
 });
 
+function validateOptOut(){
+
+	var limitShare2 = document.getElementById('limitShare2');
+	var limitShare3 = document.getElementById('limitShare3');
+	var limitshare4 = document.getElementById('limitshare4');
+	var Yes51 = document.getElementById('Yes51');
+	var limitshare6 = document.getElementById('limitshare6');
+	var Yes71 = document.getElementById('Yes71');
+	if (limitShare2.checked || limitShare3.checked 
+			|| limitshare4.checked ||Yes51.checked||limitshare6.checked
+			||Yes71.checked){
+		alert("Opt OUt");
+		 $("#optOut").show();
+		 $(".optOut").show();
+		 $("#noOptOut").hide();
+	}
+	else {
+		 $("#optOut").hide();
+		 $(".optOut").hide();
+		 $("#noOptOut").show();
+	}
+}
 
 function validate(){
 	  var remember = document.getElementById('phone');

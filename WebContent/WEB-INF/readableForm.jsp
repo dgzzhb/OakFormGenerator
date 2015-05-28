@@ -218,17 +218,17 @@ Select File to Upload:<input type="file" name="fileName">
           <tr>
             <td>For our marketing purposes - with service providers we use to offer our products and services to you</td>
             <td><input type="radio" name="forMarketing" value="marketing purposes" class="Yes21">Yes
-<input type="radio" name="forMarketing" value="false" class="No21">No</td>
-            <td><div class="limit22"  style="display:none"><input type="radio" name="limitMarketing" value="true" class="triggerOptOut">Yes
-<input type="radio" name="limitMarketing" value="false">No</div>
+<input type="radio" name="forMarketing" value="false" class="No21" id="noShareMarketing" onclick="validateOptOut()">No</td>
+            <td><div class="limit22"  style="display:none"><input type="radio" name="limitMarketing" value="true" id="limitShare2" onclick="validateOptOut()">Yes
+<input type="radio" name="limitMarketing" value="false" onclick="validateOptOut()">No</div>
 <div class="limit23" style="display:none">We don't share.</div>
 </td>
           </tr>
           <tr>
             <td>For joint marketing with other financial companies</td>
                         <td><input type="radio" name="forJointMarket" value="marketing purposes" class="Yes31">Yes
-<input type="radio" name="forJointMarket" value="false" class="No31">No</td>
-            <td><div class="limit32"  style="display:none"><input type="radio" name="limitJointMarket" value="true" class="triggerOptOut">Yes
+<input type="radio" name="forJointMarket" value="false"  id="noShareJointMarketing" class="No31" onclick="validateOptOut()">No</td>
+            <td><div class="limit32"  style="display:none"><input type="radio" name="limitJointMarket" value="true" class="triggerOptOut"  id="limitShare3" onclick="validateOptOut()">Yes
 <input type="radio" name="limitJointMarket" value="false">No</div>
 <div class="limit33" style="display:none">We don't share.</div>
 </td>
@@ -237,7 +237,7 @@ Select File to Upload:<input type="file" name="fileName">
             <td>For our affiliates' everyday business purposes - Information about your transactions and experiences</td>
                         <td><input type="radio" name="forAffiliateTransaction" value="marketing purposes" class="Yes41">Yes
 <input type="radio" name="forAffiliateTransaction" value="false" class="No41">No</td>
-            <td><div class="limit42"  style="display:none"><input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut">Yes
+            <td><div class="limit42"  style="display:none"><input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut"  id="limitShare4" onclick="validateOptOut()">Yes
 <input type="radio" name="limitAffiliateTransaction" value="false">No</div>
 <div class="limit43" style="display:none">We don't share.</div>
 </td>
@@ -245,7 +245,7 @@ Select File to Upload:<input type="file" name="fileName">
           <tr>
             <td>For our affiliates' everyday business purposes - Information about your creditworthiness</td>
                         <td><input type="radio" name="forAffiliateCredit" value="marketing purposes" id="Yes51" class="triggerOptOut">Yes
-<input type="radio" name="forAffiliateCredit" value="false" class="No51">No</td>
+<input type="radio" name="forAffiliateCredit" value="false" id="No51" onclick="validateOptOut()">No</td>
             <td><div class="limit52"  style="display:none">Yes</div>
 <div class="limit53" style="display:none">We don't share.</div>
 </td>
@@ -256,7 +256,7 @@ Select File to Upload:<input type="file" name="fileName">
             </td>
                         <td><div class="share62"  style="display:none"><input type="radio" name="forAffiliateMarket" value="marketing purposes" class="Yes61">Yes
 <input type="radio" name="forAffiliateMarket" value="false" class="No61">No</div></td>
-            <td><div class="limit62"  style="display:none"><input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut" >Yes
+            <td><div class="limit62"  style="display:none"><input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut"  id="limitShare6" onclick="validateOptOut()">Yes
 <input type="radio" name="limitAffiliateMarket" value="false">No</div>
 <div class="limit63" style="display:none">We don't share.</div>
 </td>
@@ -264,7 +264,7 @@ Select File to Upload:<input type="file" name="fileName">
           <tr>
             <td>For nonaffiliates to market to you</td>
                         <td><input type="radio" name="forNonaffiliate" value="marketing purposes" id="Yes71" class="triggerOptOut">Yes
-<input type="radio" name="forNonaffiliate" value="false" class="No71">No</td>
+<input type="radio" name="forNonaffiliate" value="false" class="No71" onclick="validateOptOut()">No</td>
             <td><div class="limit72"  style="display:none">Yes</div>
 <div class="limit73" style="display:none">We don't share.</div>
 </td>
