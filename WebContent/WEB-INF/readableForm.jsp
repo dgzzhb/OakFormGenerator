@@ -53,8 +53,7 @@
 
 
 <form action="UploadServlet" method="post" enctype="multipart/form-data">
-Select File to Upload:<input type="file" name="fileName">
-<br>
+<input type="file" name="fileName">
 <input type="submit" value="Upload">
 </form>
 <!-- <form action="upload" method="post" enctype="multipart/form-data">
@@ -68,6 +67,18 @@ Select File to Upload:<input type="file" name="fileName">
 			<div style="float: right;" class="demoNavLinks">
 					
  					<input class="btn" type="submit" value = "Save"/>
+ 					
+ 					<button id="opener1">open the dialog</button>
+<div id="dialog1" title="Dialog Title">I'm a dialog</div>
+ 
+<script>
+$( "#dialog1" ).dialog({ autoOpen: false });
+$( "#opener1" ).click(function() {
+  $( "#dialog1" ).dialog( "open" );
+});
+</script>
+
+
  
 					 <a href="save.do" class="btn">DownLoad</a> 
 					 <a type = "button" class = "btn" id = "non-print" name = "anything" onClick="javascript:window.print();return true" >Print</a>
@@ -156,7 +167,7 @@ Select File to Upload:<input type="file" name="fileName">
 												</tr>
 												<tr>
 												<td><input type="checkbox" name="what" value="investment experience">investment experience</td>
-												<td><input type="checkbox" name="what" value="credit-�based insurance scores">credit­based insurance scores</td>
+												<td><input type="checkbox" name="what" value="credit­based insurance scores">credit­based insurance scores</td>
 												<td><input type="checkbox" name="what" value="insurance claim history">insurance claim history</td>
 												</tr>
 												<tr>
@@ -218,17 +229,17 @@ Select File to Upload:<input type="file" name="fileName">
           <tr>
             <td>For our marketing purposes - with service providers we use to offer our products and services to you</td>
             <td><input type="radio" name="forMarketing" value="marketing purposes" class="Yes21">Yes
-<input type="radio" name="forMarketing" value="false" class="No21" id="noShareMarketing" onclick="validateOptOut()">No</td>
-            <td><div class="limit22"  style="display:none"><input type="radio" name="limitMarketing" value="true" id="limitShare2" onclick="validateOptOut()">Yes
-<input type="radio" name="limitMarketing" value="false" onclick="validateOptOut()">No</div>
+<input type="radio" name="forMarketing" value="false" class="No21">No</td>
+            <td><div class="limit22"  style="display:none"><input type="radio" name="limitMarketing" value="true" class="triggerOptOut">Yes
+<input type="radio" name="limitMarketing" value="false">No</div>
 <div class="limit23" style="display:none">We don't share.</div>
 </td>
           </tr>
           <tr>
             <td>For joint marketing with other financial companies</td>
                         <td><input type="radio" name="forJointMarket" value="marketing purposes" class="Yes31">Yes
-<input type="radio" name="forJointMarket" value="false"  id="noShareJointMarketing" class="No31" onclick="validateOptOut()">No</td>
-            <td><div class="limit32"  style="display:none"><input type="radio" name="limitJointMarket" value="true" class="triggerOptOut"  id="limitShare3" onclick="validateOptOut()">Yes
+<input type="radio" name="forJointMarket" value="false" class="No31">No</td>
+            <td><div class="limit32"  style="display:none"><input type="radio" name="limitJointMarket" value="true" class="triggerOptOut">Yes
 <input type="radio" name="limitJointMarket" value="false">No</div>
 <div class="limit33" style="display:none">We don't share.</div>
 </td>
@@ -237,7 +248,7 @@ Select File to Upload:<input type="file" name="fileName">
             <td>For our affiliates' everyday business purposes - Information about your transactions and experiences</td>
                         <td><input type="radio" name="forAffiliateTransaction" value="marketing purposes" class="Yes41">Yes
 <input type="radio" name="forAffiliateTransaction" value="false" class="No41">No</td>
-            <td><div class="limit42"  style="display:none"><input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut"  id="limitShare4" onclick="validateOptOut()">Yes
+            <td><div class="limit42"  style="display:none"><input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut">Yes
 <input type="radio" name="limitAffiliateTransaction" value="false">No</div>
 <div class="limit43" style="display:none">We don't share.</div>
 </td>
@@ -245,7 +256,7 @@ Select File to Upload:<input type="file" name="fileName">
           <tr>
             <td>For our affiliates' everyday business purposes - Information about your creditworthiness</td>
                         <td><input type="radio" name="forAffiliateCredit" value="marketing purposes" id="Yes51" class="triggerOptOut">Yes
-<input type="radio" name="forAffiliateCredit" value="false" id="No51" onclick="validateOptOut()">No</td>
+<input type="radio" name="forAffiliateCredit" value="false" class="No51">No</td>
             <td><div class="limit52"  style="display:none">Yes</div>
 <div class="limit53" style="display:none">We don't share.</div>
 </td>
@@ -256,7 +267,7 @@ Select File to Upload:<input type="file" name="fileName">
             </td>
                         <td><div class="share62"  style="display:none"><input type="radio" name="forAffiliateMarket" value="marketing purposes" class="Yes61">Yes
 <input type="radio" name="forAffiliateMarket" value="false" class="No61">No</div></td>
-            <td><div class="limit62"  style="display:none"><input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut"  id="limitShare6" onclick="validateOptOut()">Yes
+            <td><div class="limit62"  style="display:none"><input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut" >Yes
 <input type="radio" name="limitAffiliateMarket" value="false">No</div>
 <div class="limit63" style="display:none">We don't share.</div>
 </td>
@@ -264,7 +275,7 @@ Select File to Upload:<input type="file" name="fileName">
           <tr>
             <td>For nonaffiliates to market to you</td>
                         <td><input type="radio" name="forNonaffiliate" value="marketing purposes" id="Yes71" class="triggerOptOut">Yes
-<input type="radio" name="forNonaffiliate" value="false" class="No71" onclick="validateOptOut()">No</td>
+<input type="radio" name="forNonaffiliate" value="false" class="No71">No</td>
             <td><div class="limit72"  style="display:none">Yes</div>
 <div class="limit73" style="display:none">We don't share.</div>
 </td>
@@ -466,56 +477,30 @@ Select File to Upload:<input type="file" name="fileName">
             <td>Affiliates</td>
             <td>
             Do we have affiliates?<br>
-            <input type="radio" name="account" value="Affiliate" onclick="showHide('#shareWithAffiliates','#shareWithNonaffiliates')">Yes
-<input type="radio" name="account" value="NoAffiliate" onclick="showHide('#shareWithNonaffiliates','#shareWithAffiliates')" >No <br><br>
+            <input type="radio" name="account" value="Affiliate">Yes
+<input type="radio" name="account" value="NoAffiliate" >No <br><br>
 
-			 <div id="shareWithAffiliates" style="display:none" >
 			Do we share personal information with affiliates?<br>
-			 <input type="radio" name="account" value="Affiliate" onclick="show('#affiliatesList')">Yes
-<input type="radio" name="account" value="NoAffiliate"  onclick="hide('#affiliatesList')">No <br><br>
-</div>
+			
 
-		<div id="affiliatesList" style="display:none" >
-		Our affiliates include companies with a <input type="text" name="whoIsProviding" placeholder="common corporate identity of financial institution"> name; 
-		financial companies such as <input type="text" name="whoIsProviding" placeholder="illustrative list of companies">; 
-		nonfinancial companies, such as <input type="text" name="whoIsProviding" placeholder="illustrative list of companies">;
-		 and others, such as <input type="text" name="whoIsProviding" placeholder="illustrative list">.
-		</div>
-</td>
+		
+
+
+            
+            
+            
+            Companies related by common ownership or control. They can be Financial and nonfinancial companies.
+  Our affiliates include companies that utilize the names Bank of America; Banc of America; U.S. Trust; LandSafe or Merrill Lynch, financial companies such as General Fidelity Life Insurance Company.</td>
           </tr>
-          <tr id="shareWithNonaffiliates" style="display:none">
+          <tr>
             <td>Nonaffiliates</td>
-            <td>
-             <div  >
-            	Do we share with nonaffiliated third parties?<br>
-			 <input type="radio" name="account" value="Affiliate"onclick="show('#NonaffiliatesList')" >Yes
-<input type="radio" name="account" value="NoAffiliate" onclick="hide('#NonaffiliatesList')">No <br><br>
-</div>
-
- <div id="NonaffiliatesList" style="display:none" >
- <textarea rows="4" cols="50">
-Please input list categories of companies such as mortgage companies, insurance companies, direct marketing companies, and nonprofit organizations
-</textarea>
- 
- </div>
-  </td>
+            <td>Companies not related by common ownership or control. They can be Financial and nonfinancial companies.
+  Nonaffiliates we share with can include financial services companies such as insurance agencies or mortgage brokers, nonfinancial companies such as retailers, travel companies and membership groups, other companies such as nonprofit groups.</td>
           </tr>
           <tr>
             <td>Joint Marketing</td>
-            <td>
-                         <div  >
-            	Do we engage in joint marketing?<br>
-			 <input type="radio" name="account" value="Affiliate"onclick="show('#jointMarketList')" >Yes
-<input type="radio" name="account" value="NoAffiliate" onclick="hide('#jointMarketList')">No <br><br>
-</div>
-
- <div id="jointMarketList" style="display:none" >
- Our joint marketing partners include:<br>
- <textarea rows="4" cols="50">
- Please input list categories of companies such as credit card companies.</textarea>
- </div>
- 
- </td>
+            <td>A formal agreement between nonaffiliated financial companies that together market financial products or services to you.
+  Our joint marketing partners include financial service companies.</td>
           </tr>                              
         </tbody>
       </table>
@@ -527,20 +512,7 @@ Please input list categories of companies such as mortgage companies, insurance 
         </thead>
         <tbody>
           <tr>
-            <td>
-             <div   >
-
- <textarea rows="5" cols="90">
- This box is optional.
- Only the following types of information can appear in this box.
-(1) State and/or international privacy law information; and/or
-(2) Acknowledgment of receipt form.
-
- </textarea>
- </div>
-            
-            
-            </td>
+            <td>[insert]</td>
           </tr>
         </tbody>
       </table>
