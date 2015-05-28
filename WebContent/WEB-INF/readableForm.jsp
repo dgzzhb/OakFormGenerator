@@ -229,7 +229,7 @@ Select File to Upload:<input type="file" name="fileName">
                         <td><input type="radio" name="forJointMarket" value="marketing purposes" class="Yes31">Yes
 <input type="radio" name="forJointMarket" value="false"  id="noShareJointMarketing" class="No31" onclick="validateOptOut()">No</td>
             <td><div class="limit32"  style="display:none"><input type="radio" name="limitJointMarket" value="true" class="triggerOptOut"  id="limitShare3" onclick="validateOptOut()">Yes
-<input type="radio" name="limitJointMarket" value="false">No</div>
+<input type="radio" name="limitJointMarket" value="false" onclick="validateOptOut()">No</div>
 <div class="limit33" style="display:none">We don't share.</div>
 </td>
           </tr>
@@ -238,7 +238,7 @@ Select File to Upload:<input type="file" name="fileName">
                         <td><input type="radio" name="forAffiliateTransaction" value="marketing purposes" class="Yes41">Yes
 <input type="radio" name="forAffiliateTransaction" value="false" class="No41">No</td>
             <td><div class="limit42"  style="display:none"><input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut"  id="limitShare4" onclick="validateOptOut()">Yes
-<input type="radio" name="limitAffiliateTransaction" value="false">No</div>
+<input type="radio" name="limitAffiliateTransaction" value="false"  onclick="validateOptOut()">No</div>
 <div class="limit43" style="display:none">We don't share.</div>
 </td>
           </tr>        
@@ -257,7 +257,7 @@ Select File to Upload:<input type="file" name="fileName">
                         <td><div class="share62"  style="display:none"><input type="radio" name="forAffiliateMarket" value="marketing purposes" class="Yes61">Yes
 <input type="radio" name="forAffiliateMarket" value="false" class="No61">No</div></td>
             <td><div class="limit62"  style="display:none"><input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut"  id="limitShare6" onclick="validateOptOut()">Yes
-<input type="radio" name="limitAffiliateMarket" value="false">No</div>
+<input type="radio" name="limitAffiliateMarket" value="false" onclick="validateOptOut()">No</div>
 <div class="limit63" style="display:none">We don't share.</div>
 </td>
           </tr>
