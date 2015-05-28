@@ -301,10 +301,10 @@ $( "#opener1" ).click(function() {
           <tr>
             <td>To limit our sharing</td>
             <td>
-            Please select one or more of the applicable optÂ­-out methods described:<br>
+            Please select one or more of the applicable opt­-out methods described:<br>
             <input type="checkbox" name="phone" value="1" id="phone"onclick="validate()">Telephone
              <input type="checkbox" name="phone" value="1"id="website" onclick="validate()">Website
-             <input type="checkbox" name="mail" value="1" id="mail" onclick="validate()">mail-Â­in optÂ­-out form 
+             <input type="checkbox" name="mail" value="1" id="mail" onclick="validate()">mail-­in opt-out form 
              <br>
              <br>
 <div class="phoneNumber" style="display:none">     Call <input type="text" name="phone" placeholder="phone number"  /> - our menu will prompt you through your choices<br></div>
@@ -313,7 +313,7 @@ $( "#opener1" ).click(function() {
   
 <div class="website" style="display:none"><br>   Visit us online: <input type="text" name="url" placeholder="website"><br></div>
  
-   <div class="mail" style="display:none"><br>Do we require customers to provide additional or different information other than name and address, such as a random optÂ­out number or a truncated account number?<br>
+   <div class="mail" style="display:none"><br>Do we require customers to provide additional or different information other than name and address, such as a random opt-out number or a truncated account number?<br>
    		<input type="radio" name="account" value="marketing purposes">Yes
 <input type="radio" name="account" value="false" >No	
 
@@ -326,8 +326,8 @@ $( "#opener1" ).click(function() {
     <input type="text" name="zip" placeholder="zip"> <br>
    
    	<br>
-   	<!--If we do, we must  include in the far left column of the mailÂ­in form the following statement.  -->
-   	<!-- âIf you have a joint account, your choice(s) will apply to everyone on your account unless you mark below. ô° Apply my choice(s) only to me.â -->
+   	<!--If we do, we must  include in the far left column of the mail-­in form the following statement.  -->
+   	<!-- If you have a joint account, your choice(s) will apply to everyone on your account unless you mark below. ô° Apply my choice(s) only to me. -->
    	Do we provide their joint accountholders the choice to opt out for only one accountholder?<br>
    	   		<input type="radio" name="jointAccountHolders" value="marketing purposes">Yes
 <input type="radio" name="jointAccountHolders" value="false" >No	
