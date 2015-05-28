@@ -356,7 +356,7 @@ $( "#opener1" ).click(function() {
         </thead>
         <tbody>
           <tr>
-            <td>Who is providing this notice?<span class="glyphicon glyphicon-question-sign" title="Please omit it when only one financial institution provides the model form." ></span></td>
+            <td>Who is providing this notice?&nbsp;<span class="glyphicon glyphicon-question-sign" title="Please omit it when only one financial institution provides the model form." ></span></td>
             <td><input type="text" name="whoIsProviding" placeholder="insert" class="nameOfInstitution"></td>
           </tr>
         </tbody>
@@ -445,13 +445,13 @@ $( "#opener1" ).click(function() {
             <br>
             <div id="collect">
             Do we collect personal information from their affiliates and/or credit bureaus?<br>
-            <input type="radio" name="whatHappens" value="true" onclick="hide('#collectFromOtherCompany')">Yes
-            <input type="radio" name="whatHappens" value="false" onclick="show('#collectFromOtherCompany')">No<br>
+            <input type="radio" name="collectFromAffiliates" value="true" onclick="hide('#collectFromOtherCompany')">Yes
+            <input type="radio" name="collectFromAffiliates" value="false" onclick="show('#collectFromOtherCompany')">No<br>
             </div>
              <div id="collectFromOtherCompany" style="display:none" >
             <br>Do we collect information from other companies?<br>
-            <input type="radio" name="whatHappens" value="true" >Yes
-            <input type="radio" name="whatHappens" value="false" >No<br>
+            <input type="radio" name="collectFromOtherCompany" value="true" >Yes
+            <input type="radio" name="collectFromOtherCompany" value="false" >No<br>
            </div>
             
             
