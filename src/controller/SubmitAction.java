@@ -1,7 +1,12 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import org.genericdao.RollbackException;
 
 public class SubmitAction extends Action{
 	private void process(HttpServletRequest request, String name ){
@@ -41,14 +46,11 @@ public class SubmitAction extends Action{
 		System.out.println("reading session id: "+ sid);
 		System.out.println("save is"+request.getParameter("save"));
 
-		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Save")){
-			return "DownJson?sid="+sid;	
-		}
-		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Download")){
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("DownLoad")){
 			return "SaveAction?sid="+sid;	
 		}
-		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Preview")){
-			return "display.do";	
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Save")){
+			return "SaveAction?sid="+sid;	
 		}
 		System.out.println("submit called");
 		
@@ -120,8 +122,22 @@ public class SubmitAction extends Action{
 		processArray(request, "howCollect");
 		process(request, "collectFromAffiliates");
 		process(request, "collectFromOtherCompany");
+		
+		List<String> errors = new ArrayList<String>();
+		request.setAttribute("errors", errors);
+		
+		String[] whats = request.getParameterValues("what");
+		if (whats == null || whats.length < 5) {
+			errors.add("At least five types of personal information we collect should be selected.");
+			return "readableForm.jsp";
+		}
+		String[] howCollects = request.getParameterValues("howCollect");
+		if (howCollects == null || howCollects.length < 5) {
+			errors.add("At least five ways we collect your personal information should be selected.");
+			return "readableForm.jsp";
+		}
 
-		return "displayform.jsp";	
+		return "index.jsp";	
 
 	}
 	
