@@ -509,8 +509,8 @@ $( "#opener1" ).click(function() {
             
             
           </tr>
-          <tr>
-            <td id="shareWithNonaffiliates" style="display:none">Nonaffiliates</td>
+          <tr id="shareWithNonaffiliates" style="display:none">
+            <td >Nonaffiliates</td>
             
               <td>
              <div  >
