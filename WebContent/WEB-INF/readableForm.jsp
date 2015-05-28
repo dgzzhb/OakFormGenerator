@@ -329,10 +329,10 @@ $("#opener1").click(function() {
           <tr>
             <td>To limit our sharing</td>
             <td>
-            Please select one or more of the applicable opt­-out methods described:<br>
+            Please select one or more of the applicable opt-out methods described:<br>
             <input type="checkbox" name="phone" value="1" id="phone"onclick="validate()">Telephone
              <input type="checkbox" name="phone" value="1"id="website" onclick="validate()">Website
-             <input type="checkbox" name="phone" value="1" id="mail" onclick="validate()">mail-­in opt-out form 
+             <input type="checkbox" name="phone" value="1" id="mail" onclick="validate()">mail-in opt-out form 
              <br>
              <br>
 <div class="phoneNumber" style="display:none">     Call <input type="text" name="phoneNum" placeholder="phone number"  /> - our menu will prompt you through your choices<br></div>
