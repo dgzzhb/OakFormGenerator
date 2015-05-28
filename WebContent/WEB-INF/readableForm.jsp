@@ -356,7 +356,7 @@ $("#opener1").click(function() {
       <!-- Finish To limit our sharing -->
       <!-- Finish To limit our sharing -->
       <table>
-      
+      	
       
       </table>
       
@@ -397,7 +397,7 @@ $("#opener1").click(function() {
             	Please provide additional information pertaining to its safeguards practices following the designated response to this question here 
             	<span class="glyphicon glyphicon-question-sign" title="Such information may include information about the institution's use of cookies or other measures it uses to safeguard personal information. "></span>  <br>
             	
-            	<textarea rows="2" cols="50" placeholder="a maximum of 30 additional words"></textarea>
+            	<textarea rows="2" cols="50" placeholder="a maximum of 30 additional words" name="Providing"></textarea>
             
             </td>
           </tr>
@@ -577,9 +577,10 @@ $("#opener1").click(function() {
 </div>
 
  <div id="jointMarketList" style="display:none" >
- Our joint marketing partners include:<br>
- <textarea rows="4" cols="50">
- Please input list categories of companies such as credit card companies.</textarea>
+ Our joint marketing partners include:<span class="glyphicon glyphicon-question-sign" title="Please input list categories of companies such as credit card companies." ></span><br> 
+ 
+ <textarea rows="4" cols="50" name="jointMarketList">
+ </textarea>
  </div>
  
  </td>
