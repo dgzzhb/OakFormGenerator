@@ -12,6 +12,17 @@ public class SubmitAction extends Action{
 		System.out.println("reading Prmtr in prcs: "+prmtr);
 		session.setAttribute(name, prmtr);
 	}
+	
+	private void processArray(HttpServletRequest request, String name ){
+		HttpSession session = request.getSession();
+		System.out.println("reading session id: "+ session.getId());
+
+		String[] prmtr = request.getParameterValues(name);
+		System.out.println("reading Prmtr in prcs: "+prmtr);
+		session.setAttribute(name, prmtr);
+	}
+	
+	
 	@Override
 	public String getName() {
 		return "submit.do";
@@ -38,7 +49,64 @@ public class SubmitAction extends Action{
 		}
 		System.out.println("submit called");
 		process(request, "nameOfInstitution");
-
+		processArray(request, "what");
+		
+		process(request, "forBusiness");
+		process(request, "forMarketing");
+		process(request, "limitMarketing");
+		process(request, "forJointMarket");
+		process(request, "limitJointMarket");
+		process(request, "forAffiliateTransaction");
+		process(request, "limitAffiliateTransaction");
+		process(request, "forAffiliateCredit");
+		process(request, "showSixthRow");
+		process(request, "forAffiliateMarket");
+		process(request, "limitAffiliateMarket");
+		process(request, "forNonaffiliate");
+		
+		HttpSession session = request.getSession();
+		String[] prmtr = request.getParameterValues("phone");
+		String noOpt = "false";
+		String[] phoneNum = {"false", "false", "false"};
+		if(prmtr == null) {
+			noOpt = "true";
+			
+		} else {
+			
+			for(int i = 0; i < prmtr.length; i++) {
+				phoneNum[Integer.parseInt(prmtr[i])] = "true";
+			}
+			
+		}
+		
+		session.setAttribute("phone", phoneNum);
+		session.setAttribute("noOpt", noOpt);
+		process(request, "phoneNum");
+		process(request, "url");
+		
+		process(request, "address1");
+		process(request, "address2");
+		process(request, "city");
+		process(request, "state");
+		process(request, "zip");
+		
+		
+		process(request, "haveAffiliates");
+		process(request, "shareWithAffiliates");
+		process(request, "whoIsProviding");
+		process(request, "affiliates1");
+		process(request, "affiliates2");
+		process(request, "affiliates3");
+		process(request, "affiliates4");
+		process(request, "account");
+		process(request, "jointMarketing");
+		process(request, "NonaffiliatesList");
+		process(request, "jointMarketList");
+		process(request, "otherImportantInformation");
+		process(request, "Providing");
+		processArray(request, "howCollect");
+		process(request, "collectFromAffiliates");
+		process(request, "collectFromOtherCompany");
 
 		return "index.jsp";	
 
