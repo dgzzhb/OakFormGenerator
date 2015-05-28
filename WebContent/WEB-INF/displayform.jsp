@@ -7,16 +7,28 @@
   <title>index</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
+<link href="css/demo_style.css" rel="stylesheet" type="text/css">
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Link customized CSS -->
   <link rel="stylesheet" href="css/style.css">
-
+<link href="css/smart_wizard_vertical.css" rel="stylesheet"
+			type="text/css">
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <!-- Latest compiled JavaScript -->
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  
+  <script type="text/javascript" src="js/jquery.smartWizard.js"></script>
+ 			
+   <script src="js/bootstrap.min.js"></script>
+  <script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+ 
   <style>
 			@media print {
 			#non-print {
@@ -31,11 +43,9 @@
 		<div>
 			<div style="float: right;" class="demoNavLinks">
 					
- 					<input class="btn" type="submit" value = "Save"/>
- 					<button class = "tryopen" id="opener1">open the dialog</button>
- 					<a href="save.do" class="btn">DownLoad</a> 
+ 					<a href="submit.do?save=downhtml" class="btn">DownLoad</a> 
 					 <a type = "button" class = "btn" name = "anything" onClick="javascript:window.print();return true" >Print</a>
-					 <a class="btn" type="button" onclick="reset();" >Reset</a>
+					 <a class="btn" type="button" onclick="goBack()" >Back</a>
 					 
 			</div>
 			<div style="clear: both;"></div>

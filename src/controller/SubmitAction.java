@@ -41,11 +41,14 @@ public class SubmitAction extends Action{
 		System.out.println("reading session id: "+ sid);
 		System.out.println("save is"+request.getParameter("save"));
 
-		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("DownLoad")){
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Save")){
+			return "DownJson?sid="+sid;	
+		}
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Download")){
 			return "SaveAction?sid="+sid;	
 		}
-		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Save")){
-			return "SaveAction?sid="+sid;	
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Preview")){
+			return "display.do";	
 		}
 		System.out.println("submit called");
 		
@@ -118,7 +121,7 @@ public class SubmitAction extends Action{
 		process(request, "collectFromAffiliates");
 		process(request, "collectFromOtherCompany");
 
-		return "index.jsp";	
+		return "displayform.jsp";	
 
 	}
 	

@@ -66,7 +66,7 @@
  
 <script>
 $( "#dialog" ).dialog({ autoOpen: false });
-$("#opener1").click(function() {
+$("#opener").click(function() {
   $( "#dialog" ).dialog( "open" );
 });
 </script>
@@ -87,12 +87,10 @@ $("#opener1").click(function() {
 			<div style="float: right;" class="demoNavLinks">
 					
  					<input name = "save" class="btn" type="submit" value = "Save"/>
- 					<input name = "save" class="btn" type="submit" value = "DownLoad"/>
+ 					<input name = "save" class="btn" type="submit" value = "Preview"/>
  					
- 					<button class = "tryopen" id="opener1">open the dialog</button>
- 					<a href="save.do?" class="btn">DownLoad</a> 
-					 <a type = "button" class = "btn" id = "non-print" name = "anything" onClick="javascript:window.print();return true" >Print</a>
-					 <a class="btn" type="button" onclick="reset();" >Reset</a>
+<!-- <!-- 					 <a type = "button" class = "btn" id = "non-print" name = "anything" onClick="javascript:window.print();return true" >Print</a>
+ --> -->					 <a class="btn" type="button" onclick="reset();" >Reset</a>
 					 
 			</div>
 			<div style="clear: both;"></div>
@@ -141,7 +139,9 @@ $("#opener1").click(function() {
 											 <br>
 											 <input type="text" id ="name"
 												name="nameOfInstitution" class="nameOfInstitution"
-												placeholder="NAME OF FINANCIAL INSTITUTION" size="32"></td>
+
+												placeholder="NAME OF FINANCIAL INSTITUTION" size="32" value="${nameOfInstitution}">DO WITH
+													YOUR PERSONAL INFORMATION?</td>
 										</tr>
 
 										<tr>

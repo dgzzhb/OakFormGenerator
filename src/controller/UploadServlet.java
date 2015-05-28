@@ -74,7 +74,11 @@ public class UploadServlet extends HttpServlet {
 
 			System.out.println("nameOfInstitution: "+nameOfInstitution);
 			HttpSession session = request.getSession();
+			//modify here===================================
 			session.setAttribute("nameOfInstitution", nameOfInstitution);
+			
+			
+			//===============================================
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -84,7 +88,7 @@ public class UploadServlet extends HttpServlet {
         }
         
         request.setAttribute("message", fileName + " File uploaded successfully!");
-        getServletContext().getRequestDispatcher("/index.do").forward(
+        getServletContext().getRequestDispatcher("/form.do").forward(
                 request, response);
     }
   
