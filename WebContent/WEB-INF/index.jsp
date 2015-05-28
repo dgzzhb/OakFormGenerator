@@ -21,7 +21,7 @@
 <body>
   <div class="container" id="main-container">
     <p>Rev.${time }</p>
-    <H1>Hi This is ${nameOfInstitution}</H1>
+    
     <div class="container" id="facts">
       <table class="table table-bordered">
         <tbody class="left-colored">
