@@ -64,7 +64,7 @@ public class SubmitAction extends Action{
 		process(request, "limitAffiliateMarket");
 		process(request, "forNonaffiliate");
 		
-		HttpSession session = request.getSession();
+		
 		String[] prmtr = request.getParameterValues("phone");
 		String noOpt = "false";
 		String[] phoneNum = {"false", "false", "false"};
