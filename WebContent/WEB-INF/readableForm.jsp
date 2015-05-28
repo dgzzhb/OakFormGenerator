@@ -522,7 +522,15 @@ Please input list categories of companies such as mortgage companies, insurance 
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Other important information</th>
+            <th>Other important information 
+            <span class="glyphicon glyphicon-question-sign" title=" This box is optional.
+ Only the following types of information can appear in this box.
+(1) State and/or international privacy law information; and/or
+(2) Acknowledgment of receipt form.
+            " ></span>
+            
+            
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -530,11 +538,7 @@ Please input list categories of companies such as mortgage companies, insurance 
             <td>
              <div   >
 
- <textarea rows="5" cols="90">
- This box is optional.
- Only the following types of information can appear in this box.
-(1) State and/or international privacy law information; and/or
-(2) Acknowledgment of receipt form.
+ <textarea rows="5" cols="90" >
 
  </textarea>
  </div>
