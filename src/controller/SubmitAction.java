@@ -48,6 +48,13 @@ public class SubmitAction extends Action{
 			return "SaveAction?sid="+sid;	
 		}
 		System.out.println("submit called");
+		
+		java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat(  
+			     "yyyy-MM-dd");  
+			   java.util.Date currentTime = new java.util.Date();  
+			   String time = simpleDateFormat.format(currentTime).toString();  
+			   
+			   session.setAttribute("time", time);	   
 		process(request, "nameOfInstitution");
 		processArray(request, "what");
 		
