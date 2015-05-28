@@ -1,15 +1,26 @@
 package controller;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
   
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import formbean.Form;
   
 @WebServlet("/UploadServlet")
 @MultipartConfig(fileSizeThreshold=1024*1024*10,    // 10 MB 
@@ -43,11 +54,37 @@ public class UploadServlet extends HttpServlet {
         //Get all the parts from request and write it to the file on server
         for (Part part : request.getParts()) {
             fileName = getFileName(part);
+            part.getInputStream();
+            InputStream fileContent = part.getInputStream();
+		    BufferedReader br = new BufferedReader(new InputStreamReader(fileContent));
+			//br = new BufferedReader(new FileReader("/users/ThomasZhao/Documents/out.json"));
+			String line  = br.readLine();
+			
+			br.close();
+			JSONParser parse = new JSONParser();
+			
+				JSONObject obj;
+				try {
+					obj = (JSONObject) parse.parse(line);
+				
+			
+			String nameOfInstitution = obj.get("nameOfInstitution").toString();
+			
+			System.out.println("Success");
+
+			System.out.println("nameOfInstitution: "+nameOfInstitution);
+			HttpSession session = request.getSession();
+			session.setAttribute("nameOfInstitution", nameOfInstitution);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			Form form = new Form();
             part.write(uploadFilePath + File.separator + fileName);
         }
-  
+        
         request.setAttribute("message", fileName + " File uploaded successfully!");
-        getServletContext().getRequestDispatcher("/response.jsp").forward(
+        getServletContext().getRequestDispatcher("/index.do").forward(
                 request, response);
     }
   

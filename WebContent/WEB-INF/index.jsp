@@ -26,7 +26,7 @@
         <tbody class="left-colored">
           <tr>
             <td>FACTS</td>
-            <td>WHAT DOES BANK OF AMERICA DO WITH YOUR PERSONAL INFORMATION?</td>
+            <td>WHAT DOES ${nameOfInstitution} DO WITH YOUR PERSONAL INFORMATION?</td>
           </tr>
           <tr>
             <td>Why?</td>

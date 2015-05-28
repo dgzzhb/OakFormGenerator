@@ -45,7 +45,7 @@ public class Controller extends HttpServlet{
 
 		System.out.println("reading action: "+action);
 
-		if ( action.equals("save.do")){
+		if ( action.equals("savehtml.do")){
 			
 			String prmtr = req.getParameter("nameOfInstitution");
 			System.out.println("reading Prmtr in prcs: "+prmtr);

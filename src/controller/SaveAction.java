@@ -27,7 +27,7 @@ public class SaveAction extends Action{
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		process(request, "nameOfInstitutionA");
+		process(request, "nameOfInstitution");
 		process(request, "nameOfInstitutionA");
 		process(request, "nameOfInstitutionA");
 		process(request, "nameOfInstitutionA");
@@ -56,7 +56,7 @@ public class SaveAction extends Action{
         //String prmtr = request.getParameter("nameOfInstitutionA");
 		//System.out.println("reading Prmtr: "+prmtr);
 
-		return "form.jsp";	
+		return "readableForm.jsp";	
 	}
 
 }
