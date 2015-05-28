@@ -354,9 +354,12 @@ $("#opener1").click(function() {
         </tbody>
       </table>  
       <!-- Finish To limit our sharing -->
-      <!-- Finish To limit our sharing -->
+      <!-- Question Field-->
       <table>
-      	
+      	<tr>
+      	<td>Question</td>
+      	<td>Call <input type="text" name="questionPhone" placeholder="phone number"  /> or go to <input type="text" name="questionUrl" placeholder="website"></td>
+      	</tr>
       
       </table>
       
