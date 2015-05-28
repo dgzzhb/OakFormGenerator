@@ -352,7 +352,15 @@ $("#opener1").click(function() {
           </tr>
           
         </tbody>
-      </table>    
+      </table>  
+      <!-- Finish To limit our sharing -->
+      <!-- Finish To limit our sharing -->
+      <table>
+      
+      
+      </table>
+      
+        
     </div> <!-- first-footer -->
     
     
