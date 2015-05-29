@@ -215,37 +215,37 @@ public class DownJson extends HttpServlet{
 	
 	
 
-	public String perform(HttpServletRequest request) {
-		process(request, "nameOfInstitution");
-		process(request, "nameOfInstitutionA");
-		process(request, "nameOfInstitutionA");
-		process(request, "nameOfInstitutionA");
-		process(request, "nameOfInstitutionA");
-		process(request, "nameOfInstitutionA");
-
-		try {
-			PrintWriter writer;
-			FileWriter fw = new FileWriter("/users/ThomasZhao/Documents/out.JSON");
-			fw.write(obj.toJSONString());
-			
-			System.out.println("jinto");
-			fw.close();
-
-			writer = new PrintWriter("save.json", "UTF-8");
-			writer.println(obj.toJSONString());
-			writer.close();
-		} catch (FileNotFoundException | UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-        //String prmtr = request.getParameter("nameOfInstitutionA");
-		//System.out.println("reading Prmtr: "+prmtr);
-
-		return "readableForm.jsp";	
-	}
+//	public String perform(HttpServletRequest request) {
+//		process(request, "nameOfInstitution");
+//		process(request, "nameOfInstitutionA");
+//		process(request, "nameOfInstitutionA");
+//		process(request, "nameOfInstitutionA");
+//		process(request, "nameOfInstitutionA");
+//		process(request, "nameOfInstitutionA");
+//
+//		try {
+//			PrintWriter writer;
+//			FileWriter fw = new FileWriter("/users/ThomasZhao/Documents/out.JSON");
+//			fw.write(obj.toJSONString());
+//			
+//			System.out.println("jinto");
+//			fw.close();
+//
+//			writer = new PrintWriter("save.json", "UTF-8");
+//			writer.println(obj.toJSONString());
+//			writer.close();
+//		} catch (FileNotFoundException | UnsupportedEncodingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//        //String prmtr = request.getParameter("nameOfInstitutionA");
+//		//System.out.println("reading Prmtr: "+prmtr);
+//
+//		return "readableForm.jsp";	
+//	}
 
 }
