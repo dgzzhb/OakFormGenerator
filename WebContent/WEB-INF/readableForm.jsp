@@ -53,7 +53,8 @@
   
   
 </head>
-<body>
+<body on>
+<button onclick="loadinit()" >here</button>
 			  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 <div id="dialog" title="Upload"><p>Please select a file</p>
@@ -255,10 +256,10 @@
         <tbody>
           <tr>
             <td>For our everyday business purposes - such as to process your transactions, maintain your account(s), respond to court orders and legal investigations, or report to credit bureaus</td>
-            <td><input type="radio" name="forBusiness" value="true" class="Yes11"
+            <td><input type="radio" name="forBusiness" value="true" class="Yes11" id="Yes11"
             <% if(((String)session.getAttribute("forBusiness"))!=null && ((String)session.getAttribute("forBusiness")).equals("true")) { %>checked<% } %>
             >Yes
-<input type="radio" name="forBusiness" value="false" class="No11" 
+<input type="radio" name="forBusiness" value="false" class="No11" id="No11"
             <% if(((String)session.getAttribute("forBusiness"))!=null &&((String)session.getAttribute("forBusiness")).equals("false")) { %>checked<% } %>
             >No</td>
             <td><div class="limit12"  style="display:none">No</div>
@@ -267,7 +268,7 @@
           </tr>
           <tr>
             <td>For our marketing purposes - with service providers we use to offer our products and services to you</td>
-            <td><input type="radio" name="forMarketing" value="true" class="Yes21"
+            <td><input type="radio" name="forMarketing" value="true" class="Yes21"  id="Yes21"
             <% if(((String)session.getAttribute("forMarketing"))!=null &&((String)session.getAttribute("forMarketing")).equals("true")) { %>checked<% } %>
             >Yes
 <input type="radio" name="forMarketing" value="false" class="No21" id="noShareMarketing" onclick="validateOptOut()"
@@ -284,7 +285,7 @@
           </tr>
           <tr>
             <td>For joint marketing with other financial companies</td>
-                        <td><input type="radio" name="forJointMarket" value="true" class="Yes31"
+                        <td><input type="radio" name="forJointMarket" value="true" class="Yes31" id="Yes31"
                         	 <% if(((String)session.getAttribute("forJointMarket"))!=null &&((String)session.getAttribute("forJointMarket")).equals("true")) { %>checked<% } %>
                         	 >Yes
 <input type="radio" name="forJointMarket" value="false"  id="noShareJointMarketing" class="No31" onclick="validateOptOut()"
@@ -304,10 +305,10 @@
           </tr>
           <tr>
             <td>For our affiliates' everyday business purposes - Information about your transactions and experiences</td>
-                        <td><input type="radio" name="forAffiliateTransaction" value="true" class="Yes41" 
+                        <td><input type="radio" name="forAffiliateTransaction" value="true" class="Yes41" id="Yes41" 
   <% if(((String)session.getAttribute("forAffiliateTransaction"))!=null &&((String)session.getAttribute("forAffiliateTransaction")).equals("true")) { %>checked<% } %>
 >Yes
-<input type="radio" name="forAffiliateTransaction" value="false" class="No41"
+<input type="radio" name="forAffiliateTransaction" value="false" class="No41" id="No41"
   <% if(((String)session.getAttribute("forAffiliateTransaction"))!=null &&((String)session.getAttribute("forAffiliateTransaction")).equals("false")) { %>checked<% } %>
 >No</td>
 
@@ -335,18 +336,18 @@
 </td>
           </tr>
           <tr>
-            <td>For our affiliates to market to you <br>   <input type="radio" name="showSixthRow" value="false" class="hide61" 
+            <td>For our affiliates to market to you <br>   <input type="radio" name="showSixthRow" value="false" class="hide61" id="hide61"
                         	 <% if(((String)session.getAttribute("showSixthRow"))!=null &&((String)session.getAttribute("showSixthRow")).equals("false")) { %>checked<% } %>
                         	 >hide
-            <input type="radio" name="showSixthRow" value="false"class="show61" 
+            <input type="radio" name="showSixthRow" value="false"class="show61" id="show61" 
                         	 <% if(((String)session.getAttribute("showSixthRow"))!=null &&((String)session.getAttribute("showSixthRow")).equals("true")) { %>checked<% } %>
                         	 >show
             </td>
                         <td><div class="share62"  style="display:none">
-                        	<input type="radio" name="forAffiliateMarket" value="true" class="Yes61"
+                        	<input type="radio" name="forAffiliateMarket" value="true" class="Yes61" id="Yes61"
                         	 <% if(((String)session.getAttribute("forAffiliateMarket"))!=null &&((String)session.getAttribute("forAffiliateMarket")).equals("true")) { %>checked<% } %>
                         	 >Yes
-<input type="radio" name="forAffiliateMarket" value="false" class="No61"
+<input type="radio" name="forAffiliateMarket" value="false" class="No61"  id="No61"
                         	 <% if(((String)session.getAttribute("forAffiliateMarket"))!=null &&((String)session.getAttribute("forAffiliateMarket")).equals("false")) { %>checked<% } %>
                         	 >No</div></td>
 
@@ -367,7 +368,7 @@
                         <td><input type="radio" name="forNonaffiliate" value="marketing purposes" id="Yes71" class="triggerOptOut"
                         	 <% if(((String)session.getAttribute("forNonaffiliate"))!=null &&((String)session.getAttribute("forNonaffiliate")).equals("true")) { %>checked<% } %>
                         	 >Yes
-<input type="radio" name="forNonaffiliate" value="false" class="No71" onclick="validateOptOut()"
+<input type="radio" name="forNonaffiliate" value="false" class="No71" id="No71" onclick="validateOptOut()"
                         	 <% if(((String)session.getAttribute("forNonaffiliate"))!=null &&((String)session.getAttribute("forNonaffiliate")).equals("false")) { %>checked<% } %>
                         	 >No</td>
             <td><div class="limit72"  style="display:none">Yes</div>

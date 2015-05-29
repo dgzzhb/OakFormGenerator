@@ -5,16 +5,113 @@ $('#name').bind('input', function() {
 			});
 });
 			
+function loadinit() {
+alert("testhaha");
+var Yes11 = document.getElementById('Yes11');
 
+if (Yes11.checked) {
+	alert("dsfd");
+	$(".limit12").show();
+	$(".limit13").hide();
+}
+	
+	
+}
 
 $(function() {
 	//var st = "${sessionScope.forBusiness}";
 	//alert(st);
-	
-	$('.Yes11').change(function() {
+//	alert("test");
+	var Yes11 = document.getElementById('Yes11');
+	if (Yes11.checked) {
+
 		$(".limit12").show();
 		$(".limit13").hide();
-	});
+	}
+	var No11 = document.getElementById('No11');
+	if (No11.checked) {
+
+		$(".limit12").show();
+		$(".limit13").hide();
+	}
+	var Yes21 = document.getElementById('Yes21');
+	var No21 = document.getElementById('noShareMarketing');
+	var Yes31 = document.getElementById('Yes31');
+	var No31 = document.getElementById('noShareJointMarketing');
+	var Yes41 = document.getElementById('Yes41');
+	var No41 = document.getElementById('No41');
+	var Yes51 = document.getElementById('Yes51');
+	var No51 = document.getElementById('No51');
+	var Yes61 = document.getElementById('Yes61');
+	var No61 = document.getElementById('No61');
+	var Yes71 = document.getElementById('Yes71');
+	var No71 = document.getElementById('No71');
+	var hide61 = document.getElementById('hide61');
+	var show61 = document.getElementById('show61');
+	
+	if (Yes21.checked) {
+		$(".limit22").show();
+		$(".limit23").hide();
+	}
+	if (No21.checked) {
+		$(".limit22").hide();
+		$(".limit23").show();
+	}
+	if (Yes31.checked) {
+		$(".limit32").show();
+		$(".limit33").hide();
+	}
+	if (No31.checked) {
+		$(".limit32").hide();
+		$(".limit33").show();
+	}
+	if (Yes41.checked) {
+		$(".limit42").show();
+		$(".limit43").hide();
+	}
+	if (No41.checked) {
+		$(".limit42").hide();
+		$(".limit43").show();
+	}
+	if (Yes51.checked) {
+		$(".limit52").show();
+		$(".limit53").hide();
+	}
+	if (No51.checked) {
+		$(".limit52").hide();
+		$(".limit53").show();
+	}
+	if (Yes71.checked) {
+		$(".limit72").show();
+		$(".limit73").hide();
+	}
+	if (No71.checked) {
+		$(".limit72").hide();
+		$(".limit73").show();
+	}
+	if (Yes61.checked) {
+		$(".limit62").show();
+		$(".limit63").hide();
+	}
+	if (No61.checked) {
+		$(".limit62").hide();
+		$(".limit63").show();
+	}
+	if (hide61.checked) {
+		$(".share62").hide();
+		
+		$(".limit62").hide();
+		$(".limit63").hide();
+	}
+	if (show61.checked) {
+		$(".share62").show();
+
+		$(".limit62").hide();
+		$(".limit63").hide();
+	}
+	
+	validateOptOut();
+	
 });
 
 
