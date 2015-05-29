@@ -216,7 +216,7 @@ public class SubmitAction extends Action{
 		}
 
 
-		return "index.jsp";	
+		return "displayform.jsp";	
 
 		}
 }
