@@ -328,7 +328,7 @@
                         	 <% if(((String)session.getAttribute("forAffiliateCredit"))!=null &&((String)session.getAttribute("forAffiliateCredit")).equals("true")) { %>checked<% } %>
                         	 >Yes
 <input type="radio" name="forAffiliateCredit" value="false" id="No51" onclick="validateOptOut()"
-                        	 <% if(((String)session.getAttribute("forAffiliateCredit"))!=null ((String)session.getAttribute("forAffiliateCredit")).equals("false")) { %>checked<% } %>
+                        	 <% if(((String)session.getAttribute("forAffiliateCredit"))!=null  && ((String)session.getAttribute("forAffiliateCredit")).equals("false")) { %>checked<% } %>
                         	 >No</td>
             <td><div class="limit52"  style="display:none">Yes</div>
 <div class="limit53" style="display:none">We don't share.</div>
