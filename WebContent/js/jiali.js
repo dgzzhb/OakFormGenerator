@@ -111,6 +111,7 @@ $(function() {
 	}
 	
 	validateOptOut();
+	validate();
 	
 });
 
@@ -255,6 +256,9 @@ function validateOptOut(){
 		 $("#optOutWhatHappens").hide();
 		 $("#noOptOut").show();
 	}
+	
+	
+	
 }
 
 function validate(){

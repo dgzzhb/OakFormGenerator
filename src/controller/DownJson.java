@@ -14,7 +14,10 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -24,6 +27,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -158,6 +162,20 @@ public class DownJson extends HttpServlet{
 			
 			process(req, "time");
 			processArray(req, "phone");
+			
+			HttpSession session = req.getSession();
+			if (session.getAttribute("phone")!=null){
+			JSONArray array = new JSONArray();
+			String[] prmtr = (String[]) session.getAttribute("phone");
+			System.out.println("reading Prmtr in prcs: "+prmtr);
+			for( int i = 0 ; i<prmtr.length; i++){
+				if( prmtr[i].equals("true")){
+					array.add(""+i);}			}
+
+			obj.put("phoneH", array);
+			}
+			
+			
 			process(req, "noOpt");
 
 

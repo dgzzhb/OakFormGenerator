@@ -161,6 +161,8 @@ public class UploadServlet extends HttpServlet {
 			process(obj, session, "otherImportantInformation");
 			process(obj, session, "Providing");
 			processArray(obj, session, "howCollect");
+			processArray(obj, session, "phoneH");
+
 			process(obj, session, "collectFromAffiliates");
 			process(obj, session, "collectFromOtherCompany");
 			
