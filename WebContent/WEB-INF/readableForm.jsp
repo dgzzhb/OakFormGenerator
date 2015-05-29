@@ -19,10 +19,12 @@
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-		<link href="css/smart_wizard_vertical.css" rel="stylesheet"
+	<link href="css/smart_wizard_vertical.css" rel="stylesheet"
 			type="text/css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 			<!-- Include all compiled plugins (below), or include individual files as needed -->
 			  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
    
  			<script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
   			<script type="text/javascript" src="js/jquery.smartWizard.js"></script>
@@ -50,8 +52,7 @@
 		
   
   
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ 
   
   
   
