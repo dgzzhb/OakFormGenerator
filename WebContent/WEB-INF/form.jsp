@@ -186,7 +186,7 @@ $("#opener").click(function() {
 												<tr>
 												<td><input type="checkbox" name="what" value="investment experience" >investment experience</td>
 
-												<td><input type="checkbox" name="what" value="credit-­based insurance scores" >credit-based insurance scores</td>
+												<td><input type="checkbox" name="what" value="credit-based insurance scores" >credit-based insurance scores</td>
 												<td><input type="checkbox" name="what" value="insurance claim history" >insurance claim history</td>
 												</tr>
 												<tr>
@@ -250,7 +250,7 @@ $("#opener").click(function() {
         </thead>
         <tbody>
           <tr>
-            <td>For our everyday business purposes - such as to process your transactions, maintain your account(s), respond to court orders and legal investigations, or report to credit bureaus</td>
+            <td>For our everyday business purposes-such as to process your transactions, maintain your account(s), respond to court orders and legal investigations, or report to credit bureaus</td>
             <td><input type="radio" name="forBusiness" value="true" class="Yes11"
             >Yes
 <input type="radio" name="forBusiness" value="false" class="No11">No</td>

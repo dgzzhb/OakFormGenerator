@@ -121,7 +121,8 @@ public class SubmitAction extends Action{
 		session.setAttribute("phone", phoneNum);
 		Set phoneset = new HashSet<String>();
 		for ( int i = 0 ; i < phoneNum.length ; i++){
-			phoneset.add(phoneNum[i]);
+			if( phoneNum[i].equals("true")){
+			phoneset.add(""+i);}
 		}
 		System.out.println("reading Prmtr in prcs: "+prmtr);
 		session.setAttribute("phoneH", phoneset);

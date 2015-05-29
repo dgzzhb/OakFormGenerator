@@ -109,7 +109,7 @@ function goBack() {
         </thead>
         <tbody>
           <tr>
-            <td>For our everyday business purposes - such as to process your transactions, maintain your account(s), respond to court orders and legal investigations, or report to credit bureaus</td>
+            <td>For our everyday business purposes-such as to process your transactions, maintain your account(s), respond to court orders and legal investigations, or report to credit bureaus</td>
             
             <c:choose>
 				<c:when test="${forBusiness == true}">
