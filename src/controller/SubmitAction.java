@@ -239,7 +239,7 @@ public class SubmitAction extends Action{
 					String state = request.getParameter("state");
 					String zip = request.getParameter("zip");
 					if (address1.isEmpty()|| city.isEmpty()|| state.isEmpty() || zip.isEmpty()) {
-						errors.add("Please input your opt-out mail address");
+						errors.add("Please input your Opt-out mailing address.");
 						return "readableForm.jsp";
 					}
 				}
