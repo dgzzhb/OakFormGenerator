@@ -198,32 +198,23 @@ public class SubmitAction extends Action{
 			errors.add("Five ways we collect your personal information should be selected.");
 			return "readableForm.jsp";
 		}
-//		
-//		String phoneNumber = request.getParameter("questionPhone");
-//		if (phoneNumber.matches("^[0-9]{9}$")) {
-//			errors.add("Please enter a valid phone number");
-//			return "readableForm.jsp";
-//		}
-//		
-//		String parsedPhoneNum = request.getParameter("phoneNum");
-//		if (parsedPhoneNum.matches("^[0-9]{9}$")) {
-//			errors.add("Please enter a valid phone number");
-//			return "readableForm.jsp";
-//		}
-//		
-//		if (request.getParameter("forBusiness") == null 
-//				|| request.getParameter("forMarketing") == null 
-//				|| request.getParameter("forJointMarket") == null 
-//				|| request.getParameter("forAffiliateTransaction") == null 
-//				|| request.getParameter("forAffiliateCredit") == null 
-//				|| request.getParameter("forNonaffiliate") == null) {
-//			errors.add("Please provide all reasons that personal information can be shared.");
-//			return "readableForm.jsp";
-//		}
 		
+		String phoneNumber = request.getParameter("questionPhone");
+		if (!phoneNumber.matches("^[0-9]{9}$")) {
+			errors.add("Please enter a valid phone number");
+			return "readableForm.jsp";
+		}
 		
-		
-		
+		if (request.getParameter("forBusiness") == null 
+				|| request.getParameter("forMarketing") == null 
+				|| request.getParameter("forJointMarket") == null 
+				|| request.getParameter("forAffiliateTransaction") == null 
+				|| request.getParameter("forAffiliateCredit") == null 
+				|| request.getParameter("forNonaffiliate") == null) {
+			errors.add("Please provide all reasons that personal information can be shared.");
+			return "readableForm.jsp";
+		}
+
 
 		return "index.jsp";	
 
