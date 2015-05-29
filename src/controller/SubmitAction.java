@@ -215,6 +215,37 @@ public class SubmitAction extends Action{
 			errors.add("Please provide all reasons that personal information can be shared.");
 			return "readableForm.jsp";
 		}
+		String[] optOutOptions = request.getParameterValues("phone");
+		if (optOutOptions !=null) {
+			for (String option: optOutOptions) {
+				if (option.equals("0")) {
+					String optPhone = request.getParameter("phoneNum");
+					if (!optPhone.matches("^[0-9]{9}$")) {
+						errors.add("Please enter a valid opt-out phone number");
+						return "readableForm.jsp";
+					}
+				}
+				else if (option.equals("1")) {
+					String url = request.getParameter("url");
+					if (url.isEmpty()) {
+						errors.add("An Opt-out website is required.");
+						return "readableForm.jsp";
+					}
+					
+				}
+				else if (option.equals("2")) {
+					String address1 = request.getParameter("address1");
+					String city = request.getParameter("city");
+					String state = request.getParameter("state");
+					String zip = request.getParameter("zip");
+					if (address1.isEmpty()|| city.isEmpty()|| state.isEmpty() || zip.isEmpty()) {
+						errors.add("Please input your opt-out mail address");
+						return "readableForm.jsp";
+					}
+				}
+			}
+		}
+		
 
 
 		return "displayform.jsp";	
