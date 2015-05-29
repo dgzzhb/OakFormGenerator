@@ -106,7 +106,7 @@
 		<table align="center" border="0" cellpadding="0" cellspacing="0">
 			<tr>
 				<td>
-					<h2 style="font: bold 40px Verdana, Arial, Helvetica, sans-serif">Privacy Form</h2>
+					<h2 style="font: bold 40px Verdana, Arial, Helvetica, sans-serif">Oak Notice Generator</h2>
 					<jsp:include page="error-list.jsp" />
 					 <!-- Tabs -->
 					<div id="wizard" class="swMain">
