@@ -2,6 +2,9 @@
 <%@page import="java.util.HashSet"%>
 <%@page import="java.util.Set"%>
 
+<%@page import="java.util.HashSet"%>
+<%@page import="java.util.Set"%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
   "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -18,15 +21,18 @@
 	<link href="css/demo_style.css" rel="stylesheet" type="text/css">
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/smart_wizard_vertical.css" rel="stylesheet"
+
+		<link href="css/smart_wizard_vertical.css" rel="stylesheet"
 			type="text/css">
-	  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
+			  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
    
  			<script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
   			<script type="text/javascript" src="js/jquery.smartWizard.js"></script>
-   			<script src="js/bootstrap.min.js"></script>
- 			<script type="text/javascript" src="js/jiali.js"></script>
+ 			
+   <script src="js/bootstrap.min.js"></script>
+ 			 
+ <script type="text/javascript" src="js/jiali.js"></script>
  			
  			
 
@@ -48,13 +54,16 @@
 		
   
   
- 
-			<!-- Include all compiled plugins (below), or include individual files as needed -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  
   
   
 </head>
+
 <body >
-			  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+			
+
 
 <div id="dialog" title="Upload"><p>Please select a file</p>
 <form action="UploadServlet" method="post" enctype="multipart/form-data">
@@ -828,12 +837,14 @@
 	</form>
 
 </body>
-<script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+ <script>
 $( "#dialog" ).dialog({ autoOpen: false });
 $("#opener").click(function() {
   $( "#dialog" ).dialog( "open" );
 });
-</script>
+</script> 
 </html>
 
 
