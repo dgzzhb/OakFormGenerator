@@ -10,7 +10,15 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!-- Link customized CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <style type="text/css">
+	 thead {
+			background-color: #b0c4de;
+		}
+		
+		.left-colored tr td:first-child {
+			background: pink;
+		}
+	</style>
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
