@@ -126,6 +126,24 @@ public class SubmitAction extends Action{
 		List<String> errors = new ArrayList<String>();
 		request.setAttribute("errors", errors);
 		
+		String nameOfInstitution = request.getParameter("nameOfInstitution");
+		if (nameOfInstitution == "") {
+			errors.add("Name of institution is required.");
+			return "readableForm.jsp";
+		}
+		
+		String questionPhone = request.getParameter("questionPhone");
+		if (questionPhone == "") {
+			errors.add("Phone number is required.");
+			return "readableForm.jsp";
+		}
+		
+		String questionUrl = request.getParameter("questionUrl");
+		if (questionUrl == "") {
+			errors.add("Website is required.");
+			return "readableForm.jsp";
+		}
+		
 		String[] whats = request.getParameterValues("what");
 		if (whats == null || whats.length < 5) {
 			errors.add("At least five types of personal information we collect should be selected.");
@@ -136,6 +154,9 @@ public class SubmitAction extends Action{
 			errors.add("At least five ways we collect your personal information should be selected.");
 			return "readableForm.jsp";
 		}
+		
+		
+		
 		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Save")){
 			return "DownJson?sid="+sid;	
 		}
