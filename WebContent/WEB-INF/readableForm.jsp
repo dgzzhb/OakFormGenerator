@@ -637,13 +637,21 @@ $("#opener").click(function() {
             <br>
             <div id="collect">
             Do we collect personal information from their affiliates and/or credit bureaus?<br>
-            <input type="radio" name="collectFromAffiliates" value="true" onclick="hide('#collectFromOtherCompany')">Yes
-            <input type="radio" name="collectFromAffiliates" value="false" onclick="show('#collectFromOtherCompany')">No<br>
+            <input type="radio" name="collectFromAffiliates" value="true" onclick="hide('#collectFromOtherCompany')"
+                        	 <% if((String)session.getAttribute("collectFromAffiliates")=="true") { %>checked<% } %>
+                        	>Yes
+            <input type="radio" name="collectFromAffiliates" value="false" onclick="show('#collectFromOtherCompany')"
+                        	 <% if((String)session.getAttribute("collectFromAffiliates")=="false") { %>checked<% } %>
+                        	>No<br>
             </div>
              <div id="collectFromOtherCompany" style="display:none" >
             <br>Do we collect information from other companies?<br>
-            <input type="radio" name="collectFromOtherCompany" value="true" >Yes
-            <input type="radio" name="collectFromOtherCompany" value="false" >No<br>
+            <input type="radio" name="collectFromOtherCompany" value="true" 
+                        	 <% if((String)session.getAttribute("collectFromOtherCompany")=="true") { %>checked<% } %>
+                        	>Yes
+            <input type="radio" name="collectFromOtherCompany" value="false" 
+                        	 <% if((String)session.getAttribute("collectFromOtherCompany")=="false") { %>checked<% } %>
+                        	>No<br>
            </div>
             
             
@@ -693,15 +701,23 @@ $("#opener").click(function() {
             <td>Affiliates</td>
             <td>
             Do we have affiliates?<br>
-             <input type="radio" name="haveAffiliates" value="true" onclick="showHide('#shareWithAffiliates','#shareWithNonaffiliates')">Yes
-<input type="radio" name="haveAffiliates" value="false" onclick="showHide('#shareWithNonaffiliates','#shareWithAffiliates')" >No <br><br>
+             <input type="radio" name="haveAffiliates" value="true" onclick="showHide('#shareWithAffiliates','#shareWithNonaffiliates')"
+                        	 <% if((String)session.getAttribute("haveAffiliates")=="true") { %>checked<% } %>
+                        	>Yes
+<input type="radio" name="haveAffiliates" value="false" onclick="showHide('#shareWithNonaffiliates','#shareWithAffiliates')"
+                        	 <% if((String)session.getAttribute("haveAffiliates")=="false") { %>checked<% } %>
+                        	 >No <br><br>
            
            
 
 <div id="shareWithAffiliates" style="display:none" >
 			Do we share personal information with affiliates?<br>
-				 <input type="radio" name="shareWithAffiliates" value="true" onclick="show('#affiliatesList')">Yes
-<input type="radio" name="shareWithAffiliates" value="false"  onclick="hide('#affiliatesList')">No <br><br>
+				 <input type="radio" name="shareWithAffiliates" value="true" onclick="show('#affiliatesList')"
+                        	 <% if((String)session.getAttribute("shareWithAffiliates")=="true") { %>checked<% } %>
+                        	>Yes
+<input type="radio" name="shareWithAffiliates" value="false"  onclick="hide('#affiliatesList')"
+                        	 <% if((String)session.getAttribute("shareWithAffiliates")=="false") { %>checked<% } %>
+                        	>No <br><br>
 </div>
 			
 
@@ -724,8 +740,12 @@ $("#opener").click(function() {
               <td>
              <div  >
             	Do we share with nonaffiliated third parties?<br>
-			 <input type="radio" name="shareWithNonaffiliates" value="true"onclick="show('#NonaffiliatesList')" >Yes
-<input type="radio" name="shareWithNonaffiliates" value="false" onclick="hide('#NonaffiliatesList')">No <br><br>
+			 <input type="radio" name="shareWithNonaffiliates" value="true"onclick="show('#NonaffiliatesList')" 
+                        	 <% if((String)session.getAttribute("shareWithNonaffiliates")=="true") { %>checked<% } %>
+                        	>Yes
+<input type="radio" name="shareWithNonaffiliates" value="false" onclick="hide('#NonaffiliatesList')"
+                        	 <% if((String)session.getAttribute("shareWithNonaffiliates")=="false") { %>checked<% } %>
+                        	>No <br><br>
 </div>
 
  <div id="NonaffiliatesList" style="display:none" >
@@ -743,14 +763,18 @@ $("#opener").click(function() {
              <td>
                          <div  >
             	Do we engage in joint marketing?<br>
-			 <input type="radio" name="jointMarketing" value="true"onclick="show('#jointMarketList')" >Yes
-<input type="radio" name="jointMarketing" value="false" onclick="hide('#jointMarketList')">No <br><br>
+			 <input type="radio" name="jointMarketing" value="true"onclick="show('#jointMarketList')" 
+                        	 <% if((String)session.getAttribute("jointMarketing")=="true") { %>checked<% } %>
+                        	 >Yes
+<input type="radio" name="jointMarketing" value="false" onclick="hide('#jointMarketList')" 
+                        	 <% if((String)session.getAttribute("jointMarketing")=="false") { %>checked<% } %>
+                        	>No <br><br>
 </div>
 
  <div id="jointMarketList" style="display:none" >
  Our joint marketing partners include:<span class="glyphicon glyphicon-question-sign" title="Please input list categories of companies such as credit card companies." ></span><br> 
  
- <textarea rows="4" cols="50" name="jointMarketList">
+ <textarea rows="4" cols="50" name="jointMarketList" value="${jointMarketList}">
  </textarea>
  </div>
  
