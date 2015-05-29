@@ -58,8 +58,8 @@
   color:              #5A5655;   
   background-color:   #F8F8F8;
   height:40px;
-/*  width:730px; 
-  float:right; */  
+  width:740px;
+  float:right;
   text-align:left;
   overflow:auto;    
   z-index:88; 
