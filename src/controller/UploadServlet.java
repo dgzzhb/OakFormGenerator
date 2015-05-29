@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -85,9 +86,13 @@ public class UploadServlet extends HttpServlet {
         for (Part part : request.getParts()) {
             fileName = getFileName(part);
             if (fileName==null || fileName.isEmpty()) {
-            	session.setAttribute("errors", " Please choose a file!");
-		        getServletContext().getRequestDispatcher("/form.do").forward(
-		                request, response);
+            	
+            	request.setAttribute("errors", " Please choose a file!");
+		        
+            	RequestDispatcher d = request.getRequestDispatcher("WEB-INF/"
+    					+ "readableForm.jsp");
+    			d.forward(request, response);
+            	
 		       return;
             }
             part.getInputStream();
