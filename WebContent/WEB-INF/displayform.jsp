@@ -45,7 +45,7 @@ function goBack() {
 					
  					<a href="submit.do?save=downhtml" class="btn">DownLoad</a> 
 					 <a type = "button" class = "btn" name = "anything" onClick="javascript:window.print();return true" >Print</a>
-					 <a class="btn" type="button" onclick="goBack()" >Back</a>
+					 <a class="btn" type="button" href="form.do" >Back</a>
 					 
 			</div>
 			<div style="clear: both;"></div>
