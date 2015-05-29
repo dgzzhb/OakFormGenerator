@@ -80,15 +80,23 @@ public class SaveAction extends HttpServlet{
 		StringBuffer sb = new StringBuffer(html);
 		InputStream in = new ByteArrayInputStream(sb.toString().getBytes("UTF-8"));
 		ServletOutputStream out = resp.getOutputStream();
-		 
-		byte[] outputByte = new byte[4096];
-		//copy binary contect to output stream
-		while(in.read(outputByte, 0, 4096) != -1)
-		{
-			out.write(outputByte, 0, 4096);
+		
+		byte[] buffer = new byte[4096];
+		int length;
+		while ((length = in.read(buffer)) > 0){
+		    out.write(buffer, 0, length);
 		}
 		in.close();
 		out.flush();
+		 
+//		byte[] outputByte = new byte[8192];
+//		//copy binary contect to output stream
+//		while(in.read(outputByte, 0, 8192) != -1)
+//		{
+//			out.write(outputByte, 0, 8192);
+//		}
+//		in.close();
+//		out.flush();
 		out.close();
 		}
 

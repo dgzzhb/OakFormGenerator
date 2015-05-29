@@ -47,7 +47,7 @@
           </tr>
           <tr>
             <td>How?</td>
-            <td>All financial companies need to share customersâ personal information to run their everyday business. In the section below, we list the reasons financial companies can share their customersâ personal information; the reasons ${nameOfInstitution} chooses to share; and whether you can limit this sharing.</td>
+            <td>All financial companies need to share customers' personal information to run their everyday business. In the section below, we list the reasons financial companies can share their customers' personal information; the reasons ${nameOfInstitution} chooses to share; and whether you can limit this sharing.</td>
           </tr>                
         </tbody>
       </table>    
@@ -443,7 +443,7 @@
   			</td>
           </tr>
           <tr>
-            <td>Why canât I limit all sharing?</td>
+            <td>Why can't I limit all sharing?</td>
             <td>Federal law gives you the right to limit some but not all sharing related to:
   affiliates' everyday business purposesâinformation about your creditworthiness
   affiliates from using your information to market to you
