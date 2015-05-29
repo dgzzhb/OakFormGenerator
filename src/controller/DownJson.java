@@ -168,7 +168,7 @@ public class DownJson extends HttpServlet{
 //			System.out.println("reading Prmtr in prcs: "+prmtr);
 			System.out.println("reading Prmtr in prcs: "+prmtr);
 			PrintWriter writer;
-			FileWriter fw = new FileWriter("out.json");
+			FileWriter fw = new FileWriter("~/out.json");
 			fw.write(obj.toJSONString());
 			
 			System.out.println("jinto");
@@ -191,7 +191,7 @@ public class DownJson extends HttpServlet{
 //		out.flush();
 //		out.close();
 		OutputStream out = resp.getOutputStream();
-		FileInputStream in = new FileInputStream(new File("out.json"));
+		FileInputStream in = new FileInputStream(new File("~/out.json"));
 		byte[] buffer = new byte[4096];
 		int length;
 		while ((length = in.read(buffer)) > 0){
