@@ -10,6 +10,7 @@ $('#name').bind('input', function() {
 $(function() {
 	//var st = "${sessionScope.forBusiness}";
 	//alert(st);
+	
 	$('.Yes11').change(function() {
 		$(".limit12").show();
 		$(".limit13").hide();

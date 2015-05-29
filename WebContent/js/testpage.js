@@ -52,6 +52,7 @@
 	
 	tester.runTest = function(textData) {
 		$('form').loadJSON(textData);
+		alert("yes");
 		var data = win.JSON.parse(textData);
 		
 		//Create a new data grid using the first div as its wrapper
