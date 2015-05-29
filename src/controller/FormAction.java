@@ -26,8 +26,8 @@ public class FormAction extends Action{
 		HttpSession session= request.getSession();
 		session.setAttribute("what", set);
 		session.setAttribute("forBusiness", "true");
-		*/
-	
+		
+	*/
 		
 		return "readableForm.jsp";	
 	}
