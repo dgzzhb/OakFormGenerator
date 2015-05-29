@@ -267,7 +267,7 @@
 				<tbody class="left-colored">
 				<tr>
 					<td>Questions?</td>
-					<td>Call ${phoneNum} or go to ${url}</td>
+					<td>Call ${questionPhone} or go to ${questionUrl}</td>
 				 </tr>
 					</tbody>
 			  </table>
@@ -282,13 +282,13 @@
 							<td>To limit our sharing</td>
 							<td>
 							<c:choose>
-							<c:when test="${ phone[0] == true}">Call ${questionPhone} - our menu will prompt you through your choices
+							<c:when test="${ phone[0] == true}">Call ${phoneNum} - our menu will prompt you through your choices
 							</c:when>
 							</c:choose>
 							
 							<c:choose>
 							<c:when test="${phone[1] == true}">
-							  Visit us online: ${questionUrl}
+							  Visit us online: ${url}
 							</c:when>
 							</c:choose>
 							  Talk to a banking center associate
@@ -298,8 +298,8 @@
 					  </tr>
 					  <tr>
 						<td>Questions?</td>
-						<td>
-						Call ${phoneNum} or go to ${url}.
+						
+						<td>Call ${questionPhone} or go to ${questionUrl}</td>
 							</tbody>
 					  </table>			 
 					</div> 
