@@ -14,6 +14,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -24,6 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 @WebServlet("/DownJson")
 public class DownJson extends HttpServlet{
@@ -33,11 +35,29 @@ public class DownJson extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private static JSONObject obj=new JSONObject();
 	private void process(HttpServletRequest request, String name ){
+		System.out.println("calling "+name);
 		HttpSession session = request.getSession();
+
+		if (session.getAttribute(name)!=null){
 		String prmtr = (String) session.getAttribute(name);
 		System.out.println("reading Prmtr in prcs: "+prmtr);
 		
 		obj.put(name, prmtr);
+		System.out.println("success ");
+
+		}
+	}
+	private void processArray(HttpServletRequest request, String name ){
+		HttpSession session = request.getSession();
+		if (session.getAttribute(name)!=null){
+		String[] prmtr = (String[]) session.getAttribute(name);
+		System.out.println("reading Prmtr in prcs: "+prmtr);
+		JSONArray array = new JSONArray();
+		for( int i = 0 ; i<prmtr.length; i++){
+			array.add(prmtr[i]);
+		}
+		obj.put(name, array);
+		}
 	}
 	
 	
@@ -91,6 +111,57 @@ public class DownJson extends HttpServlet{
 //			System.out.print("haha");
 			//===========================
 			process(req, "nameOfInstitution");
+			processArray(req, "what");
+			
+			process(req, "forBusiness");
+			process(req, "forMarketing");
+			process(req, "limitMarketing");
+			process(req, "forJointMarket");
+			process(req, "limitJointMarket");
+			process(req, "forAffiliateTransaction");
+			process(req, "limitAffiliateTransaction");
+			process(req, "forAffiliateCredit");
+			process(req, "showSixthRow");
+			process(req, "forAffiliateMarket");
+			process(req, "limitAffiliateMarket");
+			process(req, "forNonaffiliate");
+			
+			process(req, "questionPhone");
+			process(req, "phoneNum");
+			
+			process(req, "questionUrl");
+			process(req, "url");
+			
+			process(req, "address1");
+			process(req, "address2");
+			process(req, "city");
+			process(req, "state");
+			process(req, "zip");
+			
+			
+			process(req, "haveAffiliates");
+			process(req, "shareWithAffiliates");
+			process(req, "whoIsProviding");
+			process(req, "affiliates1");
+			process(req, "affiliates2");
+			process(req, "affiliates3");
+			process(req, "affiliates4");
+			process(req, "account");
+			process(req, "jointMarketing");
+			process(req, "NonaffiliatesList");
+			process(req, "jointMarketList");
+			process(req, "otherImportantInformation");
+			process(req, "Providing");
+			processArray(req, "howCollect");
+			process(req, "collectFromAffiliates");
+			process(req, "collectFromOtherCompany");
+			
+			process(req, "time");
+			processArray(req, "phone");
+			process(req, "noOpt");
+
+
+			
 			
 			//modify here=====================
 			String prmtr = req.getParameter("nameOfInstitution");

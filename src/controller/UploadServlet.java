@@ -6,6 +6,9 @@ import java.io.IOException;
   
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -16,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -35,6 +39,28 @@ public class UploadServlet extends HttpServlet {
      * the web application directory.
      */
     private static final String UPLOAD_DIR = "uploads";
+    
+    private void process(JSONObject obj,HttpSession session, String name){
+    	if (obj.get(name)!=null){
+    		String prmtr = obj.get(name).toString();
+    	
+		System.out.println(name+prmtr);
+		session.setAttribute(name, prmtr);
+    	}
+    	
+    }
+    private void processArray(JSONObject obj,HttpSession session, String name){
+    	if (obj.get(name)!=null){
+    		JSONArray array = (JSONArray) obj.get(name);
+    	
+		Iterator<String> iterator = array.iterator();
+		Set set = new HashSet<String>() ;
+		while (iterator.hasNext()) {
+		set.add(iterator.next());
+		}
+		session.setAttribute(name+"H", set);
+    	}
+    }
       
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
@@ -68,15 +94,69 @@ public class UploadServlet extends HttpServlet {
 					obj = (JSONObject) parse.parse(line);
 				
 			
-			String nameOfInstitution = obj.get("nameOfInstitution").toString();
 			
-			System.out.println("Success");
-
-			System.out.println("nameOfInstitution: "+nameOfInstitution);
 			HttpSession session = request.getSession();
 			//modify here===================================
-			session.setAttribute("nameOfInstitution", nameOfInstitution);
+			process(obj, session, "nameOfInstitution");
+			processArray(obj, session, "what");
 			
+			process(obj, session, "nameOfInstitution");
+			processArray(obj, session, "what");
+			
+			process(obj, session, "forBusiness");
+			process(obj, session, "forMarketing");
+			process(obj, session, "limitMarketing");
+			process(obj, session, "forJointMarket");
+			process(obj, session, "limitJointMarket");
+			process(obj, session, "forAffiliateTransaction");
+			process(obj, session, "limitAffiliateTransaction");
+			process(obj, session, "forAffiliateCredit");
+			process(obj, session, "showSixthRow");
+			process(obj, session, "forAffiliateMarket");
+			process(obj, session, "limitAffiliateMarket");
+			process(obj, session, "forNonaffiliate");
+			
+			process(obj, session, "questionPhone");
+			process(obj, session, "phoneNum");
+			
+			process(obj, session, "questionUrl");
+			process(obj, session, "url");
+			
+			process(obj, session, "address1");
+			process(obj, session, "address2");
+			process(obj, session, "city");
+			process(obj, session, "state");
+			process(obj, session, "zip");
+			
+			
+			process(obj, session, "haveAffiliates");
+			process(obj, session, "shareWithAffiliates");
+			process(obj, session, "whoIsProviding");
+			process(obj, session, "affiliates1");
+			process(obj, session, "affiliates2");
+			process(obj, session, "affiliates3");
+			process(obj, session, "affiliates4");
+			process(obj, session, "account");
+			process(obj, session, "jointMarketing");
+			process(obj, session, "NonaffiliatesList");
+			process(obj, session, "jointMarketList");
+			process(obj, session, "otherImportantInformation");
+			process(obj, session, "Providing");
+			processArray(obj, session, "howCollect");
+			process(obj, session, "collectFromAffiliates");
+			process(obj, session, "collectFromOtherCompany");
+			
+			process(obj, session, "time");
+			process(obj, session, "phone");
+			process(obj, session, "noOpt");
+
+//			String nameOfInstitution = obj.get("nameOfInstitution").toString();
+//			
+//
+//			System.out.println("nameOfInstitution: "+nameOfInstitution);
+//			session.setAttribute("nameOfInstitution", nameOfInstitution);
+//			session.setAttribute("nameOfInstitution", nameOfInstitution);
+
 			
 			//===============================================
 				} catch (ParseException e) {

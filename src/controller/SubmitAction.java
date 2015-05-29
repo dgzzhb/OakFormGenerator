@@ -10,21 +10,27 @@ import org.genericdao.RollbackException;
 
 public class SubmitAction extends Action{
 	private void process(HttpServletRequest request, String name ){
+		System.out.println("processing  "+ name);
+
 		HttpSession session = request.getSession();
-		System.out.println("reading session id: "+ session.getId());
 
 		String prmtr = request.getParameter(name);
 		System.out.println("reading Prmtr in prcs: "+prmtr);
 		session.setAttribute(name, prmtr);
+		System.out.println("Success");
 	}
 	
 	private void processArray(HttpServletRequest request, String name ){
+		System.out.println("processing  "+ name);
+
 		HttpSession session = request.getSession();
 		System.out.println("reading session id: "+ session.getId());
 
 		String[] prmtr = request.getParameterValues(name);
 		System.out.println("reading Prmtr in prcs: "+prmtr);
 		session.setAttribute(name, prmtr);
+		System.out.println("Success");
+
 	}
 	
 	
@@ -46,13 +52,7 @@ public class SubmitAction extends Action{
 		System.out.println("reading session id: "+ sid);
 		System.out.println("save is"+request.getParameter("save"));
 
-		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("DownLoad")){
-			return "SaveAction?sid="+sid;	
-		}
-		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Save")){
-			return "SaveAction?sid="+sid;	
-		}
-		System.out.println("submit called");
+
 		
 		java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat(  
 			     "yyyy-MM-dd");  
@@ -136,10 +136,21 @@ public class SubmitAction extends Action{
 			errors.add("At least five ways we collect your personal information should be selected.");
 			return "readableForm.jsp";
 		}
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Save")){
+			return "DownJson?sid="+sid;	
+		}
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Download")){
+			return "SaveAction?sid="+sid;	
+		}
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Preview")){
+			return "display.do";	
+		}
 
 		return "index.jsp";	
 
-	}
+		}
+}
+	
 	
 
-}
+

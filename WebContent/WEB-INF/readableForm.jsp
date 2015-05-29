@@ -1,6 +1,5 @@
 <%@page import="java.util.HashSet"%>
 <%@page import="java.util.Set"%>
-<jsp:include page="error-list.jsp" />
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
   "http://www.w3.org/TR/html4/loose.dtd">
@@ -57,16 +56,13 @@
   
 </head>
 <body>
-<div id="dialog" title="Dialog Title">I'm a dialog
-
+<div id="dialog" title="Upload"><p>Please select a file</p>
 <form action="UploadServlet" method="post" enctype="multipart/form-data">
 <input type="file" name="fileName">
-<input type="submit" value="Upload">
+<input class="btn" type="submit" value="Upload">
 </form>
-
-
 </div>
-  					<button id="opener">upload</button>
+  					<button class="btn" id="opener">upload</button>
  
 <script>
 $( "#dialog" ).dialog({ autoOpen: false });
@@ -93,8 +89,7 @@ $("#opener").click(function() {
  					<input name = "save" class="btn" type="submit" value = "Save"/>
  					<input name = "save" class="btn" type="submit" value = "Preview"/>
  					
-<!-- <!-- 					 <a type = "button" class = "btn" id = "non-print" name = "anything" onClick="javascript:window.print();return true" >Print</a>
- --> -->					 <a class="btn" type="button" onclick="reset();" >Reset</a>
+					 <a class="btn" type="button" href="clear.do" >Reset</a>
 					 
 			</div>
 			<div style="clear: both;"></div>
@@ -106,7 +101,9 @@ $("#opener").click(function() {
 		<table align="center" border="0" cellpadding="0" cellspacing="0">
 			<tr>
 				<td>
-					<h2>Privacy Form</h2> <!-- Tabs -->
+					<h2>Privacy Form</h2>
+					<jsp:include page="error-list.jsp" />
+					 <!-- Tabs -->
 					<div id="wizard" class="swMain">
 						<ul>
 							<li><a href="#step-1"> <label class="stepNumber">1</label>
@@ -173,7 +170,7 @@ $("#opener").click(function() {
 												<tr>
 												<td>Social Security number</td>
 												<%
-												HashSet<String> whatH = (HashSet<String>)session.getAttribute("what");
+												HashSet<String> whatH = (HashSet<String>)session.getAttribute("whatH");
 												boolean exist = (whatH!=null);
 												%>
 												<td><input type="checkbox" name="what" value="income" <% if(  exist && whatH.contains("income")) { %>checked<% } %>> income</td>
@@ -441,7 +438,7 @@ $("#opener").click(function() {
             <table>
             <tr>
             	<%
-												HashSet<String> howCollectH = (HashSet<String>)session.getAttribute("howCollect");
+												HashSet<String> howCollectH = (HashSet<String>)session.getAttribute("howCollectH");
 												
             	exist = howCollectH!=null;
 												%>

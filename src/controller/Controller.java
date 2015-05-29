@@ -28,6 +28,7 @@ public class Controller extends HttpServlet{
 		Action.add(new LoadAction());
 		Action.add(new SubmitAction());
 		Action.add(new DisplayAction());
+		Action.add(new ClearAction());
 
 	}
 
