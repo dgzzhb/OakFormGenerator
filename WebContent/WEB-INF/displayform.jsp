@@ -236,6 +236,7 @@ function goBack() {
             	<c:otherwise><td></td></c:otherwise>
             </c:choose>
           </tr>
+          
           <tr>
            <c:choose>
 				<c:when test="${showSixthRow == true}">

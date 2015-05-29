@@ -16,8 +16,7 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Smart Wizard 3 - Vertical Style Example - a javascript
-		jQuery wizard control plugin</title>
+	<title>Oak Interactive Form Builder--Task14</title>
 	<link href="css/demo_style.css" rel="stylesheet" type="text/css">
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
