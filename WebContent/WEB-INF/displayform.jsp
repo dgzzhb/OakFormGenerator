@@ -12,14 +12,14 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Link customized CSS -->
  <style type="text/css">
-	 thead {
-			background-color: #b0c4de;
-		}
-		
-		.left-colored tr td:first-child {
-			background: pink;
-		}
-	</style>
+ thead {
+		background-color: #b0c4de;
+	}
+	
+	.left-colored tr td:first-child {
+		background: pink;
+	}
+</style>
 <link href="css/smart_wizard_vertical.css" rel="stylesheet"
 			type="text/css">
   <!-- jQuery library -->
@@ -93,7 +93,7 @@ function goBack() {
           </tr>
           <tr>
             <td>How?</td>
-            <td>All financial companies need to share customers’ personal information to run their everyday business. In the section below, we list the reasons financial companies can share their customers’ personal information; the reasons ${nameOfInstitution} chooses to share; and whether you can limit this sharing.</td>
+            <td>All financial companies need to share customersâ personal information to run their everyday business. In the section below, we list the reasons financial companies can share their customersâ personal information; the reasons ${nameOfInstitution} chooses to share; and whether you can limit this sharing.</td>
           </tr>                
         </tbody>
       </table>    
@@ -305,7 +305,7 @@ function goBack() {
     </div> <!-- yes-no -->
     
     
-    <div class="container" id="facts">
+ <div class="container" id="facts">
  		<c:choose>
  		
           <c:when test="${noOpt == true}"> 	
@@ -313,7 +313,7 @@ function goBack() {
 				<tbody class="left-colored">
 				<tr>
 					<td>Questions?</td>
-					<td>Call ${phoneNum} or go to ${url}</td>
+					<td>Call ${questionPhone} or go to ${questionUrl}</td>
 				 </tr>
 					</tbody>
 			  </table>
@@ -328,13 +328,13 @@ function goBack() {
 							<td>To limit our sharing</td>
 							<td>
 							<c:choose>
-							<c:when test="${ phone[0] == true}">Call ${questionPhone} - our menu will prompt you through your choices
+							<c:when test="${ phone[0] == true}">Call ${phoneNum} - our menu will prompt you through your choices
 							</c:when>
 							</c:choose>
 							
 							<c:choose>
 							<c:when test="${phone[1] == true}">
-							  Visit us online: ${questionUrl}
+							  Visit us online: ${url}
 							</c:when>
 							</c:choose>
 							  Talk to a banking center associate
@@ -344,8 +344,8 @@ function goBack() {
 					  </tr>
 					  <tr>
 						<td>Questions?</td>
-						<td>
-						Call ${phoneNum} or go to ${url}.
+						
+						<td>Call ${questionPhone} or go to ${questionUrl}</td>
 							</tbody>
 					  </table>			 
 					</div> 
@@ -436,7 +436,6 @@ function goBack() {
 		</c:choose>			
 	</div>  
     
-    
     <!-- first-footer -->
     <div class="container" id="second-page">
       <table class="table table-bordered">
@@ -489,9 +488,9 @@ function goBack() {
   			</td>
           </tr>
           <tr>
-            <td>Why can’t I limit all sharing?</td>
+            <td>Why canât I limit all sharing?</td>
             <td>Federal law gives you the right to limit some but not all sharing related to:
-  affiliates' everyday business purposes—information about your creditworthiness
+  affiliates' everyday business purposesâinformation about your creditworthiness
   affiliates from using your information to market to you
   nonaffiliates to market to you
   State laws and individual ${nameOfInstitution} companies may give you more rights to limit sharing. See Other important information section for your rights under state law.</td>
