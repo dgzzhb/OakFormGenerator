@@ -167,18 +167,17 @@ public class DownJson extends HttpServlet{
 			String prmtr = req.getParameter("nameOfInstitution");
 //			System.out.println("reading Prmtr in prcs: "+prmtr);
 			System.out.println("reading Prmtr in prcs: "+prmtr);
-			PrintWriter writer;
-			FileWriter fw = new FileWriter("~/out.json");
-			fw.write(obj.toJSONString());
+			//PrintWriter writer;
+//			FileWriter fw = new FileWriter("~/out.json");
+			//fw.write(obj.toJSONString());
 			
 			System.out.println("jinto");
-			fw.close();
+			//fw.close();
 		resp.setContentType("fileType");
 		resp.setHeader("Content-Disposition",
 		"attachment;filename=youname.json");
-		String test = new String ( "test");
-//		StringBuffer sb = new StringBuffer(test);
-//		InputStream in = new ByteArrayInputStream(sb.toString().getBytes("UTF-8"));
+		StringBuffer sb = new StringBuffer(obj.toJSONString());
+		InputStream in = new ByteArrayInputStream(sb.toString().getBytes("UTF-8"));
 //		ServletOutputStream out = resp.getOutputStream();
 //		 
 //		byte[] outputByte = new byte[4096];
@@ -191,7 +190,7 @@ public class DownJson extends HttpServlet{
 //		out.flush();
 //		out.close();
 		OutputStream out = resp.getOutputStream();
-		FileInputStream in = new FileInputStream(new File("~/out.json"));
+		//FileInputStream in = new FileInputStream(new File("~/out.json"));
 		byte[] buffer = new byte[4096];
 		int length;
 		while ((length = in.read(buffer)) > 0){
