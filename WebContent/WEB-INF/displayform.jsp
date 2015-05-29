@@ -11,7 +11,15 @@
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Link customized CSS -->
-  <link rel="stylesheet" href="css/style.css">
+ <style type="text/css">
+	 thead {
+			background-color: #b0c4de;
+		}
+		
+		.left-colored tr td:first-child {
+			background: pink;
+		}
+	</style>
 <link href="css/smart_wizard_vertical.css" rel="stylesheet"
 			type="text/css">
   <!-- jQuery library -->
