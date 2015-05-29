@@ -199,9 +199,10 @@
             </c:choose>
           </tr>
           <tr>
-            <td>For our affiliates to market to you</td>
+            
              <c:choose>
 				<c:when test="${showSixthRow == true}">
+					<td>For our affiliates to market to you</td>
             		<c:choose>
 						<c:when test="${forAffiliateMarket == true}">
 		            		<td>Yes</td>
@@ -210,15 +211,9 @@
 		            		<td>No</td>
 		            	</c:when>
 		            </c:choose>
-            	</c:when>
-            	<c:when test="${showSixthRow == false}">
-            		<td></td>
-            	</c:when>
-            	<c:otherwise><td></td></c:otherwise>
-            </c:choose>
+            	
             
-            <c:choose>
-				<c:when test="${showSixthRow == true}">
+           
             		<c:choose>
 						<c:when test="${forAffiliateMarket == true}">
 		            		<c:choose>
@@ -234,12 +229,9 @@
 		            		<td>We don't share.</td>
 		            	</c:when>
 		            </c:choose>
-		        </c:when>
-		        <c:when test="${showSixthRow == false}">
-            		<td></td>
-            	</c:when>
-            	<c:otherwise><td></td></c:otherwise>
-			</c:choose>
+			</c:when>
+            	
+            </c:choose>
           </tr>
           <tr>
             <td>For nonaffiliates to market to you</td>
