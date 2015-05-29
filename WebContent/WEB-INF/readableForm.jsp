@@ -397,15 +397,21 @@
           <tr>
             <td>To limit our sharing</td>
             <td>
+            <%
+            HashSet<String> phoneH = (HashSet<String>)session.getAttribute("phoneH");
+			 exist = (phoneH!=null);
+            %>
             Please select one or more of the applicable opt-out methods described:<br>
             <input type="checkbox" name="phone" value="0" id="phone"onclick="validate()"
-                        	 <% if(((String)session.getAttribute("phone"))!=null &&((String)session.getAttribute("phone")).equals("0")) { %>checked<% } %>
+            	<% if(exist && phoneH.contains("0")) { %>checked<% } %>
                         	>Telephone
              <input type="checkbox" name="phone" value="1"id="website" onclick="validate()"
-                        	 <% if(((String)session.getAttribute("phone"))!=null &&((String)session.getAttribute("phone")).equals("1")){ %>checked<% } %>
+            	 <% if(exist && phoneH.contains("1")) { %>checked<% } %>
+                    
                         	>Website
              <input type="checkbox" name="phone" value="2" id="mail" onclick="validate()"
-                        	 <% if(((String)session.getAttribute("phone"))!=null &&  ((String)session.getAttribute("phone")).equals("2")) { %>checked<% } %>
+            	 <% if(exist && phoneH.contains("2")) { %>checked<% } %>
+           
                         	>mail-in opt-out form 
              <br>
              <br>
