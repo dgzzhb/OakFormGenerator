@@ -53,8 +53,7 @@
   
   
 </head>
-<body on>
-<button onclick="loadinit()" >here</button>
+<body >
 			  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 <div id="dialog" title="Upload"><p>Please select a file</p>
