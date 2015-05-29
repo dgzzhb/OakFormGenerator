@@ -1,7 +1,9 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -33,6 +35,25 @@ public class SubmitAction extends Action{
 
 	}
 	
+	private void processArrayH(HttpServletRequest request, String name ){
+		System.out.println("processing  "+ name);
+
+		HttpSession session = request.getSession();
+		System.out.println("reading session id: "+ session.getId());
+
+		String[] prmtr = request.getParameterValues(name);
+		if(prmtr!=null){
+		Set set = new HashSet<String>();
+		for ( int i = 0 ; i < prmtr.length ; i++){
+			set.add(prmtr[i]);
+		}
+		System.out.println("reading Prmtr in prcs: "+prmtr);
+		session.setAttribute(name+"H", set);
+		System.out.println("Success");
+		}
+
+	}
+	
 	
 	@Override
 	public String getName() {
@@ -45,7 +66,7 @@ public class SubmitAction extends Action{
 	public String perform(HttpServletRequest request) {
 		
 		System.out.println("submit called");
-		process(request, "nameOfInstitution");
+//		process(request, "nameOfInstitution");
 		HttpSession session = request.getSession();
 		String sid = session.getId();
 
@@ -62,7 +83,8 @@ public class SubmitAction extends Action{
 			   session.setAttribute("time", time);	   
 		process(request, "nameOfInstitution");
 		processArray(request, "what");
-		
+		processArrayH(request, "what");
+
 		process(request, "forBusiness");
 		process(request, "forMarketing");
 		process(request, "limitMarketing");
@@ -92,7 +114,15 @@ public class SubmitAction extends Action{
 		}
 		
 		session.setAttribute("phone", phoneNum);
+		Set phoneset = new HashSet<String>();
+		for ( int i = 0 ; i < phoneNum.length ; i++){
+			phoneset.add(phoneNum[i]);
+		}
+		System.out.println("reading Prmtr in prcs: "+prmtr);
+		session.setAttribute("phoneH", phoneset);
+		
 		session.setAttribute("noOpt", noOpt);
+		
 		process(request, "questionPhone");
 		process(request, "phoneNum");
 		
@@ -120,6 +150,8 @@ public class SubmitAction extends Action{
 		process(request, "otherImportantInformation");
 		process(request, "Providing");
 		processArray(request, "howCollect");
+		processArrayH(request, "howCollect");
+
 		process(request, "collectFromAffiliates");
 		process(request, "collectFromOtherCompany");
 		
