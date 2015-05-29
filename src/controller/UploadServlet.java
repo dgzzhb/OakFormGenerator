@@ -44,7 +44,7 @@ public class UploadServlet extends HttpServlet {
     	if (obj.get(name)!=null){
     		String prmtr = obj.get(name).toString();
     	
-		System.out.println(name+prmtr);
+		System.out.println(name+" is: "+prmtr);
 		session.setAttribute(name, prmtr);
     	}
     	

@@ -18,20 +18,15 @@
 	<link href="css/demo_style.css" rel="stylesheet" type="text/css">
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
 	<link href="css/smart_wizard_vertical.css" rel="stylesheet"
 			type="text/css">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-			<!-- Include all compiled plugins (below), or include individual files as needed -->
-			  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	
    
  			<script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
   			<script type="text/javascript" src="js/jquery.smartWizard.js"></script>
- 			
-   <script src="js/bootstrap.min.js"></script>
- 			 
- <script type="text/javascript" src="js/jiali.js"></script>
+   			<script src="js/bootstrap.min.js"></script>
+ 			<script type="text/javascript" src="js/jiali.js"></script>
  			
 
 			<script type="text/javascript">
@@ -53,25 +48,22 @@
   
   
  
-  
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
   
   
 </head>
 <body>
+			  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 <div id="dialog" title="Upload"><p>Please select a file</p>
 <form action="UploadServlet" method="post" enctype="multipart/form-data">
 <input type="file" name="fileName">
 <input class="btn" type="submit" value="Upload">
 </form>
 </div>
-  					<button class="btn" id="opener">upload</button>
- 
-<script>
-$( "#dialog" ).dialog({ autoOpen: false });
-$("#opener").click(function() {
-  $( "#dialog" ).dialog( "open" );
-});
-</script>
+<!--   					<button class="btn" id="opener">upload</button>
+ --> 
+
 
 
 
@@ -87,6 +79,7 @@ $("#opener").click(function() {
 	<div class="demoHead">
 		<div>
 			<div style="float: right;" class="demoNavLinks">
+			    <input class="btn" type="button" value="upload" id="opener">
 					
  					<input name = "save" class="btn" type="submit" value = "Save"/>
  					<input name = "save" class="btn" type="submit" value = "Preview"/>
@@ -787,4 +780,12 @@ $("#opener").click(function() {
 	</form>
 
 </body>
+<script>
+$( "#dialog" ).dialog({ autoOpen: false });
+$("#opener").click(function() {
+  $( "#dialog" ).dialog( "open" );
+});
+</script>
 </html>
+
+

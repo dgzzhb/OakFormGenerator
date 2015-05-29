@@ -327,7 +327,7 @@
 							   
 										<td  rowspan = "6">
 									Leave Blank Or [If your have a joint account, 
-									your choice{s} will apply to everyone on your accoutn unless
+									your choice(s) will apply to everyone on your accoun unless
 									 you mark below.]
 									 <label><input name="ApplyChoice" type="radio" value="" />
 										Apply my choices only to me.
@@ -337,7 +337,7 @@
 									 <td colspan="3">
 										Mark any/or you want to limit:<br>
 										<label><input name="limit" type="checkbox" value="" />
-										Do not share information about my creditworthiness with my 
+										Do not share information about my credit worthiness with my 
 										affiliates for their everyday business purposes.
 										</label> 
 										
@@ -445,7 +445,7 @@
 			   </c:choose>
 			    <c:choose>
 			      		<c:when test="${whatHappensCompany == true}">
-			      		We also collectcollect information from other companies.
+			      		We also collect information from other companies.
 			      		</c:when>
 			   </c:choose>
   			</td>
@@ -453,7 +453,7 @@
           <tr>
             <td>Why can't I limit all sharing?</td>
             <td>Federal law gives you the right to limit some but not all sharing related to:
-  affiliates' everyday business purposesâinformation about your creditworthiness
+  affiliates' everyday business purposes information about your creditworthiness
   affiliates from using your information to market to you
   nonaffiliates to market to you
   State laws and individual ${nameOfInstitution} companies may give you more rights to limit sharing. See Other important information section for your rights under state law.</td>
@@ -476,7 +476,7 @@
           <tr>
             <td>Affiliates</td>
             <td>Companies related by common ownership or control. They can be Financial and nonfinancial companies.
-  Our affiliates include companies that utilize the names ${nameOfInstitution}; Banc of America; U.S. Trust; LandSafe or Merrill Lynch, financial companies such as General Fidelity Life Insurance Company.
+  Our affiliates include companies that utilize the names ${nameOfInstitution}; Bank of America; U.S. Trust; LandSafe or Merrill Lynch, financial companies such as General Fidelity Life Insurance Company.
           <c:choose>
           <c:when test="${haveAffiliates == true}">
 	          <c:choose>
@@ -522,7 +522,7 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Ohter important information</th>
+            <th>Other important information</th>
           </tr>
         </thead>
         <tbody>
