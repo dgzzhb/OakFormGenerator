@@ -257,7 +257,7 @@
             <% if((String)session.getAttribute("forBusiness")=="true") { %>checked<% } %>
             >Yes
 <input type="radio" name="forBusiness" value="false" class="No11" 
-            <% if(session.getAttribute("forBusiness")=="false") { %>checked<% } %>
+            <% if((String)session.getAttribute("forBusiness")=="false") { %>checked<% } %>
             >No</td>
             <td><div class="limit12"  style="display:none">No</div>
 		<div class="limit13" style="display:none">We don't share.</div>
@@ -266,7 +266,7 @@
           <tr>
             <td>For our marketing purposes - with service providers we use to offer our products and services to you</td>
             <td><input type="radio" name="forMarketing" value="true" class="Yes21"
-            <% if(session.getAttribute("forMarketing")=="true") { %>checked<% } %>
+            <% if((String)session.getAttribute("forMarketing")=="true") { %>checked<% } %>
             >Yes
 <input type="radio" name="forMarketing" value="false" class="No21" id="noShareMarketing" onclick="validateOptOut()"
             <% if((String)session.getAttribute("forMarketing")=="false") { %>checked<% } %>
