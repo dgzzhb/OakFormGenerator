@@ -1,3 +1,4 @@
+<%@page import="com.sun.xml.internal.txw2.Document"%>
 <%@page import="java.util.HashSet"%>
 <%@page import="java.util.Set"%>
 
@@ -127,6 +128,10 @@ $("#opener").click(function() {
 								</span>
 							</a></li>
 						</ul>
+			
+						
+						
+			
 						<div id="step-1">
 							<h2 class="StepTitle">Step 1 FACTS</h2>
 							
@@ -255,69 +260,120 @@ $("#opener").click(function() {
           <tr>
             <td>For our everyday business purposes - such as to process your transactions, maintain your account(s), respond to court orders and legal investigations, or report to credit bureaus</td>
             <td><input type="radio" name="forBusiness" value="true" class="Yes11"
-            <% if(session.getAttribute("forBusiness")!=null && session.getAttribute("forBusiness")=="true") { %>checked<% } %>
+            <% if((String)session.getAttribute("forBusiness")=="true") { %>checked<% } %>
             >Yes
-<input type="radio" name="forBusiness" value="false" class="No11">No</td>
+<input type="radio" name="forBusiness" value="false" class="No11" 
+            <% if(session.getAttribute("forBusiness")=="false") { %>checked<% } %>
+            >No</td>
             <td><div class="limit12"  style="display:none">No</div>
 		<div class="limit13" style="display:none">We don't share.</div>
 </td>
           </tr>
           <tr>
             <td>For our marketing purposes - with service providers we use to offer our products and services to you</td>
-            <td><input type="radio" name="forMarketing" value="true" class="Yes21">Yes
-<input type="radio" name="forMarketing" value="false" class="No21" id="noShareMarketing" onclick="validateOptOut()">No</td>
-            <td><div class="limit22"  style="display:none"><input type="radio" name="limitMarketing" value="true" id="limitShare2" onclick="validateOptOut()">Yes
-<input type="radio" name="limitMarketing" value="false" onclick="validateOptOut()">No</div>
+            <td><input type="radio" name="forMarketing" value="true" class="Yes21"
+            <% if(session.getAttribute("forMarketing")=="true") { %>checked<% } %>
+            >Yes
+<input type="radio" name="forMarketing" value="false" class="No21" id="noShareMarketing" onclick="validateOptOut()"
+            <% if((String)session.getAttribute("forMarketing")=="false") { %>checked<% } %>
+            >No</td>
+            <td><div class="limit22"  style="display:none">
+            	<input type="radio" name="limitMarketing" value="true" id="limitShare2" onclick="validateOptOut()" 
+            <% if((String)session.getAttribute("limitMarketing")=="true") { %>checked<% } %>
+            >Yes
+<input type="radio" name="limitMarketing" value="false" onclick="validateOptOut()" 
+            <% if((String)session.getAttribute("limitMarketing")=="false") { %>checked<% } %>
+            >No</div>
 </td>
           </tr>
           <tr>
             <td>For joint marketing with other financial companies</td>
-                        <td><input type="radio" name="forJointMarket" value="true" class="Yes31">Yes
-<input type="radio" name="forJointMarket" value="false"  id="noShareJointMarketing" class="No31" onclick="validateOptOut()">No</td>
-            <td><div class="limit32"  style="display:none"><input type="radio" name="limitJointMarket" value="true" class="triggerOptOut"  id="limitShare3" onclick="validateOptOut()">Yes
+                        <td><input type="radio" name="forJointMarket" value="true" class="Yes31"
+                        	 <% if((String)session.getAttribute("forJointMarket")=="true") { %>checked<% } %>
+                        	 >Yes
+<input type="radio" name="forJointMarket" value="false"  id="noShareJointMarketing" class="No31" onclick="validateOptOut()"
+            <% if((String)session.getAttribute("forJointMarket")=="false") { %>checked<% } %>
+            >No</td>
+            <td><div class="limit32"  style="display:none">
+            	<input type="radio" name="limitJointMarket" value="true" class="triggerOptOut"  id="limitShare3" onclick="validateOptOut()"
+            <% if((String)session.getAttribute("limitJointMarket")=="true") { %>checked<% } %>
+            >Yes
 
-<input type="radio" name="limitJointMarket" value="false" onclick="validateOptOut()">No</div>
+<input type="radio" name="limitJointMarket" value="false" onclick="validateOptOut()"
+  <% if((String)session.getAttribute("limitJointMarket")=="false") { %>checked<% } %>
+>No</div>
 
 <div class="limit33" style="display:none">We don't share.</div>
 </td>
           </tr>
           <tr>
             <td>For our affiliates' everyday business purposes - Information about your transactions and experiences</td>
-                        <td><input type="radio" name="forAffiliateTransaction" value="true" class="Yes41">Yes
-<input type="radio" name="forAffiliateTransaction" value="false" class="No41">No</td>
+                        <td><input type="radio" name="forAffiliateTransaction" value="true" class="Yes41" 
+  <% if((String)session.getAttribute("forAffiliateTransaction")=="true") { %>checked<% } %>
+>Yes
+<input type="radio" name="forAffiliateTransaction" value="false" class="No41"
+  <% if((String)session.getAttribute("forAffiliateTransaction")=="false") { %>checked<% } %>
+>No</td>
 
- <td><div class="limit42"  style="display:none"><input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut"  id="limitShare4" onclick="validateOptOut()">Yes
- <input type="radio" name="limitAffiliateTransaction" value="false"  onclick="validateOptOut()">No</div>
+ <td><div class="limit42"  style="display:none">
+ 	<input type="radio" name="limitAffiliateTransaction" value="true" class="triggerOptOut"  id="limitShare4" onclick="validateOptOut()"
+  <% if((String)session.getAttribute("limitAffiliateTransaction")=="true") { %>checked<% } %>
+>Yes
+ <input type="radio" name="limitAffiliateTransaction" value="false"  onclick="validateOptOut()"
+                        	 <% if((String)session.getAttribute("limitAffiliateTransaction")=="false") { %>checked<% } %>
+                        	 >No</div>
 
 <div class="limit43" style="display:none">We don't share.</div>
 </td>
           </tr>        
           <tr>
             <td>For our affiliates' everyday business purposes - Information about your creditworthiness</td>
-                        <td><input type="radio" name="forAffiliateCredit" value="true" id="Yes51" class="triggerOptOut">Yes
-<input type="radio" name="forAffiliateCredit" value="false" id="No51" onclick="validateOptOut()">No</td>
+                        <td><input type="radio" name="forAffiliateCredit" value="true" id="Yes51" class="triggerOptOut"
+                        	 <% if((String)session.getAttribute("forAffiliateCredit")=="true") { %>checked<% } %>
+                        	 >Yes
+<input type="radio" name="forAffiliateCredit" value="false" id="No51" onclick="validateOptOut()"
+                        	 <% if((String)session.getAttribute("forAffiliateCredit")=="false") { %>checked<% } %>
+                        	 >No</td>
             <td><div class="limit52"  style="display:none">Yes</div>
 <div class="limit53" style="display:none">We don't share.</div>
 </td>
           </tr>
           <tr>
-            <td>For our affiliates to market to you <br>   <input type="radio" name="showSixthRow" value="false" class="hide61" >hide
-            <input type="radio" name="showSixthRow" value="false"class="show61" >show
+            <td>For our affiliates to market to you <br>   <input type="radio" name="showSixthRow" value="false" class="hide61" 
+                        	 <% if((String)session.getAttribute("showSixthRow")=="false") { %>checked<% } %>
+                        	 >hide
+            <input type="radio" name="showSixthRow" value="false"class="show61" 
+                        	 <% if((String)session.getAttribute("showSixthRow")=="true") { %>checked<% } %>
+                        	 >show
             </td>
-                        <td><div class="share62"  style="display:none"><input type="radio" name="forAffiliateMarket" value="true" class="Yes61">Yes
-<input type="radio" name="forAffiliateMarket" value="false" class="No61">No</div></td>
+                        <td><div class="share62"  style="display:none">
+                        	<input type="radio" name="forAffiliateMarket" value="true" class="Yes61"
+                        	 <% if((String)session.getAttribute("forAffiliateMarket")=="true") { %>checked<% } %>
+                        	 >Yes
+<input type="radio" name="forAffiliateMarket" value="false" class="No61"
+                        	 <% if((String)session.getAttribute("forAffiliateMarket")=="false") { %>checked<% } %>
+                        	 >No</div></td>
 
-            <td><div class="limit62"  style="display:none"><input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut"  id="limitShare6" onclick="validateOptOut()">Yes
+            <td><div class="limit62"  style="display:none">
+            	<input type="radio" name="limitAffiliateMarket" value="true" class="triggerOptOut"  id="limitShare6" onclick="validateOptOut()"
+                        	 <% if((String)session.getAttribute("limitAffiliateMarket")=="true") { %>checked<% } %>
+                        	 >Yes
            
-<input type="radio" name="limitAffiliateMarket" value="false" onclick="validateOptOut()">No</div>
+<input type="radio" name="limitAffiliateMarket" value="false" onclick="validateOptOut()"
+                        	 <% if((String)session.getAttribute("limitAffiliateMarket")=="false") { %>checked<% } %>
+                        	 >No</div>
 
 <div class="limit63" style="display:none">We don't share.</div>
 </td>
           </tr>
           <tr>
             <td>For nonaffiliates to market to you</td>
-                        <td><input type="radio" name="forNonaffiliate" value="marketing purposes" id="Yes71" class="triggerOptOut">Yes
-<input type="radio" name="forNonaffiliate" value="false" class="No71" onclick="validateOptOut()">No</td>
+                        <td><input type="radio" name="forNonaffiliate" value="marketing purposes" id="Yes71" class="triggerOptOut"
+                        	 <% if((String)session.getAttribute("forNonaffiliate")=="true") { %>checked<% } %>
+                        	 >Yes
+<input type="radio" name="forNonaffiliate" value="false" class="No71" onclick="validateOptOut()"
+                        	 <% if((String)session.getAttribute("forNonaffiliate")=="false") { %>checked<% } %>
+                        	 >No</td>
             <td><div class="limit72"  style="display:none">Yes</div>
 <div class="limit73" style="display:none">We don't share.</div>
 </td>
@@ -337,9 +393,9 @@ $("#opener").click(function() {
             <td>To limit our sharing</td>
             <td>
             Please select one or more of the applicable opt-out methods described:<br>
-            <input type="checkbox" name="phone" value="1" id="phone"onclick="validate()">Telephone
+            <input type="checkbox" name="phone" value="0" id="phone"onclick="validate()">Telephone
              <input type="checkbox" name="phone" value="1"id="website" onclick="validate()">Website
-             <input type="checkbox" name="phone" value="1" id="mail" onclick="validate()">mail-in opt-out form 
+             <input type="checkbox" name="phone" value="2" id="mail" onclick="validate()">mail-in opt-out form 
              <br>
              <br>
 <div class="phoneNumber" style="display:none">     Call <input type="text" name="phoneNum" placeholder="phone number"  /> - our menu will prompt you through your choices<br></div>

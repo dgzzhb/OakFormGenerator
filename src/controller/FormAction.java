@@ -25,6 +25,7 @@ public class FormAction extends Action{
 		set.add("account balances");
 		HttpSession session= request.getSession();
 		session.setAttribute("what", set);
+		session.setAttribute("forBusiness", "true");
 	
 		
 		return "readableForm.jsp";	
