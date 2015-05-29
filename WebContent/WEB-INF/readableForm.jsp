@@ -208,7 +208,7 @@
 												<tr>
 												<td><input type="checkbox" name="what" value="account transactions" <% if(exist && whatH.contains("account transactions")) { %>checked<% } %>>account transactions</td>
 												<td><input type="checkbox" name="what" value="risk tolerance" <% if(exist && whatH.contains("risk tolerance")) { %>checked<% } %>>risk tolerance</td>
-												<td><input type="checkbox" name="what" value="medical-­related debts" <% if(exist && whatH.contains("medical-­related debts")) { %>checked<% } %>>medical-related debts</td>
+												<td><input type="checkbox" name="what" value="medical-related debts" <% if(exist && whatH.contains("medical-­related debts")) { %>checked<% } %>>medical-related debts</td>
 												</tr>
 												<tr>
 												<td><input type="checkbox" name="what" value="credit card or other debt" <% if(exist && whatH.contains("credit card or other debt")) { %>checked<% } %>>credit card or other debt</td>
