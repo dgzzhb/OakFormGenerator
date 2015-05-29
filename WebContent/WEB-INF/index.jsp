@@ -288,7 +288,7 @@
 							
 							<c:choose>
 							<c:when test="${phone[1] == true}">
-							  Visit us online: ${url}
+							  Visit us online: <a href="${url}">${url}</a>
 							</c:when>
 							</c:choose>
 							  Talk to a banking center associate
@@ -299,7 +299,7 @@
 					  <tr>
 						<td>Questions?</td>
 						
-						<td>Call ${questionPhone} or go to ${questionUrl}</td>
+						<td>Call ${questionPhone} or go to <a href="${questionUrl}">${questionUrl}</a></td>
 							</tbody>
 					  </table>			 
 					</div> 

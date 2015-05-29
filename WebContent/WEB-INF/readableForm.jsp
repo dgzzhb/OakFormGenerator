@@ -197,7 +197,7 @@
 												<tr>
 												<td><input type="checkbox" name="what" value="investment experience" <% if( exist && whatH.contains("investment experience")) { %>checked<% } %>>investment experience</td>
 
-												<td><input type="checkbox" name="what" value="credit-­based insurance scores" <% if(exist && whatH.contains("credit-­based insurance scores")) { %>checked<% } %>>credit-based insurance scores</td>
+												<td><input type="checkbox" name="what" value="credit-based insurance scores" <% if(exist && whatH.contains("credit-­based insurance scores")) { %>checked<% } %>>credit-based insurance scores</td>
 												<td><input type="checkbox" name="what" value="insurance claim history" <% if(exist && whatH.contains("insurance claim history")) { %>checked<% } %>>insurance claim history</td>
 												</tr>
 												<tr>
