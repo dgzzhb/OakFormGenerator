@@ -47,7 +47,8 @@ public class UploadServlet extends HttpServlet {
 		System.out.println(name+" is: "+prmtr);
 		session.setAttribute(name, prmtr);
     	}
-    	
+    	else 		session.setAttribute(name, "");
+
     }
     private void processArray(JSONObject obj,HttpSession session, String name){
     	if (obj.get(name)!=null){
