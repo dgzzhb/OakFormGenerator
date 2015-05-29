@@ -170,7 +170,7 @@
             </c:choose>
           </tr>        
           <tr>
-            <td>For our affiliates' everyday business purposes - Information about your creditworthiness</td>
+            <td>For our affiliates' everyday business purposes - Information about your credit worthiness</td>
             <c:choose>
 				<c:when test="${forAffiliateCredit == true}">
             		<td>Yes</td>

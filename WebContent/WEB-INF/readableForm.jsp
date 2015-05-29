@@ -393,49 +393,35 @@ $("#opener").click(function() {
             <td>To limit our sharing</td>
             <td>
             Please select one or more of the applicable opt-out methods described:<br>
-            <input type="checkbox" name="phone" value="0" id="phone"onclick="validate()"
-                        	 <% if((String)session.getAttribute("phone")=="0") { %>checked<% } %>
-                        	>Telephone
-             <input type="checkbox" name="phone" value="1"id="website" onclick="validate()"
-                        	 <% if((String)session.getAttribute("phone")=="1") { %>checked<% } %>
-                        	>Website
-             <input type="checkbox" name="phone" value="2" id="mail" onclick="validate()"
-                        	 <% if((String)session.getAttribute("phone")=="2") { %>checked<% } %>
-                        	>mail-in opt-out form 
+            <input type="checkbox" name="phone" value="0" id="phone"onclick="validate()">Telephone
+             <input type="checkbox" name="phone" value="1"id="website" onclick="validate()">Website
+             <input type="checkbox" name="phone" value="2" id="mail" onclick="validate()">mail-in opt-out form 
              <br>
              <br>
-<div class="phoneNumber" style="display:none">     Call <input type="text" name="phoneNum" placeholder="phone number"  value="${phoneNum}"/> - our menu will prompt you through your choices<br></div>
+<div class="phoneNumber" style="display:none">     Call <input type="text" name="phoneNum" placeholder="phone number"  /> - our menu will prompt you through your choices<br></div>
  
  
   
-<div class="website" style="display:none"><br>   Visit us online: <input type="text" name="url" placeholder="website" value="${url}"><br></div>
+<div class="website" style="display:none"><br>   Visit us online: <input type="text" name="url" placeholder="website"><br></div>
  
    <div class="mail" style="display:none"><br>Do we require customers to provide additional or different information other than name and address, such as a random opt-out number or a truncated account number?<br>
-   		<input type="radio" name="addition" value="true"
-                        	 <% if((String)session.getAttribute("addition")=="true") { %>checked<% } %>
-                        	>Yes
-<input type="radio" name="addition" value="false" 
-                        	 <% if((String)session.getAttribute("adddition")=="false") { %>checked<% } %>
-                        	>No	
+   		<input type="radio" name="account" value="true">Yes
+<input type="radio" name="account" value="false" >No	
 
     <br><br>
     Opt-out mailing address:<br>
-    <input type="text" name="address1" placeholder="Address1" value="${address1}"> <br>
-    <input type="text" name="address2" placeholder="Address2" value="${address2}"> <br>
-    <input type="text" name="city" placeholder="city" value="${city}"><br> 
-    <input type="text" name="state" placeholder="state" value="${state}"> <br>
-    <input type="text" name="zip" placeholder="zip" value="${zip}"> <br>
+    <input type="text" name="address1" placeholder="Address1"> <br>
+    <input type="text" name="address2" placeholder="Address2"> <br>
+    <input type="text" name="city" placeholder="city"><br> 
+    <input type="text" name="state" placeholder="state"> <br>
+    <input type="text" name="zip" placeholder="zip"> <br>
    
    	<br>
    	<!--If we do, we must  include in the far left column of the mail-­in form the following statement.  -->
    	<!-- If you have a joint account, your choice(s) will apply to everyone on your account unless you mark below. ô° Apply my choice(s) only to me. -->
    	Do we provide their joint accountholders the choice to opt out for only one accountholder?<br>
-   	   		<input type="radio" name="jointAccountHolders" value="true" 
-                        	 <% if((String)session.getAttribute("jointAccountHolders")=="true") { %>checked<% } %>
-                        	>Yes
-<input type="radio" name="jointAccountHolders" value="false"  
-                        	 <% if((String)session.getAttribute("jointAccountHolders")=="false") { %>checked<% } %>
-                        	>No	
+   	   		<input type="radio" name="jointAccountHolders" value="true">Yes
+<input type="radio" name="jointAccountHolders" value="false" >No	
    	
    
    </div>
@@ -443,7 +429,7 @@ $("#opener").click(function() {
    
  
   <br>Please note:
-  If you are a new customer, we can begin sharing your information <input type="text" name="beginShareDays" placeholder="30 or greater" value="${beginShareDays}">  days from the date we sent this notice. When you are no longer our customer, we continue to share your information as described in this notice. However, you can contact us at any time to limit our sharing.</td>
+  If you are a new customer, we can begin sharing your information <input type="text" name="beginShareDays" placeholder="30 or greater">  days from the date we sent this notice. When you are no longer our customer, we continue to share your information as described in this notice. However, you can contact us at any time to limit our sharing.</td>
           </tr>
           
         </tbody>
@@ -455,7 +441,7 @@ $("#opener").click(function() {
       	<td>Question
 <span class="glyphicon glyphicon-question-sign" title="Customer service contact information must be inserted as appropriate. Institutions may elect to provide either a phone number, such as a toll-free number, or a Web address, or both. Institutions may include the words 'toll-free' before the telephone number, as appropriate."></span>
       	</td>
-      	<td>Call <input type="text" name="questionPhone" placeholder="phone number"  value="${questionPhone}"/> or go to <input type="text" name="questionUrl" placeholder="website" value="${questionUrl}"></td>
+      	<td>Call <input type="text" name="questionPhone" placeholder="phone number"  /> or go to <input type="text" name="questionUrl" placeholder="website"></td>
       	</tr>
       
       </table>
@@ -478,7 +464,7 @@ $("#opener").click(function() {
         <tbody>
           <tr>
             <td>Who is providing this notice?&nbsp;<span class="glyphicon glyphicon-question-sign" title="Please omit it when only one financial institution provides the model form." ></span></td>
-            <td><input type="text" name="nameOfInstitution" placeholder="insert" class="nameOfInstitution" value="${nameOfInstitution}"></td>
+            <td><input type="text" name="whoIsProviding" placeholder="insert" class="nameOfInstitution"></td>
           </tr>
         </tbody>
       </table>
@@ -497,7 +483,7 @@ $("#opener").click(function() {
             	Please provide additional information pertaining to its safeguards practices following the designated response to this question here 
             	<span class="glyphicon glyphicon-question-sign" title="Such information may include information about the institution's use of cookies or other measures it uses to safeguard personal information. "></span>  <br>
             	
-            	<textarea rows="2" cols="50" placeholder="a maximum of 30 additional words" name="Providing" value="${Providing}"></textarea>
+            	<textarea rows="2" cols="50" placeholder="a maximum of 30 additional words" name="Providing"></textarea>
             
             </td>
           </tr>
@@ -637,21 +623,13 @@ $("#opener").click(function() {
             <br>
             <div id="collect">
             Do we collect personal information from their affiliates and/or credit bureaus?<br>
-            <input type="radio" name="collectFromAffiliates" value="true" onclick="hide('#collectFromOtherCompany')"
-                        	 <% if((String)session.getAttribute("collectFromAffiliates")=="true") { %>checked<% } %>
-                        	>Yes
-            <input type="radio" name="collectFromAffiliates" value="false" onclick="show('#collectFromOtherCompany')"
-                        	 <% if((String)session.getAttribute("collectFromAffiliates")=="false") { %>checked<% } %>
-                        	>No<br>
+            <input type="radio" name="collectFromAffiliates" value="true" onclick="hide('#collectFromOtherCompany')">Yes
+            <input type="radio" name="collectFromAffiliates" value="false" onclick="show('#collectFromOtherCompany')">No<br>
             </div>
              <div id="collectFromOtherCompany" style="display:none" >
             <br>Do we collect information from other companies?<br>
-            <input type="radio" name="collectFromOtherCompany" value="true" 
-                        	 <% if((String)session.getAttribute("collectFromOtherCompany")=="true") { %>checked<% } %>
-                        	>Yes
-            <input type="radio" name="collectFromOtherCompany" value="false" 
-                        	 <% if((String)session.getAttribute("collectFromOtherCompany")=="false") { %>checked<% } %>
-                        	>No<br>
+            <input type="radio" name="collectFromOtherCompany" value="true" >Yes
+            <input type="radio" name="collectFromOtherCompany" value="false" >No<br>
            </div>
             
             
@@ -701,23 +679,15 @@ $("#opener").click(function() {
             <td>Affiliates</td>
             <td>
             Do we have affiliates?<br>
-             <input type="radio" name="haveAffiliates" value="true" onclick="showHide('#shareWithAffiliates','#shareWithNonaffiliates')"
-                        	 <% if((String)session.getAttribute("haveAffiliates")=="true") { %>checked<% } %>
-                        	>Yes
-<input type="radio" name="haveAffiliates" value="false" onclick="showHide('#shareWithNonaffiliates','#shareWithAffiliates')"
-                        	 <% if((String)session.getAttribute("haveAffiliates")=="false") { %>checked<% } %>
-                        	 >No <br><br>
+             <input type="radio" name="haveAffiliates" value="true" onclick="showHide('#shareWithAffiliates','#shareWithNonaffiliates')">Yes
+<input type="radio" name="haveAffiliates" value="false" onclick="showHide('#shareWithNonaffiliates','#shareWithAffiliates')" >No <br><br>
            
            
 
 <div id="shareWithAffiliates" style="display:none" >
 			Do we share personal information with affiliates?<br>
-				 <input type="radio" name="shareWithAffiliates" value="true" onclick="show('#affiliatesList')"
-                        	 <% if((String)session.getAttribute("shareWithAffiliates")=="true") { %>checked<% } %>
-                        	>Yes
-<input type="radio" name="shareWithAffiliates" value="false"  onclick="hide('#affiliatesList')"
-                        	 <% if((String)session.getAttribute("shareWithAffiliates")=="false") { %>checked<% } %>
-                        	>No <br><br>
+				 <input type="radio" name="shareWithAffiliates" value="true" onclick="show('#affiliatesList')">Yes
+<input type="radio" name="shareWithAffiliates" value="false"  onclick="hide('#affiliatesList')">No <br><br>
 </div>
 			
 
@@ -740,12 +710,8 @@ $("#opener").click(function() {
               <td>
              <div  >
             	Do we share with nonaffiliated third parties?<br>
-			 <input type="radio" name="shareWithNonaffiliates" value="true"onclick="show('#NonaffiliatesList')" 
-                        	 <% if((String)session.getAttribute("shareWithNonaffiliates")=="true") { %>checked<% } %>
-                        	>Yes
-<input type="radio" name="shareWithNonaffiliates" value="false" onclick="hide('#NonaffiliatesList')"
-                        	 <% if((String)session.getAttribute("shareWithNonaffiliates")=="false") { %>checked<% } %>
-                        	>No <br><br>
+			 <input type="radio" name="shareWithNonaffiliates" value="true"onclick="show('#NonaffiliatesList')" >Yes
+<input type="radio" name="shareWithNonaffiliates" value="false" onclick="hide('#NonaffiliatesList')">No <br><br>
 </div>
 
  <div id="NonaffiliatesList" style="display:none" >
@@ -763,18 +729,14 @@ $("#opener").click(function() {
              <td>
                          <div  >
             	Do we engage in joint marketing?<br>
-			 <input type="radio" name="jointMarketing" value="true"onclick="show('#jointMarketList')" 
-                        	 <% if((String)session.getAttribute("jointMarketing")=="true") { %>checked<% } %>
-                        	 >Yes
-<input type="radio" name="jointMarketing" value="false" onclick="hide('#jointMarketList')" 
-                        	 <% if((String)session.getAttribute("jointMarketing")=="false") { %>checked<% } %>
-                        	>No <br><br>
+			 <input type="radio" name="jointMarketing" value="true"onclick="show('#jointMarketList')" >Yes
+<input type="radio" name="jointMarketing" value="false" onclick="hide('#jointMarketList')">No <br><br>
 </div>
 
  <div id="jointMarketList" style="display:none" >
  Our joint marketing partners include:<span class="glyphicon glyphicon-question-sign" title="Please input list categories of companies such as credit card companies." ></span><br> 
  
- <textarea rows="4" cols="50" name="jointMarketList" value="${jointMarketList}">
+ <textarea rows="4" cols="50" name="jointMarketList">
  </textarea>
  </div>
  
