@@ -25,7 +25,6 @@ public class Controller extends HttpServlet{
 	public void init() throws ServletException {
 		Action.add(new IndexAction());
 		Action.add(new FormAction());
-		Action.add(new LoadAction());
 		Action.add(new SubmitAction());
 		Action.add(new DisplayAction());
 		Action.add(new ClearAction());

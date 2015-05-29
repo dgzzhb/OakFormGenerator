@@ -69,7 +69,7 @@ public class UploadServlet extends HttpServlet {
         String applicationPath = request.getServletContext().getRealPath("");
         // constructs path of the directory to save uploaded file
         String uploadFilePath = applicationPath + File.separator + UPLOAD_DIR;
-          
+        HttpSession session= request.getSession();
         // creates the save directory if it does not exists
         File fileSaveDir = new File(uploadFilePath);
         if (!fileSaveDir.exists()) {
@@ -79,24 +79,41 @@ public class UploadServlet extends HttpServlet {
          
         String fileName = null;
         //Get all the parts from request and write it to the file on server
+        if ( request.getParts()==null){
+        	System.out.println("error");
+        }
         for (Part part : request.getParts()) {
             fileName = getFileName(part);
+            if (fileName==null || fileName.isEmpty()) {
+            	session.setAttribute("errors", " Please choose a file!");
+		        getServletContext().getRequestDispatcher("/form.do").forward(
+		                request, response);
+		       return;
+            }
             part.getInputStream();
             InputStream fileContent = part.getInputStream();
 		    BufferedReader br = new BufferedReader(new InputStreamReader(fileContent));
 			//br = new BufferedReader(new FileReader("/users/ThomasZhao/Documents/out.json"));
-			String line  = br.readLine();
+		 
+	
+			String line   = br.readLine();
 			
 			br.close();
 			JSONParser parse = new JSONParser();
 			
 				JSONObject obj;
 				try {
-					obj = (JSONObject) parse.parse(line);
+					if (parse==null || line==null){
+						 session.setAttribute("errors", " No file here!");
+					        getServletContext().getRequestDispatcher("/form.do").forward(
+					                request, response);
+					       return;
+					}
+					 obj = (JSONObject) parse.parse(line);
 				
 			
 			
-			HttpSession session = request.getSession();
+			
 			//modify here===================================
 			process(obj, session, "nameOfInstitution");
 			processArray(obj, session, "what");
@@ -166,6 +183,7 @@ public class UploadServlet extends HttpServlet {
 				}
 			Form form = new Form();
             part.write(uploadFilePath + File.separator + fileName);
+        
         }
         
         request.setAttribute("message", fileName + " File uploaded successfully!");

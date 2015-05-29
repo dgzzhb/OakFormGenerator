@@ -150,8 +150,7 @@
 											 <input type="text" id ="name"
 												name="nameOfInstitution" class="nameOfInstitution"
 
-												placeholder="NAME OF FINANCIAL INSTITUTION" size="32" value="${nameOfInstitution}">DO WITH
-													YOUR PERSONAL INFORMATION?</td>
+												placeholder="NAME OF FINANCIAL INSTITUTION" size="32" value="${nameOfInstitution}"></td>
 										</tr>
 
 										<tr>
