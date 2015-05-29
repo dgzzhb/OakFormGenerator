@@ -289,6 +289,7 @@
 <input type="radio" name="limitMarketing" value="false" onclick="validateOptOut()" 
             <% if(((String)session.getAttribute("limitMarketing"))!=null &&((String)session.getAttribute("limitMarketing")).equals("false")) { %>checked<% } %>
             >No</div>
+            <div class="limit23" style="display:none">We don't share.</div>
 </td>
           </tr>
           <tr>
