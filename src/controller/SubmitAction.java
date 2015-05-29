@@ -72,6 +72,10 @@ public class SubmitAction extends Action{
 
 		System.out.println("reading session id: "+ sid);
 		System.out.println("save is"+request.getParameter("save"));
+		
+		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("downhtml")){
+			return "SaveAction?sid="+sid;	
+		}
 
 
 		
@@ -192,9 +196,7 @@ public class SubmitAction extends Action{
 		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Save")){
 			return "DownJson?sid="+sid;	
 		}
-		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Download")){
-			return "SaveAction?sid="+sid;	
-		}
+		
 		if ( request.getParameter("save")!=null&&request.getParameter("save").equals("Preview")){
 			return "display.do";	
 		}
